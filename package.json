@@ -1,0 +1,25 @@
+{
+  "name": "dca-2-proyecto-final",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Axelito02/DCA-2-Proyecto-final.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Axelito02/DCA-2-Proyecto-final/issues"
+  },
+  "homepage": "https://github.com/Axelito02/DCA-2-Proyecto-final#readme",
+  "devDependencies": {
+    "serve": "^14.2.0",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
+  }
+}
