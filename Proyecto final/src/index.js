@@ -20,6 +20,13 @@ class App extends HTMLElement {
         <comp-card></comp-card>
         <comp-comments></comp-comments>
         <comp-comment></comp-comment>
+        <comp-gameweek></comp-gameweek>
+        <comp-account></comp-account>
+        <comp-settings></comp-settings>
+        <comp-favorites></comp-favorites>
+        <comp-friends></comp-friends>
+        <comp-notification></comp-notification>
+        <comp-profile></comp-profile>
         `;
     }
 
