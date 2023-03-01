@@ -9,7 +9,7 @@ class Account extends HTMLElement {
     }
 
     render(){
-        this.shadowRoot.innerHTML = `<p>component account<p>`;
+        this.shadowRoot.innerHTML = `<p>component account</p>`;
     }
 
 }
