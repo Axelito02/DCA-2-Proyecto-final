@@ -1,4 +1,4 @@
-import "./components/index"
+import "./components/export"
 
 class App extends HTMLElement {
     constructor() {

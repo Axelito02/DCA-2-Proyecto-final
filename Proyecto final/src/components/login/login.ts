@@ -12,7 +12,7 @@ class login extends HTMLElement {
     render(){
         if(this.shadowRoot){
             this.shadowRoot.innerHTML = `
-            <link rel="stylesheet" href="./style.css">
+            <link rel="stylesheet" href="./styleLogin.css">
 
             <div class="Login-both">
             <section id ="images">
