@@ -9,9 +9,13 @@ class Favorites extends HTMLElement {
     }
 
     render(){
-        this.shadowRoot.innerHTML = `<p>component favorites<p>`;
+        if(this.shadowRoot){
+            this.shadowRoot.innerHTML = `<p>component favorites<p>`;
+
+        }
     }
 
 }
 
 customElements.define('comp-favorites', Favorites);
+export default Favorites;

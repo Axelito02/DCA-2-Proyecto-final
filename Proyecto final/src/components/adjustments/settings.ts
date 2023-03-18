@@ -9,9 +9,13 @@ class Settings extends HTMLElement {
     }
 
     render(){
-        this.shadowRoot.innerHTML = `<p>component settings<p>`;
+        if(this.shadowRoot){
+            this.shadowRoot.innerHTML = `<p>component settings<p>`;
+
+        }
     }
 
 }
 
 customElements.define('comp-settings', Settings);
+export default Settings;

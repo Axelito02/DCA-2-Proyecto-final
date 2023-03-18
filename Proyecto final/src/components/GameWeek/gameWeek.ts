@@ -9,9 +9,13 @@ class GameWeek extends HTMLElement {
     }
 
     render(){
-        this.shadowRoot.innerHTML = `<p>component gameWeek<p>`;
+        if(this.shadowRoot){
+            this.shadowRoot.innerHTML = `<p>component gameWeek<p>`;
+
+        }
     }
 
 }
 
 customElements.define('comp-gameweek', GameWeek);
+export default GameWeek;

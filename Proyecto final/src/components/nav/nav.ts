@@ -8,10 +8,14 @@ class Nav extends HTMLElement {
         this.render();
     }
 
-    render(){
-        this.shadowRoot.innerHTML = `<p>component nav<p>`;
+    render(){ 
+        if(this.shadowRoot){
+            this.shadowRoot.innerHTML = `<p>component nav<p>`;
+
+        }
     }
 
 }
 
 customElements.define('comp-nav', Nav);
+export default Nav;

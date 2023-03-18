@@ -9,9 +9,13 @@ class Card extends HTMLElement {
     }
 
     render(){
-        this.shadowRoot.innerHTML = `<p>component card<p>`;
+        if(this.shadowRoot){
+            this.shadowRoot.innerHTML = `<p>component card<p>`;
+
+        }
     }
 
 }
 
 customElements.define('comp-card', Card);
+export default Card;

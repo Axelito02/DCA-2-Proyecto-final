@@ -1,0 +1,6 @@
+.Login-both {
+    display: grid;
+    grid-template-columns: auto auto;
+    background-color: aqua;
+    color: blue;
+}

@@ -9,9 +9,13 @@ class Comment extends HTMLElement {
     }
 
     render(){
-        this.shadowRoot.innerHTML = `<p>component comment<p>`;
+        if(this.shadowRoot){
+            this.shadowRoot.innerHTML = `<p>component comment<p>`;
+
+        }
     }
 
 }
 
 customElements.define('comp-comment', Comment);
+export default Comment;

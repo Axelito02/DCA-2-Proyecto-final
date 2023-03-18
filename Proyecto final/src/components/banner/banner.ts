@@ -9,9 +9,13 @@ class Banner extends HTMLElement {
     }
 
     render(){
-        this.shadowRoot.innerHTML = `<p>component banner</p>`;
+        if(this.shadowRoot){
+            this.shadowRoot.innerHTML = `<p>component banner</p>`;
+
+        }
     }
 
 }
 
 customElements.define('comp-banner', Banner);
+export default Banner;

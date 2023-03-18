@@ -9,9 +9,13 @@ class Search extends HTMLElement {
     }
 
     render(){
-        this.shadowRoot.innerHTML = `<p>component search<p>`;
+        if(this.shadowRoot){
+            this.shadowRoot.innerHTML = `<p>component search<p>`;
+
+        }
     }
 
 }
 
 customElements.define('comp-search', Search);
+export default Search;

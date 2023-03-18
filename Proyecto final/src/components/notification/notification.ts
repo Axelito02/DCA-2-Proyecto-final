@@ -8,10 +8,14 @@ class Notification extends HTMLElement {
         this.render();
     }
 
-    render(){
-        this.shadowRoot.innerHTML = `<p>component notification<p>`;
+    render(){ 
+        if(this.shadowRoot){
+            this.shadowRoot.innerHTML = `<p>component notification<p>`;
+
+        }
     }
 
 }
 
 customElements.define('comp-notification', Notification);
+export default Notification;

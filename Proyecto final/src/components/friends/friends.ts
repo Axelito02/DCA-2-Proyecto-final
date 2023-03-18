@@ -9,9 +9,13 @@ class Friends extends HTMLElement {
     }
 
     render(){
-        this.shadowRoot.innerHTML = `<p>component friends<p>`;
+        if(this.shadowRoot){
+            this.shadowRoot.innerHTML = `<p>component friends<p>`;
+
+        }
     }
 
 }
 
 customElements.define('comp-friends', Friends);
+export default Friends;

@@ -9,9 +9,13 @@ class Account extends HTMLElement {
     }
 
     render(){
-        this.shadowRoot.innerHTML = `<p>component account</p>`;
+        if(this.shadowRoot){
+            this.shadowRoot.innerHTML = `<p>component account</p>`;
+
+        }
     }
 
 }
 
 customElements.define('comp-account', Account);
+export default Account;
