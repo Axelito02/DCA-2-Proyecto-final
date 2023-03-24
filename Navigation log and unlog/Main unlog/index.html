@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Navegacion por pestañas</title>
+
+	<link rel="stylesheet" href="./style.css">
+	<script src="./script.js" defer></script>
+</head>
+<body>
+
+	<div class="menu">
+		<p data-target="#news">News</p>
+		<p data-target="#communities">Communities</p>
+	</div>
+
+	<div class="content">
+
+		<div data-content id="news" class="active">
+			<h1>News</h1>
+			<p>
+				Aquí van los juegos y después game of the week
+			</p>
+		</div>
+
+		<div data-content id="communities">
+			<h1>Communities</h1>
+			<p>
+				Aquí van los juegos y después la publicación
+			</p>
+		</div>
+
+	</div>
+
+</body>
+</html>
