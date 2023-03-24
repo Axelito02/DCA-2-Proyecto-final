@@ -1,0 +1,17 @@
+.row {
+    margin: 0;
+    width: 100%;
+}
+
+.col{
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.col:hover{
+    cursor: pointer;
+    background-color: #141550;
+}

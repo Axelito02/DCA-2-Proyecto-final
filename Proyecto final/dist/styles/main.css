@@ -1,6 +1,11 @@
-#main {
-    display: flex;
-    flex-direction: column;
+*{
     padding: 0px;
     margin: 0px;
+    font-family: sans-serif;
+    color: #F5F1F1;
+    background-color: #0E0F38;
+}
+
+#main_container{
+    width: 100%;
 }

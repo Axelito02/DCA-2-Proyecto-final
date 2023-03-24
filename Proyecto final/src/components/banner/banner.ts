@@ -1,4 +1,4 @@
-class Banner extends HTMLElement {
+export default class Banner extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({mode: 'open'})
@@ -10,12 +10,16 @@ class Banner extends HTMLElement {
 
     render(){
         if(this.shadowRoot){
-            this.shadowRoot.innerHTML = `<p>component banner</p>`;
+            this.shadowRoot.innerHTML = `
+            <link rel="stylesheet" href="../src/components/banner/style.css">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
 
+            <div class="banner">
+                <img src="../dist/images/Valorant.png" alt="Valorant">
+            </div>
+            `;
         }
     }
-
 }
 
 customElements.define('comp-banner', Banner);
-export default Banner;

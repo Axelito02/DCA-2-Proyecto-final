@@ -11,11 +11,11 @@ class Register extends HTMLElement {
     render(){
         if(this.shadowRoot){
             this.shadowRoot.innerHTML = `
-            <link rel="stylesheet" href="./style.css">
+            <link rel="stylesheet" href="../src/components/register/style.css">
 
             <div id="main">
                 <section id ="images">
-                    <img src="https://i.pinimg.com/originals/bd/64/79/bd6479fe38844545f7a06223bf927015.gif" alt="Mario world gif">
+                    <img src="" alt="Mario world gif">
                 </section>
                 <section>
                     <div class="inputs">

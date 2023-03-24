@@ -1,0 +1,28 @@
+.row{
+    display: flex;
+    margin: 1rem 0px;
+    position: absolute;
+    width: 100%;
+}
+
+.bar-search{
+    background-color: #F8F8F8;
+    padding: 0.5rem;
+    border-radius: 0.7rem;
+    border: none;
+    width: 100%;
+    opacity: 0.7;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 0 1rem;
+    height: 3rem;
+    gap: 1rem;
+}
+
+.header img{
+    height: 100%;
+}
