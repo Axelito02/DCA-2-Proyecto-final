@@ -1,4 +1,4 @@
-class Settings extends HTMLElement {
+export default class Settings extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({mode: 'open'})
@@ -18,4 +18,3 @@ class Settings extends HTMLElement {
 }
 
 customElements.define('comp-settings', Settings);
-export default Settings;

@@ -9,3 +9,20 @@
 #main_container{
     width: 100%;
 }
+
+.icon{
+    position: absolute;
+    left: 90px;
+    top: 1.87rem;
+    width: 20px;
+}
+#bar_nav{
+    background-color: #252848;
+}
+
+#content{
+    display: flex;
+    flex-direction: row;
+    margin: 1.5rem 0;
+    border: solid 2px
+}

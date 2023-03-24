@@ -1,4 +1,4 @@
-class login extends HTMLElement {
+export default class login extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({mode: 'open'})
@@ -36,4 +36,3 @@ class login extends HTMLElement {
 }
 
 customElements.define('comp-login', login);
-export default login;

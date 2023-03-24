@@ -1,4 +1,4 @@
-class Register extends HTMLElement {
+export default class Register extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({mode: 'open'})
@@ -38,4 +38,3 @@ class Register extends HTMLElement {
 }
 
 customElements.define('comp-register', Register);
-export default Register;

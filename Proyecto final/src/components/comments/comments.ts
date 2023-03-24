@@ -1,4 +1,4 @@
-class Comments extends HTMLElement {
+export default class Comments extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({mode: 'open'})
@@ -18,4 +18,3 @@ class Comments extends HTMLElement {
 }
 
 customElements.define('comp-comments', Comments);
-export default Comments;
