@@ -1,0 +1,69 @@
+*{
+    background-color: rgba(14, 15, 56, 1);
+    color: white;
+    font-family: sans-serif;
+}
+
+#carousel-container {
+    width: 100%;
+    overflow-x: scroll;
+    white-space: nowrap;
+  }
+
+  #app {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    width: 100%; /* agregar esta regla */
+    box-sizing: border-box; /* agregar esta regla */
+  }
+
+  #carousel {
+    width: 90%;
+  }
+
+/*.juego-card {
+    width: auto;
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 10px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}*/
+
+.juego-card { 
+    display: inline-block;
+    margin-right: 20px;
+    margin-left: 20px;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+  }
+
+.juego-card:hover {
+    background-color: rgb(21, 22, 74);
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.juego-card img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.juego-card h2 {
+    margin: 10px;
+    font-size: 24px;
+    font-weight: 700;
+    background-color: transparent;
+}
+
+.juego-card h3 {
+    background-color: transparent;
+    margin: 10px;
+}
+
