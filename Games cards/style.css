@@ -2,13 +2,22 @@
     background-color: rgba(14, 15, 56, 1);
     color: white;
     font-family: sans-serif;
+    
 }
 
+/* ESTO OCULTA LA BARRA, PERO CÓMO HAGO QUE SE ARRASTRE?
+div::-webkit-scrollbar {
+  display: none;
+}
+*/
+
 #carousel-container {
-    width: 100%;
-    overflow-x: scroll;
-    white-space: nowrap;
-  }
+  width: 100%;
+  overflow-x: scroll;
+  white-space: nowrap;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+}
 
   #app {
     display: flex;
@@ -16,24 +25,15 @@
     gap: 20px;
     justify-content: center;
     width: 100%; /* agregar esta regla */
-    box-sizing: border-box; /* agregar esta regla */
+    box-sizing: border-box;
+     /* agregar esta regla */
   }
 
   #carousel {
     width: 90%;
+    scroll-behavior: smooth;
+    
   }
-
-/*.juego-card {
-    width: auto;
-    border-radius: 5px;
-    overflow: hidden;
-    padding: 10px;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}*/
 
 .juego-card { 
     display: inline-block;
@@ -67,3 +67,22 @@
     margin: 10px;
 }
 
+
+.carousel-container {
+  width: 80%;
+  height: 350px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+}
+.carousel {
+  width: 150%;
+  display: flex;
+  gap: 10px;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+}

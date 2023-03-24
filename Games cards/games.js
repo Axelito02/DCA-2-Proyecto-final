@@ -23,6 +23,20 @@ export default [
     name: "Doom Eternal",
     thumbnail: "https://upload.wikimedia.org/wikipedia/en/9/9d/Cover_Art_of_Doom_Eternal.png",
     publisher: "ID software",
-    releaseyear: "1995",
+    releaseyear: "2020",
+  },
+
+  {
+    name: "Animal Crossing",
+    thumbnail: "https://external-preview.redd.it/XmYU1C6KD9q1m9qY1hnedMhwYbwdWf3J2F-BcDpiav0.png?format=pjpg&auto=webp&s=cbf386c9e839022b6ca98520faafa98a4aa59783",
+    publisher: "Nintendo",
+    releaseyear: "2020",
+  },
+
+  {
+    name: "Omori",
+    thumbnail: "https://i1.sndcdn.com/artworks-Xb7DjesUtk53E0KI-GpZdgg-t500x500.jpg",
+    publisher: "Omocat",
+    releaseyear: "2021",
   },
 ];
