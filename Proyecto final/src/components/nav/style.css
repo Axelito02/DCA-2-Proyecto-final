@@ -1,6 +1,7 @@
 .row {
     margin: 0;
     width: 100%;
+    min-width: 500px; 
 }
 
 .col{
@@ -24,3 +25,8 @@
     border-bottom: none;
     background-color: #0E0F38;
 }
+
+@media screen and (max-width: 767px) {
+    
+    }
+    
