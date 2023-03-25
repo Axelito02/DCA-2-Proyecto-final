@@ -10,12 +10,14 @@ class App extends HTMLElement {
 
     connectedCallback() {
         this.render()
-        console.log(dataG);
         }
 
     render() {
         if(this.shadowRoot){
-            const gamesD = dataG.map(({name, thumbnail, publisher, releaseyear}) => `<comp-card name=${name} thumbnail="${thumbnail}" publisher="${publisher}" releaseyear="${releaseyear}"></comp-card>`)
+            const gamesD = dataG.map(({name, thumbnail, publisher, releaseyear}) => `<comp-card name="${name}" thumbnail="${thumbnail}" publisher="${publisher}" releaseyear="${releaseyear}"></comp-card>`)
+            
+            console.log(gamesD);
+            
             this.shadowRoot.innerHTML =`
         <link rel="stylesheet" href="../dist/styles/main.css">
 
@@ -29,14 +31,16 @@ class App extends HTMLElement {
                 <comp-nav></comp-nav>
             </section>
 
-            <section id= "content">
-                <comp-card></comp-card>
-                <comp-card></comp-card>
+            <section id="title">
+                <h3>You’d also like...</h3>
             </section>
 
             <section id= "content">
-                <comp-card></comp-card>
-                <comp-card></comp-card>
+                ${gamesD.join("")}
+            </section>
+                
+            <section id= "content">    
+                ${gamesD.join("")}
             </section>
 
             <section id= "bottom">

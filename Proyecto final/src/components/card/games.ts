@@ -1,6 +1,6 @@
 export default [
     {
-      name: "Zelda Breath of the Wild",
+      name: "Zelda BOW",
       thumbnail: "https://cdn02.plentymarkets.com/qozbgypaugq8/item/images/1613/full/PSTR-ZELDA005.jpg",
       publisher: "Nintendo",
       releaseyear: "1985",
@@ -40,3 +40,4 @@ export default [
       releaseyear: "2021",
     },
   ];
+  

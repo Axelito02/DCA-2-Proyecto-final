@@ -13,7 +13,7 @@ export default class Card extends HTMLElement {
     releaseyear : string = "";
     publisher : string = "";
 
-    static get observedAtributtes(){
+    static get observedAttributes(){
         return Object.keys(renderCharacter);
     }
 
@@ -30,7 +30,7 @@ export default class Card extends HTMLElement {
         this.render();
     }
 
-    attributesChangedCallback(propName:renderCharacter, _:unknown, newValue:string){
+    attributeChangedCallback(propName:renderCharacter, _:unknown, newValue:string){        
         this[propName]= newValue
         this.render()
     }
@@ -42,16 +42,16 @@ export default class Card extends HTMLElement {
             <link rel="stylesheet" href="../src/components/card/style.css">
 
             <div id="carousel-container">
-                <div id="app">
-                    <div id="carousel">
-                        <figure class="juego-card">
-                            <img src ="${this.thumbnail}">
-                            <h2>${this.name}</h2>
-                            <h2>${this.releaseyear}</h2>
-                            <h3>${this.publisher}</h3>
-                        </figure>
-                    </div>
+            <div id="app">
+                <div id="carousel">
+                    <figure class="juego-card">
+                        <img src ="${this.thumbnail}">
+                        <h2 class="name">${this.name}</h2>
+                        <h2>${this.releaseyear}</h2>
+                        <h3>${this.publisher}</h3>
+                    </figure>
                 </div>
+            </div>
             </div>
             `;
         }

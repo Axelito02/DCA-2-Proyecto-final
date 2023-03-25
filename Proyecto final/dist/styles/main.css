@@ -4,10 +4,7 @@
     font-family: sans-serif;
     color: #F5F1F1;
     background-color: #0E0F38;
-}
-
-#main_container{
-    width: 100%;
+    box-sizing: border-box;
 }
 
 .icon{
@@ -23,6 +20,17 @@
 #content{
     display: flex;
     flex-direction: row;
-    margin: 1.5rem 0;
-    border: solid 2px
+    margin: 0 0 20px 0;
+    border-top: solid 2px;
+    border-bottom: solid 2px;
+    overflow: auto;
+}
+
+#content::-webkit-scrollbar {
+    display: none;
+}
+
+#title{
+    display: flex;
+    padding: 1rem 1rem;
 }

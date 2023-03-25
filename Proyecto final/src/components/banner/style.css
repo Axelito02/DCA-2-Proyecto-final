@@ -1,9 +1,10 @@
-.banner{
+.banner {
     display: flex;
     width: 100%;
-}
-
-.banner img{
+  }
+  
+  .banner img {
     height: 100%;
     width: 100%;
-}
+  }
+ 

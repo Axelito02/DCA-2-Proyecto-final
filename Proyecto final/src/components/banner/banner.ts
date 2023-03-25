@@ -12,7 +12,6 @@ export default class Banner extends HTMLElement {
         if(this.shadowRoot){
             this.shadowRoot.innerHTML = `
             <link rel="stylesheet" href="../src/components/banner/style.css">
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
 
             <div class="banner">
                 <img src="../dist/images/Valorant.png" alt="Valorant">
