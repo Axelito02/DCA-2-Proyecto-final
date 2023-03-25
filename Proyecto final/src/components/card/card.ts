@@ -13,7 +13,7 @@ export default class Card extends HTMLElement {
     releaseyear : string = "";
     publisher : string = "";
 
-    static get observedAtributtes(){
+    static get observedAttributes(){
         return Object.keys(renderCharacter);
     }
 
@@ -30,7 +30,9 @@ export default class Card extends HTMLElement {
         this.render();
     }
 
-    attributesChangedCallback(propName:renderCharacter, _:unknown, newValue:string){
+    attributeChangedCallback(propName:renderCharacter, _:unknown, newValue:string){
+        console.log("aaa");
+        
         this[propName]= newValue
         this.render()
     }

@@ -15,7 +15,10 @@ class App extends HTMLElement {
 
     render() {
         if(this.shadowRoot){
-            const gamesD = dataG.map(({name, thumbnail, publisher, releaseyear}) => `<comp-card name=${name} thumbnail="${thumbnail}" publisher="${publisher}" releaseyear="${releaseyear}"></comp-card>`)
+            const gamesD = dataG.map(({name, thumbnail, publisher, releaseyear}) => `<comp-card name="${name}" thumbnail="${thumbnail}" publisher="${publisher}" releaseyear="${releaseyear}"></comp-card>`)
+            
+            console.log(gamesD);
+            
             this.shadowRoot.innerHTML =`
         <link rel="stylesheet" href="../dist/styles/main.css">
 
@@ -35,13 +38,14 @@ class App extends HTMLElement {
             </section>
 
             <section id= "content">
-                <comp-card></comp-card>
+                <comp-card ></comp-card>
                 <comp-card></comp-card>
             </section>
 
             <section id= "bottom">
                 <comp-gameweek></comp-gameweek>
             </section>        
+            ${gamesD.join("")}
         </section>
             `;
         }
