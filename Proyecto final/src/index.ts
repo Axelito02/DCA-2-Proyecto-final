@@ -36,16 +36,22 @@ class App extends HTMLElement {
             </section>
 
             <section id= "content">
+<<<<<<< HEAD
                 ${gamesD.join("")}
             </section>
                 
             <section id= "content">    
                 ${gamesD.join("")}
+=======
+                <comp-card ></comp-card>
+                <comp-card></comp-card>
+>>>>>>> 7843c85a830786be636d2fc9f6ad09b32c3c70a8
             </section>
 
             <section id= "bottom">
                 <comp-gameweek></comp-gameweek>
             </section>        
+            ${gamesD.join("")}
         </section>
             `;
         }

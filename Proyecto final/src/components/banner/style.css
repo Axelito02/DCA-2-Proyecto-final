@@ -7,4 +7,32 @@
     height: 100%;
     width: 100%;
   }
+<<<<<<< HEAD
  
+=======
+  
+  @media screen and (min-width: 768px) {
+    .banner {
+      height: 300px; 
+    }
+    .banner img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover; 
+    }
+  }
+  
+  @media screen and (max-width: 767px) {
+    .banner {
+      height: auto;
+    }
+    .banner img {
+      max-width: 100%;
+      height: auto;
+      object-fit: unset;
+      min-width: 485px; 
+    }
+  }
+  
+  
+>>>>>>> 7843c85a830786be636d2fc9f6ad09b32c3c70a8

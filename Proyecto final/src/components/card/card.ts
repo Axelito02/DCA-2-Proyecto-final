@@ -30,7 +30,13 @@ export default class Card extends HTMLElement {
         this.render();
     }
 
+<<<<<<< HEAD
     attributeChangedCallback(propName:renderCharacter, _:unknown, newValue:string){        
+=======
+    attributeChangedCallback(propName:renderCharacter, _:unknown, newValue:string){
+        console.log("aaa");
+        
+>>>>>>> 7843c85a830786be636d2fc9f6ad09b32c3c70a8
         this[propName]= newValue
         this.render()
     }
