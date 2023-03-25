@@ -7,9 +7,6 @@
     height: 100%;
     width: 100%;
   }
-<<<<<<< HEAD
- 
-=======
   
   @media screen and (min-width: 768px) {
     .banner {
@@ -33,6 +30,3 @@
       min-width: 485px; 
     }
   }
-  
-  
->>>>>>> 7843c85a830786be636d2fc9f6ad09b32c3c70a8
