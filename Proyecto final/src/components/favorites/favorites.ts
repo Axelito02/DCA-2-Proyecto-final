@@ -1,4 +1,4 @@
-class Favorites extends HTMLElement {
+export default class Favorites extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({mode: 'open'})
@@ -18,4 +18,3 @@ class Favorites extends HTMLElement {
 }
 
 customElements.define('comp-favorites', Favorites);
-export default Favorites;

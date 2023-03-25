@@ -1,4 +1,4 @@
-class Profile extends HTMLElement {
+export default class Profile extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({mode: 'open'})
@@ -24,4 +24,3 @@ class Profile extends HTMLElement {
 }
 
 customElements.define('comp-profile', Profile);
-export default Profile;

@@ -1,4 +1,4 @@
-class Account extends HTMLElement {
+export default class Account extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({mode: 'open'})
@@ -18,4 +18,3 @@ class Account extends HTMLElement {
 }
 
 customElements.define('comp-account', Account);
-export default Account;

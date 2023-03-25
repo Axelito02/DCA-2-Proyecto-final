@@ -1,4 +1,4 @@
-class Friends extends HTMLElement {
+export default class Friends extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({mode: 'open'})
@@ -18,4 +18,3 @@ class Friends extends HTMLElement {
 }
 
 customElements.define('comp-friends', Friends);
-export default Friends;

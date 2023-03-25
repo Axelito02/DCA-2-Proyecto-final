@@ -1,6 +1,7 @@
 .row {
     margin: 0;
     width: 100%;
+    min-width: 500px; 
 }
 
 .col{
@@ -9,9 +10,23 @@
     justify-content: center;
     align-items: center;
     margin: 0;
+    background-color: #252848;
+    border-left: solid;
+    border-bottom: solid;
+    border-width: 1px;
 }
 
 .col:hover{
     cursor: pointer;
-    background-color: #141550;
+    background-color: #11123f;
 }
+
+.col:focus{
+    border-bottom: none;
+    background-color: #0E0F38;
+}
+
+@media screen and (max-width: 767px) {
+    
+    }
+    

@@ -15,8 +15,8 @@ export default class Search extends HTMLElement {
             
             <div class="row">
             <div class="header">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQShKNOcRVhqJHfcy08NCyeEm9eGfFQ2tPBuA&usqp=CAU">
-                <input class= "bar-search" type="text" placeholder="Search">
+                <img src="../dist/images/Playconnect-Logo.png" >
+                <input class= "bar-search" type="text" placeholder="        Search">
             </div>
         </div>
             `;
