@@ -7,6 +7,10 @@
     box-sizing: border-box;
 }
 
+*::-webkit-scrollbar {
+    display: none;
+}
+
 .icon{
     position: absolute;
     left: 90px;
@@ -24,6 +28,7 @@
     border-top: solid 2px;
     border-bottom: solid 2px;
     overflow: auto;
+    gap: 10px;
 }
 
 #content::-webkit-scrollbar {
@@ -33,4 +38,9 @@
 #title{
     display: flex;
     padding: 1rem 1rem;
+}
+
+#bottom{
+    display: flex;
+    justify-content: center;
 }

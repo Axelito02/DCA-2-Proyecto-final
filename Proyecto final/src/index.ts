@@ -8,7 +8,7 @@ class App extends HTMLElement {
         this.attachShadow({mode: 'open'})
     }
 
-    connectedCallback() {
+    connectedCallback(){
         this.render()
         }
 
@@ -20,6 +20,7 @@ class App extends HTMLElement {
             
             this.shadowRoot.innerHTML =`
         <link rel="stylesheet" href="../dist/styles/main.css">
+        <link rel="stylesheet" href="../src/components/nav/style.css">
 
         <section id= "main_container">
             <section id= "header">
@@ -43,9 +44,18 @@ class App extends HTMLElement {
                 ${gamesD.join("")}
             </section>
 
-            <section id= "bottom">
-                <comp-gameweek></comp-gameweek>
-            </section>        
+            <div data-content id="gameweek" class="active">
+                <section id= "bottom">
+                    <comp-gameweek></comp-gameweek>
+                </section>  
+            </div>
+
+            <div data-content id="post">
+                <section id= "bottom">
+                    <comp-comments></comp-comments>
+                </section>  
+            </div>
+                  
         </section>
             `;
         }

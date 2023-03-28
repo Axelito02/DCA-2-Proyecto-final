@@ -1,9 +1,9 @@
 export default [
     {
-      name: "Zelda BOW",
+      name: "Zelda BOTW",
       thumbnail: "https://cdn02.plentymarkets.com/qozbgypaugq8/item/images/1613/full/PSTR-ZELDA005.jpg",
       publisher: "Nintendo",
-      releaseyear: "1985",
+      releaseyear: "2017",
     },
     {
       name: "Super Mario Bros",
