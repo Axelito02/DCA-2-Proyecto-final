@@ -13,3 +13,4 @@ export {default as favorites} from './favorites/favorites';
 export {default as friends} from './friends/friends';
 export {default as notification} from './notification/notification';
 export {default as profile} from './profile/profile';
+export {default as Post} from './Posts/Posts';

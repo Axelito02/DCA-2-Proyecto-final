@@ -18,8 +18,8 @@ export default class Search extends HTMLElement {
                 <img src="../dist/images/Playconnect-Logo.png" >
                 <div class="col">
                     <input class= "bar-search" type="text" placeholder="        Search">
-                    <button class="btn">Sing in</button>
-                    <button class="btn">Sing up</button>
+                    <button class="btn">Sign in</button>
+                    <button class="btn">Sign up</button>
                 </div>
             </div>
         </div>

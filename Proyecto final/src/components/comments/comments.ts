@@ -14,7 +14,6 @@ export default class Comments extends HTMLElement {
 
         }
     }
-
 }
 
 customElements.define('comp-comments', Comments);

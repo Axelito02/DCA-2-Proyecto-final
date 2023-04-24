@@ -13,12 +13,12 @@ export default class GameWeek extends HTMLElement {
             this.shadowRoot.innerHTML = `
             <link rel="stylesheet" href="../src/components/GameWeek/style.css">
             
-            <div class="carContainer">
-                <div class="card">
-                    <div class "title">
+            <div class= "carContainer">
+                <div class= "card">
+                    <div class= "title">
                         <h2>Game the week</h2>
                     </div>
-                    <div class "title">
+                    <div class= "title">
                         <img src="../dist/images/Minecraft.jpg" class="card-img-top1" alt="Juego de la semana Minecraft"> 
                     </div>
                         

@@ -1,5 +1,3 @@
-import dataG from "./games"
-
 enum renderCharacter{
     "name" = "name",
     "thumbnail" = "thumbnail",

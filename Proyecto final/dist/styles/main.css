@@ -40,7 +40,12 @@
     padding: 1rem 1rem;
 }
 
-#bottom{
+#bottomG{
+    display: flex;
+    justify-content: center;
+}
+
+#bottomP{
     display: flex;
     justify-content: center;
 }
