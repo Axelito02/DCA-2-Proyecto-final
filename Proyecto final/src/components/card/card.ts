@@ -1,58 +1,68 @@
-enum renderCharacter{
-    "name" = "name",
-    "thumbnail" = "thumbnail",
-    "publisher" = "publisher",
-    "releaseyear" = "releaseyear",
-}
+import style from "./style.css"
+import { AttrCards } from "../../Types/types";
+import { loadCss } from "../../utils/styles";
 
 export default class Card extends HTMLElement {
-    thumbnail: string = "";
-    name : string = "";
-    releaseyear : string = "";
-    publisher : string = "";
+    name: string = "";
+    thumbnail: string= "";
+    publisher: string= "";
+    releaseyear: string= "";
 
     static get observedAttributes(){
-        return Object.keys(renderCharacter);
+        return["name", "thumbnail", "publisher", "releaseyear"]
     }
 
-    constructor() {
+    attributeChangedCallback(propName: keyof AttrCards, _:unknown, newValue:string){
+        this[propName] = newValue;
+        this.render();
+    }
+
+    constructor(){
         super();
-        this.attachShadow({mode: 'open'})
-        this.name = ""
-        this.thumbnail = ""
-        this.publisher = ""
-        this.releaseyear = ""
+        this.attachShadow({mode: "open"})
     }
 
     connectedCallback(){
         this.render();
     }
 
-    attributeChangedCallback(propName:renderCharacter, _:unknown, newValue:string){        
-        this[propName]= newValue
-        this.render()
-    }
-
     render(){
+        if(this.shadowRoot) this.shadowRoot.innerHTML = ``;
+        loadCss(this, style)
         
-        if(this.shadowRoot){
-            this.shadowRoot.innerHTML = `
-            <link rel="stylesheet" href="../src/components/card/style.css">
+        const mainContainer = this.ownerDocument.createElement("div");
+        mainContainer.setAttribute("id", "carousel-container");
+        this.shadowRoot?.appendChild(mainContainer);
+        
+        const app = this.ownerDocument.createElement("div");
+        app.setAttribute("id", "app");
 
-            <div id="carousel-container">
-            <div id="app">
-                <div id="carousel">
-                    <figure class="juego-card">
-                        <img src ="${this.thumbnail}">
-                        <h2 class="name">${this.name}</h2>
-                        <h2>${this.releaseyear}</h2>
-                        <h3>${this.publisher}</h3>
-                    </figure>
-                </div>
-            </div>
-            </div>
-            `;
-        }
+        const carousel = this.ownerDocument.createElement("div");
+        carousel.setAttribute("id", "carousel");
+
+        const figure = this.ownerDocument.createElement("figure");
+        figure.classList.add("juego-card");
+
+        const img = this.ownerDocument.createElement("img");
+        img.setAttribute("src",`${this.thumbnail}`);
+        
+        const text1 = this.ownerDocument.createElement("h2");
+        text1.textContent = `${this.name}`
+        
+        const text2 = this.ownerDocument.createElement("h2");
+        text2.textContent = `${this.releaseyear}`
+        
+        const text3 = this.ownerDocument.createElement("h3");
+        text3.textContent = `${this.publisher}`
+
+        mainContainer.appendChild(app)
+        app.appendChild(carousel)
+        carousel.appendChild(figure)
+        figure.appendChild(img)
+        figure.appendChild(text1)
+        figure.appendChild(text2)
+        figure.appendChild(text3)
     }
 }
+
 customElements.define('comp-card', Card);

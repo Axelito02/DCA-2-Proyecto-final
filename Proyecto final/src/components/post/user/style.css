@@ -1,0 +1,22 @@
+:host{
+    display: flex;
+    flex-direction: column;
+}
+
+.user{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.user img{
+    border-radius: 8rem;
+    display: flex;
+    width: 3rem;
+}
+
+.username{
+    margin: 0;
+}

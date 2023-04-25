@@ -1,7 +1,10 @@
+import { loadCss } from "../../utils/styles";
+import style from "./style.css"
+
 export default class Search extends HTMLElement {
-    constructor() {
+    constructor(){
         super();
-        this.attachShadow({mode: 'open'})
+        this.attachShadow({mode: "open"})
     }
 
     connectedCallback(){
@@ -9,22 +12,23 @@ export default class Search extends HTMLElement {
     }
 
     render(){
-        if(this.shadowRoot){
-            this.shadowRoot.innerHTML = `
-            <link rel="stylesheet" href="../src/components/search/style.css">
-            
-            <div class="row">
-            <div class="header">
-                <img src="../dist/images/Playconnect-Logo.png" >
-                <div class="col">
-                    <input class= "bar-search" type="text" placeholder="        Search">
-                    <button class="btn">Sign in</button>
-                    <button class="btn">Sign up</button>
-                </div>
-            </div>
-        </div>
-            `;
-        }
+        if(this.shadowRoot) this.shadowRoot.innerHTML = ``
+        loadCss(this, style)
+        
+        const bar = this.ownerDocument.createElement("comp-bar");
+        const main = this.ownerDocument.createElement("div");
+        const header = this.ownerDocument.createElement("div");
+        const logo = this.ownerDocument.createElement("img");
+        logo.setAttribute("src", "../dist/image/Playconnect-Logo.png");
+        
+        main.classList.add("row");
+        header.classList.add("header");
+        
+        main.appendChild(header);
+        header.appendChild(logo);
+        header.appendChild(bar);
+        
+        this.shadowRoot?.appendChild(main);
     }
 }
 

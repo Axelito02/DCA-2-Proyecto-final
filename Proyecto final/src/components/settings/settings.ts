@@ -3,7 +3,7 @@ export interface AttrDescription {
     text: string;
 }
 
-export default class Notification extends HTMLElement {
+export default class Settings extends HTMLElement {
     text_btn: string = "";
     text: string = "";
 
@@ -39,4 +39,4 @@ export default class Notification extends HTMLElement {
     }
 }
 
-customElements.define('comp-notification', Notification);
+customElements.define('comp-settings', Settings);

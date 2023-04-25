@@ -2,8 +2,13 @@ const path = require('path');
 
 module.exports = {
 entry: './src/index.ts',
+mode: "development",
 module: {
     rules: [
+    {
+        test: /\.css$/i,
+        use: ["css-loader"],
+    },
     {
         test: /\.tsx?$/,
         use: 'ts-loader',

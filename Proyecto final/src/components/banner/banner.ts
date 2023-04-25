@@ -1,7 +1,10 @@
+import style from "./style.css"
+import { loadCss } from "../../utils/styles";
+
 export default class Banner extends HTMLElement {
-    constructor() {
+    constructor(){
         super();
-        this.attachShadow({mode: 'open'})
+        this.attachShadow({mode: "open"})
     }
 
     connectedCallback(){
@@ -9,15 +12,18 @@ export default class Banner extends HTMLElement {
     }
 
     render(){
-        if(this.shadowRoot){
-            this.shadowRoot.innerHTML = `
-            <link rel="stylesheet" href="../src/components/banner/style.css">
+        if(this.shadowRoot) this.shadowRoot.innerHTML = ``;
+        loadCss(this, style)
 
-            <div class="banner">
-                <img src="../dist/images/Valorant.png" alt="Valorant">
-            </div>
-            `;
-        }
+        const banner = this.ownerDocument.createElement("div");
+        banner.classList.add("banner")
+
+        const img = this.ownerDocument.createElement("img");
+        img.setAttribute("src","../dist/image/Valorant.png");
+        img.setAttribute("alt","Valorant");
+
+        banner.appendChild(img);
+        this.shadowRoot?.appendChild(banner);
     }
 }
 

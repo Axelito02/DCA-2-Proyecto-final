@@ -1,0 +1,25 @@
+:host{
+    padding: 12px 0;
+}
+
+.card-posts{
+    display: flex;
+    flex-direction: column;
+    background-color: #4C4F78;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.hastag{
+    display: flex;
+    padding: 0;
+    padding-bottom: 18px;
+    justify-content: flex-start;
+}
+
+.content{
+    display: flex;
+    padding: 0;
+    padding-bottom: 18px;
+}
+

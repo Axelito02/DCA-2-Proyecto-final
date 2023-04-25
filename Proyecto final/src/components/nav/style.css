@@ -32,28 +32,15 @@
     border-left: none ;
 }
 
-@media screen and (min-width: 900px) {
+@media (min-width: 900px) {
     .tres{
         display: none;
     }
     
 }
 
-@media screen and (max-width: 900px) {
+@media (max-width: 900px) {
 .tres-log{
     display: none;
 }
-}
-
-/*esto mientras hacemos el cambio de login a unlog*/
-.cont-nav-unlog {
-    display: none;
-}
-
-[data-content] {
-	display: none;
-}
-
-.active[data-content] {
-	display: block;
 }

@@ -1,6 +1,29 @@
+:host{
+    display: flex;
+    width: 96%;
+}
+
+.card-platform{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    column-gap: 1.5rem;
+}
+
+.card-platform img{
+    width: 3rem;
+    margin-bottom: 0.9rem;
+}
+
+.card-platform img:hover{
+    cursor: pointer;
+}
+
 .carContainer{
     display: flex;
-    padding: 20px;
+    padding: 0 20px;
     margin: 0;
     background-color: #252848;
     justify-content: center;
@@ -15,13 +38,64 @@
     align-items: center;
 }
 
+.card-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
 .card img{
    border-radius: 8px;
 }
 
-@media screen and (min-width: 1280px) {
-    .card{
-        display: flex;
-        flex-direction: row;
+.name{
+    display: flex;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 19px;
+}
+
+p{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+@media screen and (max-width: 900px) {
+
+    .card-body{
+        width: 100%;
     }
+
+    .name{
+        display: none;
+    }
+
+    .carContainer{
+        padding: 0 12px;
+    }
+
+    .contImg{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .contImg img{
+        width: 100%;
+    }
+
+    .contImg{
+        display: flex;
+        width: 100%;
+    }
+
+    :host{
+        display: flex;
+        width: 100%;
+    }
+
 }
