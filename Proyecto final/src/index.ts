@@ -1,10 +1,12 @@
 import "./screens/export"
 import "./components/export"
+import { addObserver } from "./components/nav/store/index";
 
 class App extends HTMLElement {
     constructor(){
         super();
         this.attachShadow({mode: "open"})
+        addObserver(this);
     }
 
     connectedCallback(){
