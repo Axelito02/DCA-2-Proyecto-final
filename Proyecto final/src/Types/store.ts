@@ -20,4 +20,4 @@ export interface NavigateAction {
     payload: Screens;
 }
 
-export type Actions = NavigateAction
+export type Actions = NavigateAction;

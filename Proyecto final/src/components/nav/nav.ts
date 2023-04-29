@@ -38,24 +38,24 @@ export default class Nav extends HTMLElement {
         bootstrap.setAttribute("rel", "stylesheet");
         bootstrap.setAttribute("href", "https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css");
         this.shadowRoot?.appendChild(bootstrap);
-        
+
         const main = this.ownerDocument.createElement("nav");
         main.classList.add("cont-nav");
         this.shadowRoot?.appendChild(main);
         
-        const col1 = this.ownerDocument.createElement("div");
+        const col1 = this.ownerDocument.createElement("button");
         col1.classList.add("col");
         col1.classList.add("uno");
         col1.setAttribute("tabindex", "0");
         col1.textContent = ("News")
-        
-        const col2 = this.ownerDocument.createElement("div");
+
+        const col2 = this.ownerDocument.createElement("button");
         col2.classList.add("col");
         col2.classList.add("dos");
         col2.setAttribute("tabindex", "0");
         col2.textContent = ("Comunities")
         
-        const col3 = this.ownerDocument.createElement("div");
+        const col3 = this.ownerDocument.createElement("button");
         col3.classList.add("col");
         col3.classList.add("tres");
         col3.setAttribute("tabindex", "0");

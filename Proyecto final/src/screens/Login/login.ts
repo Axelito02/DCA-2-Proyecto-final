@@ -20,4 +20,4 @@ export default class Login extends HTMLElement {
     }
 }
 
-customElements.define('comp-login', Login);
+customElements.define('comp-login2', Login);

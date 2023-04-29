@@ -14,3 +14,4 @@ export {default as Settings} from "./settings/settings";
 export {default as Bar} from "./search/bar/bar";
 export {default as Post} from "./post/post";
 export {default as User} from "./post/user/user";
+export {default as login} from "./Login(revisar)/login";

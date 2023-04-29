@@ -2,7 +2,7 @@ import { Actions, AppState, NavigationActions } from "../../../Types/store";
 
 export const reducer = (
     currentAction: Actions,
-     currentState: AppState
+    currentState: AppState
      ): AppState => {
     const { action, payload } = currentAction; 
 
