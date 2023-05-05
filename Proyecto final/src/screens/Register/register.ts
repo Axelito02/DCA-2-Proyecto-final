@@ -1,4 +1,5 @@
-import { AttrRegister } from "../../Types/types";
+import { loadCss } from "../../utils/styles";
+import style from "./style.css";
 
 export default class Register extends HTMLElement {
     constructor(){
@@ -12,14 +13,24 @@ export default class Register extends HTMLElement {
 
     render(){
         if(this.shadowRoot) this.shadowRoot.innerHTML = ``;
-        const css = this.ownerDocument.createElement("link");
-        css.setAttribute("rel", "stylesheet");
-        css.setAttribute("href", "./style/main.css");
-        this.shadowRoot?.appendChild(css);
+        loadCss(this, style)
 
-        const main = this.ownerDocument.createElement('section')
-        main.setAttribute("id","registerContainer")
-        this.shadowRoot?.appendChild(main)
+        const container = this.ownerDocument.createElement("main");
+        container.classList.add("Register-both");
+        this.shadowRoot?.appendChild(container)
+
+        const left = this.ownerDocument.createElement("section");
+        left.id = "space"
+        
+        const right = this.ownerDocument.createElement("section");
+        right.id = "register_form"
+        
+        const ComponentForm = this.ownerDocument.createElement("comp-form");
+        
+        container.appendChild(left)
+        container.appendChild(right)
+
+        right.appendChild(ComponentForm)
     }
 }
 

@@ -1,22 +1,7 @@
-import { AttrProfile, AttrRegister } from "../../Types/types"
+import { AttrProfile } from "../../Types/Interfaces"
+import { appState } from "../../store/index";
 
 export default class Profile extends HTMLElement {
-    username: string = "";
-    thumbnail: string = "";
-    name: string = "";
-    email: string = "";
-
-    static get observedAttributes(){
-        return["text_btn", "text"]
-    }
-
-    attributeChangedCallback(propName: keyof AttrProfile, _:unknown, newValue:string){
-        this[propName] = newValue;
-        console.log(propName, newValue);
-            
-        this.render();
-    }
-
     constructor(){
         super();
         this.attachShadow({mode: "open"})
@@ -28,13 +13,27 @@ export default class Profile extends HTMLElement {
 
     render(){
         if(this.shadowRoot) this.shadowRoot.innerHTML = ``
-        const text = this.ownerDocument.createElement("p");
-        this.shadowRoot?.appendChild(text);
-        text.textContent = this.name;
-        
-        const button = this.ownerDocument.createElement("button");
-        this.shadowRoot?.appendChild(button);
-        button.textContent = this.thumbnail;
+        const MainContainer = this.ownerDocument.createElement("main");
+        MainContainer.setAttribute("id", "Main")
+
+        const Top = this.ownerDocument.createElement("section");
+        Top.setAttribute("id", "Top")
+
+        const Content = this.ownerDocument.createElement("section");
+        Content.setAttribute("id", "Content")
+
+        const AppUserInfo = this.ownerDocument.createElement("user-info");
+
+        const AppContent = this.ownerDocument.createElement("content-profile");
+        const AppRecentlyGames = this.ownerDocument.createElement("recently-games");
+
+        Top.appendChild(AppUserInfo)
+        Top.appendChild(AppRecentlyGames)
+        Content.appendChild(AppContent)
+        MainContainer.appendChild(Top)
+        MainContainer.appendChild(Content)
+
+        this.shadowRoot?.appendChild(MainContainer)
     }
 }
 

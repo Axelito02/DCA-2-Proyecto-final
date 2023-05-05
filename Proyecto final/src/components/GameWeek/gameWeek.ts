@@ -1,6 +1,6 @@
 import style from "./style.css"
 import { loadCss } from "../../utils/styles";
-import { AttrGameWeek } from "../../Types/types";
+import { AttrGameWeek } from "../../Types/Interfaces";
 
 export default class GameWeek extends HTMLElement {
     name: string = "";

@@ -1,3 +1,6 @@
+import { ScreenLogin, ScreenRegister } from "../../../store/actions";
+import { dispatch } from "../../../store/index";
+import { Addevent } from "../../../utils/addevents";
 import { loadCss } from "../../../utils/styles";
 import style from "./style.css"
 
@@ -20,11 +23,19 @@ export default class Bar extends HTMLElement {
         
         const btn1= this.ownerDocument.createElement("button");
         btn1.classList.add("btn");
-        btn1.textContent = ("Sing in")
+        btn1.textContent = ("Sign in")
+        Addevent(btn1, () => {
+            dispatch(ScreenLogin())
+            console.log("login");
+        })
         
         const btn2 = this.ownerDocument.createElement("button");
         btn2.classList.add("btn");
-        btn2.textContent = ("Sing up")
+        btn2.textContent = ("Sign up")
+        Addevent(btn2, () => {
+            dispatch(ScreenRegister())
+            console.log("Sign up");
+        })
         
         const barsearch = this.ownerDocument.createElement("input");
         barsearch.classList.add("bar-search");

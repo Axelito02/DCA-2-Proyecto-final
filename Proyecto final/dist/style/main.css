@@ -17,6 +17,7 @@
     top: 1.87rem;
     width: 20px;
 }
+
 #bar_nav{
     background-color: #252848;
 }
@@ -25,8 +26,6 @@
     display: flex;
     flex-direction: row;
     margin: 0 0 20px 0;
-    border-top: solid 2px;
-    border-bottom: solid 2px;
     overflow: auto;
     gap: 10px;
 }

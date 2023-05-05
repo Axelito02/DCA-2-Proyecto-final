@@ -1,23 +1,9 @@
-export type Observer = ({ render: () => void } & HTMLElement);
+export type Observer = HTMLElement & { render: () => void };
 
-export enum Screens {
-    LOGIN= "LOGIN",
-    SIGNUP= "SIGNUP",
-    DASHBOARD= "DASHBOARD",
-    //supongo que aquí van más pantallas nuestras
+export enum ActionTypes {
+    UPDATE_GAMES = "UPDATE_GAMES",
+    UPDATE_POST = "UPDATE_POST",
+    UPDATE_PROFILE = "UPDATE_PROFILE",
+    UPDATE_LOGIN = "UPDATE_LOGIN",
+    UPDATE_REGISTER = "UPDATE_REGISTER",
 }
-    
-export type AppState = {
-    screen: Screens;
-};
-
-export enum NavigationActions {
-    "NAVIGATE" = "NAVIGATE",
-}
-
-export interface NavigateAction {
-    action: NavigationActions.NAVIGATE;
-    payload: Screens;
-}
-
-export type Actions = NavigateAction;

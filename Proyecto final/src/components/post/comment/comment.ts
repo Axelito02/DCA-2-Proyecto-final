@@ -1,4 +1,4 @@
-import { AttrComment } from "../../../Types/types"
+import { AttrComment } from "../../../Types/Interfaces"
 import { loadCss } from "../../../utils/styles";
 import style from "./style.css"
 
@@ -37,12 +37,12 @@ export default class Comment extends HTMLElement {
         input.setAttribute("type","text");
         input.setAttribute("placeholder","Say something...");
         
-        const button = this.ownerDocument.createElement("button");
-        button.classList.add("btnSend");
-        button.textContent = "Send"
+        const btn = this.ownerDocument.createElement("button");
+        btn.classList.add("btnSend");
+        btn.textContent = "Send"
 
         contInput.appendChild(input);
-        contInput.appendChild(button);
+        contInput.appendChild(btn);
 
     }
 }

@@ -40,3 +40,7 @@ export interface AttrProfile {
 export interface AttrComment {
     comment: string;
 }
+
+export interface Action {
+    type: string,
+}

@@ -12,10 +12,10 @@ export default [
         description: "Terraria es un videojuego de acción, aventura y de sandbox producido de forma independiente por el estudio Re-Logic. Tiene características tales como la exploración, la artesanía, la construcción de estructuras y el combate.",
     },
     {
-        name: "Nintendo",
-        alt: "Nintendo",
-        thumbnail: "https://cdn02.plentymarkets.com/qozbgypaugq8/item/images/1613/full/PSTR-ZELDA005.jpg",
-        description: "2017",
+        name: "Rain World",
+        alt: "Imagen de Rain World",
+        thumbnail: "https://pics.filmaffinity.com/Rain_World-740948847-large.jpg",
+        description: "Ponte en la piel de un gato-babosa nómada perdido en un ecosistema corrompido en el que eres tanto depredador como presa. Coge tu lanza, avanza entre las ruinas industriales y caza para sobrevivir, pero ten cuidado, otras criaturas más grandes planean hacer lo mismo, y tú eres un manjar para ellas",
     },
     {
         name: "Nintendo",

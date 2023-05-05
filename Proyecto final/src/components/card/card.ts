@@ -1,6 +1,7 @@
 import style from "./style.css"
-import { AttrCards } from "../../Types/types";
+import { AttrCards } from "../../Types/Interfaces";
 import { loadCss } from "../../utils/styles";
+import { Addevent } from "../../utils/addevents";
 
 export default class Card extends HTMLElement {
     name: string = "";
@@ -29,7 +30,6 @@ export default class Card extends HTMLElement {
     render(){
         if(this.shadowRoot) this.shadowRoot.innerHTML = ``;
         loadCss(this, style)
-        
         const mainContainer = this.ownerDocument.createElement("div");
         mainContainer.setAttribute("id", "carousel-container");
         this.shadowRoot?.appendChild(mainContainer);

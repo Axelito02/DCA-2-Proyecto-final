@@ -14,7 +14,7 @@ export default class Search extends HTMLElement {
     render(){
         if(this.shadowRoot) this.shadowRoot.innerHTML = ``
         loadCss(this, style)
-
+        
         const bar = this.ownerDocument.createElement("comp-bar");
         const main = this.ownerDocument.createElement("div");
         const header = this.ownerDocument.createElement("div");
