@@ -1,3 +1,7 @@
+*{
+    color: white;
+}
+
 .cont-nav {
     display: flex;
     flex-direction: row;
@@ -36,11 +40,23 @@
     .tres{
         display: none;
     }
-    
+    .cuatro-log{
+   
+        display: none;
+    }
+    .cinco-log{
+        display: none;
+    }
 }
 
 @media (max-width: 900px) {
-.tres-log{
-    display: none;
-}
+    .tres-log{
+        display: none;
+    }
+    .cuatro{
+        display: none;
+    }
+    .cinco{
+        display: none;
+    }
 }

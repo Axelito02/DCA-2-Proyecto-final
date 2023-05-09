@@ -1,4 +1,4 @@
-import { AttrComments } from "../../../Types/types";
+import { AttrComments } from "../../../Types/Interfaces";
 import { loadCss } from "../../../utils/styles";
 import style from "./style.css"
 
