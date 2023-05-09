@@ -18,4 +18,7 @@ export {default as UserInfo} from "./profile/UserInfo/userInfo"
 export {default as RecentlyGames} from "./profile/gamesRecently/gamesRecently"
 export {default as ContenProfile} from "./profile/content/content"
 export {default as Form} from "./form/form"
+<<<<<<< HEAD
 export {default as LoginMobile} from "./login_(mobile)/login"
+=======
+>>>>>>> 814a32a24d0cd896c05d7a320e5295d7aea5eb5e

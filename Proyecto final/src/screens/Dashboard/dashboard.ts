@@ -1,6 +1,10 @@
 import data from "../../components/card/data";
 import { addObserver, appState } from "../../store/index";
 import { AttrCards } from "../../Types/Interfaces";
+<<<<<<< HEAD
+=======
+import { Addevent } from "../../utils/addevents";
+>>>>>>> 814a32a24d0cd896c05d7a320e5295d7aea5eb5e
 import { setAttributes } from "../../utils/attributtes";
 
 export default class Dashboard extends HTMLElement {
@@ -31,13 +35,21 @@ export default class Dashboard extends HTMLElement {
         const row = this.ownerDocument.createElement("main");
         row.setAttribute("id", "content");
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 814a32a24d0cd896c05d7a320e5295d7aea5eb5e
         const appSearch = this.ownerDocument.createElement("comp-search");
         const appBanner = this.ownerDocument.createElement("comp-banner");
         const appNav = this.ownerDocument.createElement("comp-nav");
         const appGame = this.ownerDocument.createElement("comp-gameweek");
         const appPost = this.ownerDocument.createElement("comp-post");
         const appProfile = this.ownerDocument.createElement("comp-profile");
+<<<<<<< HEAD
         const appLogin = this.ownerDocument.createElement("comp-loginmobile");
+=======
+        const appCard = this.ownerDocument.createElement("comp-card");
+>>>>>>> 814a32a24d0cd896c05d7a320e5295d7aea5eb5e
 
         data.forEach(({name, thumbnail, publisher, releaseyear}) => {
             const appCard = this.ownerDocument.createElement("comp-card");
@@ -83,6 +95,10 @@ export default class Dashboard extends HTMLElement {
         main.appendChild(content);
         main.appendChild(row);
         main.appendChild(bottom);
+
+        Addevent(main ,() => {
+
+        })
         
         if(appState.contentGames == "compGames") {
             main.appendChild(content);
@@ -90,12 +106,17 @@ export default class Dashboard extends HTMLElement {
             main.appendChild(bottom);
 
         } else if (appState.contentPost == "compPost"){
+<<<<<<< HEAD
             text.style.display = "none";
             text.innerHTML = "";
+=======
+            text.textContent = ("");
+>>>>>>> 814a32a24d0cd896c05d7a320e5295d7aea5eb5e
             appGame.style.display = "none"
             bottom.appendChild(appPost);
             
         } else if (appState.contentProfile == "compProfile"){
+<<<<<<< HEAD
             text.style.display = "none";
             row.style.display = "none";
             content.style.display = "none";
@@ -108,6 +129,13 @@ export default class Dashboard extends HTMLElement {
             content.style.display = "none";
             bottom.style.display = "none";
             main.appendChild(appLogin)
+=======
+            text.textContent = ("");
+            row.innerHTML = "";
+            content.innerHTML = "";
+            bottom.style.display = "none";
+            content.appendChild(appProfile)
+>>>>>>> 814a32a24d0cd896c05d7a320e5295d7aea5eb5e
         }
 
         bottom.appendChild(appGame);

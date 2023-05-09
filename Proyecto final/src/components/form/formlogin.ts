@@ -1,12 +1,10 @@
-<<<<<<< HEAD
-=======
+import { ScreenRegister } from "../../store/actions";
 import { dispatch } from "../../store/index";
 import { Addevent } from "../../utils/addevents";
->>>>>>> 814a32a24d0cd896c05d7a320e5295d7aea5eb5e
 import { loadCss } from "../../utils/styles";
 import style from "./style.css"
 
-export default class Form extends HTMLElement {
+export default class FormLogin extends HTMLElement {
     constructor(){
         super();
         this.attachShadow({mode: "open"})
@@ -28,12 +26,6 @@ export default class Form extends HTMLElement {
         
         const ContainerGoogleBtn = this.ownerDocument.createElement("div");
         ContainerGoogleBtn.classList.add("google-btn");
-<<<<<<< HEAD
-
-        const ContainerTitle = this.ownerDocument.createElement("div");
-        ContainerTitle.classList.add("title");
-=======
->>>>>>> 814a32a24d0cd896c05d7a320e5295d7aea5eb5e
         
         const Loginbtn = this.ownerDocument.createElement("button");
         Loginbtn.classList.add("LoginBtn")
@@ -45,38 +37,19 @@ export default class Form extends HTMLElement {
         const textContent2 = this.ownerDocument.createElement("div");
         textContent2.classList.add("textContent")
         
-<<<<<<< HEAD
-        const Title = this.ownerDocument.createElement("h1");
-        Title.textContent = "Log in"
-        Title.classList.add("TitleLogin")
-
-=======
->>>>>>> 814a32a24d0cd896c05d7a320e5295d7aea5eb5e
         const Text = this.ownerDocument.createElement("p");
         Text.textContent = "Or sign in with"
         
         const Text2 = this.ownerDocument.createElement("p");
         Text2.textContent = "Don't have a account?"
         
-<<<<<<< HEAD
-        const Text3 = this.ownerDocument.createElement("p");
-        Text3.classList.add("RecoveryPassword")
-        Text3.textContent = "Forgot account username or password?"
-
-=======
->>>>>>> 814a32a24d0cd896c05d7a320e5295d7aea5eb5e
         const ContainerInputs = this.ownerDocument.createElement("div");
         ContainerInputs.classList.add("ContainerInputs")
-        
-        const HipervinculoRegister = this.ownerDocument.createElement("a");
-        HipervinculoRegister.textContent = "Register";
 
         const HipervinculoLogin = this.ownerDocument.createElement("a");
         HipervinculoLogin.textContent = "Login"
         
-<<<<<<< HEAD
-=======
-        Addevent(HipervinculoRegister, () => {
+        Addevent(HipervinculoLogin, () => {
             const inptuName = this.ownerDocument.createElement("input");
             inptuName.placeholder = "Enter name";
             inptuName.classList.add("name");
@@ -85,16 +58,11 @@ export default class Form extends HTMLElement {
             const HipervinculoLogin = this.ownerDocument.createElement("a");
         })
         
->>>>>>> 814a32a24d0cd896c05d7a320e5295d7aea5eb5e
         const inptuUsername = this.ownerDocument.createElement("input");
         inptuUsername.placeholder = "Enter username";
         inptuUsername.classList.add("username");
         inptuUsername.type = "text";
-<<<<<<< HEAD
-        
-=======
 
->>>>>>> 814a32a24d0cd896c05d7a320e5295d7aea5eb5e
         const inptuPassword = this.ownerDocument.createElement("input");
         inptuPassword.placeholder = "Enter password";
         inptuPassword.classList.add("password");
@@ -133,16 +101,9 @@ export default class Form extends HTMLElement {
         HipervinculoGoogle.target = "_blank"
         GoogleBtnAction.textContent = "Sing with facebook"
         GoogleBtnAction.classList.add("LoginGoogle")
-<<<<<<< HEAD
-
-        this.shadowRoot?.appendChild(ContainerFormLogin)
-
-        ContainerFormLogin.appendChild(ContainerTitle)
-=======
         
         this.shadowRoot?.appendChild(ContainerFormLogin)
 
->>>>>>> 814a32a24d0cd896c05d7a320e5295d7aea5eb5e
         ContainerFormLogin.appendChild(form)
         ContainerFormLogin.appendChild(textContent)
         ContainerFormLogin.appendChild(ContainerSocial)
@@ -157,21 +118,13 @@ export default class Form extends HTMLElement {
         ContainerGoogleBtn.appendChild(HipervinculoGoogle)
         ContainerInputs.appendChild(inptuUsername);
         ContainerInputs.appendChild(inptuPassword);
-<<<<<<< HEAD
-        ContainerTitle.appendChild(Title)
         form.appendChild(ContainerInputs);
         form.appendChild(Loginbtn);
-        form.appendChild(Text3)
-=======
-        form.appendChild(ContainerInputs);
-        form.appendChild(Loginbtn);
->>>>>>> 814a32a24d0cd896c05d7a320e5295d7aea5eb5e
         textContent.appendChild(Text)
         textContent2.appendChild(Text2)
-        textContent2.appendChild(HipervinculoRegister)
         HipervinculoFacebook.appendChild(FacebookBtnAction)
         HipervinculoGoogle.appendChild(GoogleBtnAction)
     }
 }
 
-customElements.define('comp-form', Form);
+customElements.define('comp-form', FormLogin);

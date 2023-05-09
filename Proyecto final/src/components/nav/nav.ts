@@ -2,7 +2,11 @@ import style from "./style.css"
 import { loadCss } from "../../utils/styles";
 import { Addevent } from "../../utils/addevents";
 import { dispatch } from "../../store/index";
+<<<<<<< HEAD
 import { ChagedContent, ChagedPost, ChagedProfile, ChagedMyGames, ChagedLoginMobile } from "../../store/actions";
+=======
+import { ChagedContent, ChagedPost, ChagedProfile } from "../../store/actions";
+>>>>>>> 814a32a24d0cd896c05d7a320e5295d7aea5eb5e
 
 export default class Nav extends HTMLElement {
     constructor(){
@@ -50,6 +54,7 @@ export default class Nav extends HTMLElement {
         col3.classList.add("tres");
         col3.textContent = ("Login")
         Addevent(col3, () => {
+<<<<<<< HEAD
             dispatch(ChagedLoginMobile())
             console.log("login");
         })
@@ -77,6 +82,15 @@ export default class Nav extends HTMLElement {
         main.appendChild(col3);
         main.appendChild(col4);
         main.appendChild(col5);
+=======
+            dispatch(ChagedProfile())
+            console.log("login");
+        })
+
+        main.appendChild(col1);
+        main.appendChild(col2);
+        main.appendChild(col3);
+>>>>>>> 814a32a24d0cd896c05d7a320e5295d7aea5eb5e
         
     }
 }

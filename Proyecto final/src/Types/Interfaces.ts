@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 import { NavigationActions } from "./store";
 
+=======
+>>>>>>> 814a32a24d0cd896c05d7a320e5295d7aea5eb5e
 export interface AttrCards {
     name: string;
     thumbnail: string;
@@ -46,8 +49,11 @@ export interface AttrComment {
 export interface Action {
     type: string,
 }
+<<<<<<< HEAD
 
 export interface ScreenAction {
     action: NavigationActions.NAVIGATE;
     payload: Screen
 }
+=======
+>>>>>>> 814a32a24d0cd896c05d7a320e5295d7aea5eb5e

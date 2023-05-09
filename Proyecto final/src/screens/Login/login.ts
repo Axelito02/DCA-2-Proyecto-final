@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 // import { Addevent } from "../../utils/addevents";
+=======
+import { Addevent } from "../../utils/addevents";
+>>>>>>> 814a32a24d0cd896c05d7a320e5295d7aea5eb5e
 import { loadCss } from "../../utils/styles";
 import style from "./style.css"
 

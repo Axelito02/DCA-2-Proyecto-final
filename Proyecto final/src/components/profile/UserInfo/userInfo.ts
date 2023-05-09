@@ -1,6 +1,9 @@
 import { AttrProfile } from "../../../Types/Interfaces";
+<<<<<<< HEAD
 import { loadCss } from "../../../utils/styles";
 import style from "./style.css"
+=======
+>>>>>>> 814a32a24d0cd896c05d7a320e5295d7aea5eb5e
 
 export default class UserInfo extends HTMLElement {
     username = "";
@@ -28,12 +31,19 @@ export default class UserInfo extends HTMLElement {
 
     render(){
         if(this.shadowRoot) this.shadowRoot.innerHTML = ``
+<<<<<<< HEAD
         loadCss (this,style)
+=======
+
+>>>>>>> 814a32a24d0cd896c05d7a320e5295d7aea5eb5e
         const ContIPicture = this.ownerDocument.createElement("div")
         const ContInfo = this.ownerDocument.createElement("div")
 
         const Picture = this.ownerDocument.createElement("img")
+<<<<<<< HEAD
         Picture.classList.add('Profile-pic');
+=======
+>>>>>>> 814a32a24d0cd896c05d7a320e5295d7aea5eb5e
         Picture.src = "../dist/image/Steam-logo.png";
 
         const Username = this.ownerDocument.createElement("h3")   

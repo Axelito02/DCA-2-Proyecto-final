@@ -1,13 +1,19 @@
 import "./screens/export"
 import "./components/export"
+<<<<<<< HEAD
 import { addObserver, appState } from "./store/index";
 import { Screen } from "./Types/store";
+=======
+>>>>>>> 814a32a24d0cd896c05d7a320e5295d7aea5eb5e
 
 class App extends HTMLElement {
     constructor(){
         super();
         this.attachShadow({mode: "open"})
+<<<<<<< HEAD
         addObserver(this)
+=======
+>>>>>>> 814a32a24d0cd896c05d7a320e5295d7aea5eb5e
     }
 
     connectedCallback(){
@@ -25,6 +31,7 @@ class App extends HTMLElement {
         const login = this.ownerDocument.createElement("comp-login");
         const register = this.ownerDocument.createElement("comp-register");
 
+<<<<<<< HEAD
         this.shadowRoot?.appendChild(dashboard)
         // this.shadowRoot?.appendChild(login);
         // this.shadowRoot?.appendChild(register)
@@ -45,6 +52,11 @@ class App extends HTMLElement {
             default:
                 break;
         }
+=======
+        this.shadowRoot?.appendChild(dashboard);
+        // this.shadowRoot?.appendChild(login);
+        // this.shadowRoot?.appendChild(register)
+>>>>>>> 814a32a24d0cd896c05d7a320e5295d7aea5eb5e
     }
 }
 

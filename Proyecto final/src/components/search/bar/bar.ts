@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 
 import { ScreenNavigate } from "../../../store/actions";
+=======
+import { ScreenLogin, ScreenRegister } from "../../../store/actions";
+>>>>>>> 814a32a24d0cd896c05d7a320e5295d7aea5eb5e
 import { dispatch } from "../../../store/index";
 import { Addevent } from "../../../utils/addevents";
 import { loadCss } from "../../../utils/styles";
@@ -26,6 +30,7 @@ export default class Bar extends HTMLElement {
         const btn1= this.ownerDocument.createElement("button");
         btn1.classList.add("btn");
         btn1.textContent = ("Sign in")
+<<<<<<< HEAD
         // Addevent(btn1, () => {
         //     dispatch(ChagedLOGIN())
         //     console.log("login");
@@ -38,6 +43,20 @@ export default class Bar extends HTMLElement {
         const btn2 = this.ownerDocument.createElement("button");
         btn2.classList.add("btn");
         btn2.textContent = ("Sign up")
+=======
+        Addevent(btn1, () => {
+            dispatch(ScreenLogin())
+            console.log("login");
+        })
+        
+        const btn2 = this.ownerDocument.createElement("button");
+        btn2.classList.add("btn");
+        btn2.textContent = ("Sign up")
+        Addevent(btn2, () => {
+            dispatch(ScreenRegister())
+            console.log("Sign up");
+        })
+>>>>>>> 814a32a24d0cd896c05d7a320e5295d7aea5eb5e
         
         const barsearch = this.ownerDocument.createElement("input");
         barsearch.classList.add("bar-search");

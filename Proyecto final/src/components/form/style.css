@@ -1,6 +1,9 @@
 :host{
     display: flex;
+<<<<<<< HEAD
     justify-content: center;
+=======
+>>>>>>> 814a32a24d0cd896c05d7a320e5295d7aea5eb5e
     width: 100%;
 }
 
@@ -8,9 +11,13 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+<<<<<<< HEAD
     margin-top: 2rem;
     margin-bottom: 4rem;
     /* margin:  4.5rem 0; */
+=======
+    margin:  4.5rem 0;
+>>>>>>> 814a32a24d0cd896c05d7a320e5295d7aea5eb5e
     gap: 0.5rem;   
     width: 100%;
 }
@@ -66,6 +73,10 @@
     align-items: center;
     padding: 0 1rem;
     border-radius: 0.5rem ;
+<<<<<<< HEAD
+=======
+    
+>>>>>>> 814a32a24d0cd896c05d7a320e5295d7aea5eb5e
 }
 
 .LoginGoogle:hover{
@@ -136,6 +147,7 @@ a{
     text-decoration: none;
     cursor: pointer;
 }
+<<<<<<< HEAD
 
 .RecoveryPassword{
     display: none;
@@ -169,3 +181,5 @@ a{
         margin: 1rem 0;
     }
 }
+=======
+>>>>>>> 814a32a24d0cd896c05d7a320e5295d7aea5eb5e

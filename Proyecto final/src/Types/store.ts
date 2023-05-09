@@ -1,5 +1,6 @@
 export type Observer = HTMLElement & { render: () => void };
 
+<<<<<<< HEAD
 export enum Screen {
     LOGIN = "LOGIN",
     REGISTER = "REGISTER",
@@ -25,3 +26,12 @@ export enum ActionTypes {
 }
 
 export type Actions  = NavigationActions
+=======
+export enum ActionTypes {
+    UPDATE_GAMES = "UPDATE_GAMES",
+    UPDATE_POST = "UPDATE_POST",
+    UPDATE_PROFILE = "UPDATE_PROFILE",
+    UPDATE_LOGIN = "UPDATE_LOGIN",
+    UPDATE_REGISTER = "UPDATE_REGISTER",
+}
+>>>>>>> 814a32a24d0cd896c05d7a320e5295d7aea5eb5e

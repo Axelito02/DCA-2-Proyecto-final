@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+=======
+import { AttrProfile } from "../../Types/Interfaces"
+import { appState } from "../../store/index";
+
+>>>>>>> 814a32a24d0cd896c05d7a320e5295d7aea5eb5e
 export default class Profile extends HTMLElement {
     constructor(){
         super();
