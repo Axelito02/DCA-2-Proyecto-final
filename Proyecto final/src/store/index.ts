@@ -1,5 +1,7 @@
+import { ScreenAction } from "../Types/Interfaces";
 import { Action } from "../Types/Interfaces";
 import { Observer, Screen } from "../Types/store";
+import { ScreenNavigate } from "./actions";
 import { reducer } from "./reducer";
 
 export let appState = {
@@ -7,7 +9,8 @@ export let appState = {
     contentPost: "compPs",
     contentProfile: "compPr",
     contentLoginMobile: "compLMB",
-    screen: Screen.LOGIN,
+    contentMygames: "compMG",
+    screen: Screen.DASHBOARD,
 }
 
 const oberservers: Observer[] = [];

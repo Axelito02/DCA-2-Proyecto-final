@@ -43,6 +43,10 @@ export interface AttrComment {
     comment: string;
 }
 
+export interface AttrGames {
+    thumbnail: string;
+}
+
 export interface Action {
     type: string,
 }

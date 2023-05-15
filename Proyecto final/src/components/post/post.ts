@@ -38,14 +38,6 @@ export default class Post extends HTMLElement {
 
         const contPlatform = this.ownerDocument.createElement("div");
         contPlatform.classList.add("card-platform");
-
-        const steam = this.ownerDocument.createElement("img");
-        steam.setAttribute("src",`../dist/image/Steam-logo.png`);
-        steam.setAttribute("alt","logo Steam");
-
-        const epic = this.ownerDocument.createElement("img");
-        epic.setAttribute("src",`../dist/image/Epic_Games_logo.png`);
-        epic.setAttribute("alt","logo Epic Games");
         
         container.appendChild(card);
         card.appendChild(top)
@@ -55,8 +47,6 @@ export default class Post extends HTMLElement {
 
         top.appendChild(title)
         top.appendChild(appUser)
-        contPlatform.appendChild(steam)
-        contPlatform.appendChild(epic)
         title.appendChild(text)
     }
 }

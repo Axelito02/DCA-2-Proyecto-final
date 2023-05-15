@@ -33,19 +33,26 @@ export const reducer = (action: Action, currentState: any): any => {
                 ...clone,
                 contentProfile: "compProfile",
             }
+            
+        case ActionTypes.UPDATE_MYGAMES:
+            emptyContent();
+            return{
+                ...clone,
+                contentMygames: "compMyGames",
+            }
 
         case ActionTypes.UPDATE_MYGAMES:
-        emptyContent();
-        return{
-            ...clone,
-            contentProfile: "compMyGames",
+            emptyContent();
+            return{
+                ...clone,
+                contentProfile: "compMyGames",
         }
 
         case ActionTypes.UPDATE_LOGINMOBILE:
-        emptyContent();
-        return{
-            ...clone,
-            contentProfile: "compLoginMobile",
+            emptyContent();
+            return{
+                ...clone,
+                contentProfile: "compLoginMobile",
         }
             
         case NavigationActions.NAVIGATE:

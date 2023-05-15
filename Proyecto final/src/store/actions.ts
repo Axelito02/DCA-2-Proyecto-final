@@ -1,7 +1,6 @@
 import { ActionTypes, NavigationActions } from "../Types/store"
 import { ScreenAction } from "../Types/Interfaces"
 
-
 export const ChagedContent = () => {
     return {
         type: ActionTypes.UPDATE_GAMES,

@@ -1,4 +1,3 @@
-// import { Addevent } from "../../utils/addevents";
 import { loadCss } from "../../utils/styles";
 import style from "./style.css"
 

@@ -68,10 +68,16 @@ export default class GameWeek extends HTMLElement {
         img.setAttribute("alt",`${this.alt}`);
 
         const steam = this.ownerDocument.createElement("img");
+        const HipervinculoSteam = this.ownerDocument.createElement("a");
+        HipervinculoSteam.href = "https://store.steampowered.com/";
+        HipervinculoSteam.target = "_blank";
         steam.setAttribute("src",`../dist/image/Steam-logo.png`);
         steam.setAttribute("alt","logo Steam");
 
         const epic = this.ownerDocument.createElement("img");
+        const HipervinculoEpic = this.ownerDocument.createElement("a");
+        HipervinculoEpic.href = "https://store.epicgames.com/es-ES/";
+        HipervinculoEpic.target = "_blank";
         epic.setAttribute("src",`../dist/image/Epic_Games_logo.png`);
         epic.setAttribute("alt","logo Epic Games");
 
@@ -83,8 +89,10 @@ export default class GameWeek extends HTMLElement {
         card.appendChild(cardBody)
         card.appendChild(contPlatform)
 
-        contPlatform.appendChild(steam)
-        contPlatform.appendChild(epic)
+        HipervinculoSteam.appendChild(steam)
+        HipervinculoEpic.appendChild(epic)
+        contPlatform.appendChild(HipervinculoSteam)
+        contPlatform.appendChild(HipervinculoEpic)
         cardBody.appendChild(text2)
         title.appendChild(text)
         title2.appendChild(nameGame)

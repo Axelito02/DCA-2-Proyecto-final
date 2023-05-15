@@ -1,3 +1,6 @@
+import { ScreenNavigate } from "../../store/actions";
+import { dispatch } from "../../store/index";
+import { Addevent } from "../../utils/addevents";
 import { loadCss } from "../../utils/styles";
 import style from "./style.css"
 
@@ -30,6 +33,9 @@ export default class Form extends HTMLElement {
         const Loginbtn = this.ownerDocument.createElement("button");
         Loginbtn.classList.add("LoginBtn")
         Loginbtn.textContent = "Log in"
+        Addevent(Loginbtn, () => {
+            // dispatch(ScreenNavigate(Screen.DASHBOARD));
+        })
         
         const textContent = this.ownerDocument.createElement("div");
         textContent.classList.add("textContent")
@@ -56,9 +62,17 @@ export default class Form extends HTMLElement {
         
         const HipervinculoRegister = this.ownerDocument.createElement("a");
         HipervinculoRegister.textContent = "Register";
-
+        Addevent(HipervinculoRegister, () => {
+            // dispatch(ScreenNavigate(Screen.REGISTER));
+            console.log("screen register");    
+        })
+        
         const HipervinculoLogin = this.ownerDocument.createElement("a");
         HipervinculoLogin.textContent = "Login"
+        Addevent(HipervinculoLogin, () => {
+            // dispatch(ScreenNavigate(Screen.LOGIN));
+            console.log("screen register");    
+        })
         
         const inptuUsername = this.ownerDocument.createElement("input");
         inptuUsername.placeholder = "Enter username";

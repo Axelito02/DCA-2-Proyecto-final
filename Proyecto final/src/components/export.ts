@@ -4,7 +4,7 @@ export {default as Account} from "./account/account";
 export {default as Banner} from "./banner/banner";
 export {default as Comment} from "./post/comment/comment";
 export {default as Comments} from "./post/comments/comments";
-export {default as Favorites} from "./favorites/favorites";
+export {default as MyGames} from "./mygames/mygames";
 export {default as Friend} from "./friends/friends";
 export {default as GameWeek} from "./gameweek/gameweek";
 export {default as Notification} from "./notification/notification";
@@ -19,3 +19,6 @@ export {default as RecentlyGames} from "./profile/gamesRecently/gamesRecently"
 export {default as ContenProfile} from "./profile/content/content"
 export {default as Form} from "./form/form"
 export {default as LoginMobile} from "./login_(mobile)/login"
+export {default as RecentlyPlay} from "./mygames/recentlyplayed/recentlyplayed";
+export {default as Games} from "./mygames/games/games";
+export {default as SearchGames} from "./searchgames/searchgames";
