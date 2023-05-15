@@ -1,0 +1,12 @@
+#ContainerRecentlyAddGame {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.RecentlyAddGames {
+    display: flex;
+    height: 5rem;
+    width: 5rem;
+    background-color: aquamarine;
+}

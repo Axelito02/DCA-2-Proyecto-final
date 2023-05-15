@@ -1,3 +1,6 @@
+import style from "./style.css";
+import { loadCss } from "../../utils/styles";
+
 export default class Profile extends HTMLElement {
     constructor(){
         super();
@@ -9,7 +12,9 @@ export default class Profile extends HTMLElement {
     }
 
     render(){
-        if(this.shadowRoot) this.shadowRoot.innerHTML = ``
+        if(this.shadowRoot) this.shadowRoot.innerHTML = ``;
+        loadCss(this, style)
+
         const MainContainer = this.ownerDocument.createElement("main");
         MainContainer.setAttribute("id", "Main")
 
@@ -20,7 +25,6 @@ export default class Profile extends HTMLElement {
         Content.setAttribute("id", "Content")
 
         const AppUserInfo = this.ownerDocument.createElement("user-info");
-
         const AppContent = this.ownerDocument.createElement("content-profile");
         const AppRecentlyGames = this.ownerDocument.createElement("recently-games");
 

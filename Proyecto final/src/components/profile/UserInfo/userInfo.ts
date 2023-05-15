@@ -26,32 +26,39 @@ export default class UserInfo extends HTMLElement {
         this.render();
     }
 
-    render(){
-        if(this.shadowRoot) this.shadowRoot.innerHTML = ``
-        loadCss (this,style)
-        const ContIPicture = this.ownerDocument.createElement("div")
-        const ContInfo = this.ownerDocument.createElement("div")
+    render() {
+        if(this.shadowRoot) this.shadowRoot.innerHTML = ``;
+        loadCss (this, style);
 
-        const Picture = this.ownerDocument.createElement("img")
+        const ContIPicture = this.ownerDocument.createElement("div");
+        ContIPicture.classList.add("Imageuser");
+        
+        const ContInfo = this.ownerDocument.createElement("div");
+        ContInfo.classList.add("infoUser");
+
+        const Picture = this.ownerDocument.createElement("img");
         Picture.classList.add('Profile-pic');
-        Picture.src = "../dist/image/Steam-logo.png";
+        Picture.src = "../dist/image/iconProfile.jpeg";
 
-        const Username = this.ownerDocument.createElement("h3")   
+        const Username = this.ownerDocument.createElement("h3");
         Username.textContent = this.username
+        Username.textContent = "Username"
 
-        const Name = this.ownerDocument.createElement("h3")   
+        const Name = this.ownerDocument.createElement("h3");
         Name.textContent = this.name
+        Name.textContent = "Name"
 
-        const Email = this.ownerDocument.createElement("h3")   
+        const Email = this.ownerDocument.createElement("h3");
         Email.textContent = this.email
+        Email.textContent = "Email"
 
-        ContIPicture.appendChild(Picture)
-        ContInfo.appendChild(Username)
-        ContInfo.appendChild(Name)
-        ContInfo.appendChild(Email)
+        ContIPicture.appendChild(Picture);
+        ContInfo.appendChild(Username);
+        ContInfo.appendChild(Name);
+        ContInfo.appendChild(Email);
 
-        this.shadowRoot?.appendChild(ContIPicture)
-        this.shadowRoot?.appendChild(ContInfo)
+        this.shadowRoot?.appendChild(ContIPicture);
+        this.shadowRoot?.appendChild(ContInfo);
 
     }
 }

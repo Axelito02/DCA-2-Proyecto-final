@@ -22,3 +22,4 @@ export {default as LoginMobile} from "./login_(mobile)/login"
 export {default as RecentlyPlay} from "./mygames/recentlyplayed/recentlyplayed";
 export {default as Games} from "./mygames/games/games";
 export {default as SearchGames} from "./searchgames/searchgames";
+export {default as RecentlyAddd} from "./profile/gamesRecently/recentlyadd/recentlyeadd";

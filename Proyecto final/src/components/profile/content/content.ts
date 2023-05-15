@@ -1,3 +1,6 @@
+import style from "./style.css";
+import { loadCss } from "../../../utils/styles";
+
 export default class ContenProfile extends HTMLElement {
     constructor(){
         super();
@@ -9,9 +12,11 @@ export default class ContenProfile extends HTMLElement {
     }
 
     render(){
-        if(this.shadowRoot) this.shadowRoot.innerHTML = ``
-        const Container = this.ownerDocument.createElement("section")
-        this.shadowRoot?.appendChild(Container)
+        if(this.shadowRoot) this.shadowRoot.innerHTML = ``;
+        loadCss(this, style)
+        
+        const Container = this.ownerDocument.createElement("section");
+        this.shadowRoot?.appendChild(Container);
 
 
     }
