@@ -36,15 +36,23 @@ export default class ContenProfile extends HTMLElement {
         btnSettings.classList.add("btnNavigation");
         btnSettings.classList.add("tres");
         btnSettings.textContent = "Settings";
+
+        const ContainerContent = this.ownerDocument.createElement("section");
+        ContainerContent.id = "contentContainer";
         
         const appFriends = this.ownerDocument.createElement("comp-friends");
         const appNotification = this.ownerDocument.createElement("comp-notification");
         const appSettings = this.ownerDocument.createElement("comp-settings");
         
         Container.appendChild(ContainerNavigation);
+        Container.appendChild(ContainerContent);
         ContainerNavigation.appendChild(btnFriends);
         ContainerNavigation.appendChild(btnNotification);
         ContainerNavigation.appendChild(btnSettings);
+        ContainerContent.appendChild(appFriends);
+        ContainerContent.appendChild(appNotification);
+        // ContainerContent.appendChild(appSettings);
+
     }
 }
 

@@ -5,13 +5,20 @@
     border-radius: 1rem;
     padding: 0;
     margin: 0.5rem;
-    height: 32rem;
 }
 
 #navContainer {
     display: grid;
     grid-template-columns: auto auto auto;
     margin: 0;
+    margin-bottom: 1rem;
+}
+
+#contentContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
 }
 
 .btnNavigation {
