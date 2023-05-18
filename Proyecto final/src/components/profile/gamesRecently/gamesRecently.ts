@@ -25,6 +25,7 @@ export default class RecentlyGames extends HTMLElement {
         ContainerTitle.id = "containertitle";
 
         const title = this.ownerDocument.createElement("p");
+        title.classList.add("title")
         title.textContent = "Recently obtained games";
 
         ContainerTitle.appendChild(title)

@@ -10,3 +10,9 @@
     width: 5rem;
     background-color: aquamarine;
 }
+
+@media screen and (max-width: 900px) {
+    #ContainerRecentlyAddGame {
+        display: none;
+    }
+}

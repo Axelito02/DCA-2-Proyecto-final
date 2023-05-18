@@ -103,7 +103,7 @@ export default class Dashboard extends HTMLElement {
         } else if (appState.contentPost == "compPost"){
             text.style.display = "none";
             text.innerHTML = "";
-            appGame.style.display = "none"
+            appGame.style.display = "none";
             bottom.appendChild(appPost);
             
         } else if (appState.contentProfile == "compProfile"){
@@ -118,7 +118,8 @@ export default class Dashboard extends HTMLElement {
             row.style.display = "none";
             content.style.display = "none";
             bottom.style.display = "none";
-            main.appendChild(appLogin);
+            // main.appendChild(appLogin);
+            main.appendChild(appProfile);
 
         } else if (appState.contentMygames == "compMyGames") {
             text.textContent= "Recently played";

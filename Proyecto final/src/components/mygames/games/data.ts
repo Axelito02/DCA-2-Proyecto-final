@@ -1,6 +1,6 @@
 export default [
   {
-      thumbnail: "https://www.minecraft.net/content/dam/games/minecraft/key-art/Games_Subnav_Minecraft-300x465.jpg",
+      thumbnail: "https://static.tvtropes.org/pmwiki/pub/images/minecraft_cover.png",
   },
   {
       thumbnail: "../dist/image/Terraria.jpg",

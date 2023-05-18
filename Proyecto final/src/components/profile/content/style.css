@@ -1,0 +1,45 @@
+#mainContainer{
+    display: flex;
+    flex-direction: column;
+    background-color: #4C4F78;
+    border-radius: 1rem;
+    padding: 0;
+    margin: 0.5rem;
+    height: 32rem;
+}
+
+#navContainer {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    margin: 0;
+}
+
+.btnNavigation {
+    color: white;
+    padding: 8px;
+    background-color: #252848;
+    border-left: solid;
+    border-bottom: solid;
+    border-top: none;
+    border-width: 1px;
+}
+
+.uno {
+    border-left: none;
+    border-radius: 8px 0 0 0;
+}
+
+.tres {
+    border-right: none;
+    border-radius: 0 8px 0 0;
+}
+
+.btnNavigation:hover{
+    cursor: pointer;
+    background-color: #2f3257;
+}
+
+.btnNavigation:focus{
+    border-bottom: none;
+    background-color: #4C4F78;
+}

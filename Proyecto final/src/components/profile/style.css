@@ -2,3 +2,10 @@
     display: grid;
     grid-template-columns: auto auto;
 }
+
+@media screen and (max-width: 900px) {
+    #Top {
+        display: grid;
+        grid-template-columns: auto;
+    }
+}

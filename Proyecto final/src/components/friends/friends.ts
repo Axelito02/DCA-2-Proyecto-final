@@ -1,23 +1,7 @@
-export interface AttrDescription {
-    text_btn: string;
-    text: string;
-}
+import { loadCss } from "../../utils/styles";
+import style from "./style.css";
 
 export default class Friend extends HTMLElement {
-    text_btn: string = "";
-    text: string = "";
-
-    static get observedAttributes(){
-        return["text_btn", "text"]
-    }
-
-    attributeChangedCallback(propName: keyof AttrDescription, _:unknown, newValue:string){
-        this[propName] = newValue;
-        console.log(propName, newValue);
-            
-        this.render();
-    }
-
     constructor(){
         super();
         this.attachShadow({mode: "open"})
@@ -28,14 +12,14 @@ export default class Friend extends HTMLElement {
     }
 
     render(){
-        if(this.shadowRoot) this.shadowRoot.innerHTML = ``
-        const text = this.ownerDocument.createElement("p");
-        this.shadowRoot?.appendChild(text);
-        text.textContent = this.text;
+        if(this.shadowRoot) this.shadowRoot.innerHTML = ``;
+        loadCss(this, style)
         
-        const button = this.ownerDocument.createElement("button");
-        this.shadowRoot?.appendChild(button);
-        button.textContent = this.text_btn;
+        const buttonFriends = this.ownerDocument.createElement("button");
+        buttonFriends.classList.add("btnFriends")
+        buttonFriends.textContent = "Friends";
+        this.shadowRoot?.appendChild(buttonFriends);
+
     }
 }
 
