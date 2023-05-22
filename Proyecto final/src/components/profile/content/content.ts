@@ -99,7 +99,7 @@ export default class ContenProfile extends HTMLElement {
 
         Container.appendChild(ContainerNavigation);
         Container.appendChild(ContainerContent);
-        
+
         
         ContainerNavigation.appendChild(btnAccount);
         ContainerNavigation.appendChild(btnFriends);
@@ -108,9 +108,9 @@ export default class ContenProfile extends HTMLElement {
         ContainerNavigation.appendChild(btnSettings);
 
 
-        ContainerContent.appendChild(title)
-        ContainerContent.appendChild(ContainerContentFavorites);
-        //ContainerContent.appendChild(appAccount);
+        //ContainerContent.appendChild(title)
+        //ContainerContent.appendChild(ContainerContentFavorites);
+        ContainerContent.appendChild(appAccount);
         //ContainerContent.appendChild(appFavorites);
         // ContainerContent.appendChild(appFriends);
         // ContainerContent.appendChild(appNotification);

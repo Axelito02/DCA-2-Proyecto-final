@@ -17,3 +17,29 @@
     border-radius: 12px;
     color: gray;
 }
+
+.Inputs {
+    display: flex;
+    flex-direction: column;
+}
+
+.inputEmail {
+    margin: 7px 0px;
+    padding: 0;
+}
+.inputID {
+    margin: 7px 0px;
+    padding: 0;
+}
+.inputPhone {
+    margin: 7px 0px;
+    padding: 0;
+}
+.inputRecovery {
+    margin: 7px 0px;
+    padding: 0;
+}
+
+input[type=text]:focus {
+    border: 3px solid #555;
+  }
