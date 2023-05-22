@@ -1,3 +1,9 @@
+@media (max-width: 900px) {
+    * {
+      display: none; /* Oculta todo el contenido dentro de la clase "column" */
+    }
+  }
+
 #Container {
     display: grid;
     grid-template-columns: repeat(5, auto);

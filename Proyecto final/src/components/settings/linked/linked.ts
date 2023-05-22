@@ -1,18 +1,24 @@
-import { AttrGames } from "../../../Types/Interfaces";
+import { Socials } from "../../../Types/Interfaces";
 import { loadCss } from "../../../utils/styles";
 import style from "./style.css";
 
 export default class Linked extends HTMLElement {
-    thumbnail: string= "";
+    thumbnail: string= ""
+    link: string="";
 
     static get observedAttributes(){
-        return["thumbnail"]
+        return["thumbnail", "link"]
     }
+    
 
-    attributeChangedCallback(propName: keyof AttrGames, _:unknown, newValue:string){
-        this[propName] = newValue;
+    attributeChangedCallback(propName: keyof Socials, _:unknown, newValue:string){
+        if (propName === 'thumbnail') {
+          this.thumbnail = newValue;
+        } else if (propName === 'link') {
+          this.link = newValue;
+        }
         this.render();
-    }
+      }
 
     constructor() {
         super();
@@ -34,12 +40,17 @@ export default class Linked extends HTMLElement {
         const containerPlatformLinked = this.ownerDocument.createElement("div");
         containerPlatformLinked.classList.add("containerPlatformLinked");
 
+        //imagen y link puestos
+
         const PlatformLinked = this.ownerDocument.createElement("img");
         PlatformLinked.src = this.thumbnail;
+        const linkElement = document.createElement('a');
+        linkElement.href = this.link;
 
         Container.appendChild(containerPlatformLinked);
 
         containerPlatformLinked.appendChild(PlatformLinked);
+        containerPlatformLinked.appendChild(linkElement);
     }
 }
 

@@ -1,18 +1,23 @@
-import { AttrGames } from "../../../Types/Interfaces";
+import { Socials } from "../../../Types/Interfaces";
 import { loadCss } from "../../../utils/styles";
 import style from "./style.css";
 
 export default class Link extends HTMLElement {
-    thumbnail: string= "";
+    thumbnail: string= ""
+    link: string="";
 
     static get observedAttributes(){
         return["thumbnail"]
     }
 
-    attributeChangedCallback(propName: keyof AttrGames, _:unknown, newValue:string){
-        this[propName] = newValue;
+    attributeChangedCallback(propName: keyof Socials, _:unknown, newValue:string){
+        if (propName === 'thumbnail') {
+          this.thumbnail = newValue;
+        } else if (propName === 'link') {
+          this.link = newValue;
+        }
         this.render();
-    }
+      }
 
     constructor() {
         super();

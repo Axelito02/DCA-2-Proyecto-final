@@ -76,11 +76,11 @@ export default class ContenProfile extends HTMLElement {
         const ContainerContent = this.ownerDocument.createElement("section");
         ContainerContent.id = "contentContainer";
 
+        const titleCommunities = this.ownerDocument.createElement("p");
+        titleCommunities.textContent = "Communities"; 
+
         const ContainerContentFavorites = this.ownerDocument.createElement("section");
         ContainerContentFavorites.id = "contentFavorites";
-
-        const title = this.ownerDocument.createElement("p");
-        title.textContent = "Communities"; 
 
         data.forEach(({thumbnail}) => {
             const appFavorites = this.ownerDocument.createElement("comp-favorites");
@@ -108,13 +108,13 @@ export default class ContenProfile extends HTMLElement {
         ContainerNavigation.appendChild(btnSettings);
 
 
-        //ContainerContent.appendChild(title)
-        //ContainerContent.appendChild(ContainerContentFavorites);
+        ContainerContent.appendChild(titleCommunities)
+        ContainerContent.appendChild(ContainerContentFavorites);
         ContainerContent.appendChild(appAccount);
         //ContainerContent.appendChild(appFavorites);
         // ContainerContent.appendChild(appFriends);
         // ContainerContent.appendChild(appNotification);
-        //ContainerContent.appendChild(appSettings);
+        ContainerContent.appendChild(appSettings);
 
     }
 }

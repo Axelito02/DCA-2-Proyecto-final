@@ -67,3 +67,8 @@ export interface Notifications {
     username: string;
     notification: string;
 }
+
+export interface Socials {
+    thumbnail: string;
+    link: string;
+}

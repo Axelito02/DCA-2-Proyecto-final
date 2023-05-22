@@ -80,4 +80,11 @@
 p {
     margin: 0;
     padding: 0 4rem;
+    font-weight: bold;
 }
+
+@media (max-width: 900px) {
+    p {
+      display: none; /* Oculta todo el contenido dentro de la clase "column" */
+    }
+  }
