@@ -27,3 +27,5 @@ export {default as Linked} from "./settings/linked/linked";
 export {default as Link} from "./settings/linkto/link";
 export {default as Status} from "./settings/status/status";
 export {default as LogOut} from "./settings/btnLogout/logout";
+export {default as Inputs} from "./account/inputs/inputs";
+export {default as Favorites} from "./favorites/favorites";

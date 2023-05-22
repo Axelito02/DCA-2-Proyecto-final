@@ -3,6 +3,9 @@ import { loadCss } from "../../../utils/styles";
 import { Addevent } from "../../../utils/addevents";
 import { ChagedAccount, ChagedFavorites, ChagedFriends, ChagedNotification, ChagedSettings } from "../../../store/actions";
 import { dispatch } from "../../../store/index";
+import data from "../../mygames/games/data";
+import { AttrGames } from "../../../Types/Interfaces";
+import { setAttributes } from "../../../utils/attributtes";
 
 export default class ContenProfile extends HTMLElement {
     constructor(){
@@ -72,23 +75,46 @@ export default class ContenProfile extends HTMLElement {
 
         const ContainerContent = this.ownerDocument.createElement("section");
         ContainerContent.id = "contentContainer";
+
+        const ContainerContentFavorites = this.ownerDocument.createElement("section");
+        ContainerContentFavorites.id = "contentFavorites";
+
+        const title = this.ownerDocument.createElement("p");
+        title.textContent = "Communities"; 
+
+        data.forEach(({thumbnail}) => {
+            const appFavorites = this.ownerDocument.createElement("comp-favorites");
+            const gamesProps: AttrGames = {
+                thumbnail: `${thumbnail}`
+            }
+            setAttributes<AttrGames> (gamesProps, appFavorites);
+            ContainerContentFavorites.appendChild(appFavorites)
+        })
         
         const appFriends = this.ownerDocument.createElement("comp-friends");
         const appNotification = this.ownerDocument.createElement("comp-notification");
         const appSettings = this.ownerDocument.createElement("comp-settings");
+        const appAccount = this.ownerDocument.createElement("comp-account");
+        
 
         Container.appendChild(ContainerNavigation);
         Container.appendChild(ContainerContent);
-
+        
+        
         ContainerNavigation.appendChild(btnAccount);
         ContainerNavigation.appendChild(btnFriends);
         ContainerNavigation.appendChild(btnFavorites);
         ContainerNavigation.appendChild(btnNotification);
         ContainerNavigation.appendChild(btnSettings);
 
+
+        ContainerContent.appendChild(title)
+        ContainerContent.appendChild(ContainerContentFavorites);
+        //ContainerContent.appendChild(appAccount);
+        //ContainerContent.appendChild(appFavorites);
         // ContainerContent.appendChild(appFriends);
         // ContainerContent.appendChild(appNotification);
-        ContainerContent.appendChild(appSettings);
+        //ContainerContent.appendChild(appSettings);
 
     }
 }
