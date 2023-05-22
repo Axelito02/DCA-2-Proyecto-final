@@ -13,28 +13,28 @@ export default class Profile extends HTMLElement {
 
     render(){
         if(this.shadowRoot) this.shadowRoot.innerHTML = ``;
-        loadCss(this, style)
+        loadCss(this, style);
 
         const MainContainer = this.ownerDocument.createElement("main");
-        MainContainer.setAttribute("id", "Main")
+        MainContainer.setAttribute("id", "Main");
 
         const Top = this.ownerDocument.createElement("section");
-        Top.setAttribute("id", "Top")
+        Top.setAttribute("id", "Top");
 
         const Content = this.ownerDocument.createElement("section");
-        Content.setAttribute("id", "Content")
+        Content.setAttribute("id", "Content");
 
         const AppUserInfo = this.ownerDocument.createElement("user-info");
         const AppContent = this.ownerDocument.createElement("content-profile");
         const AppRecentlyGames = this.ownerDocument.createElement("recently-games");
 
-        Top.appendChild(AppUserInfo)
-        Top.appendChild(AppRecentlyGames)
-        Content.appendChild(AppContent)
-        MainContainer.appendChild(Top)
-        MainContainer.appendChild(Content)
+        Top.appendChild(AppUserInfo);;
+        Top.appendChild(AppRecentlyGames);
+        Content.appendChild(AppContent);
+        MainContainer.appendChild(Top);
+        MainContainer.appendChild(Content);
 
-        this.shadowRoot?.appendChild(MainContainer)
+        this.shadowRoot?.appendChild(MainContainer);
     }
 }
 

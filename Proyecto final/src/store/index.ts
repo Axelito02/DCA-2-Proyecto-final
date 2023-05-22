@@ -1,7 +1,5 @@
-import { ScreenAction } from "../Types/Interfaces";
 import { Action } from "../Types/Interfaces";
 import { Observer, Screen } from "../Types/store";
-import { ScreenNavigate } from "./actions";
 import { reducer } from "./reducer";
 
 export let appState = {
@@ -10,6 +8,9 @@ export let appState = {
     contentProfile: "compPr",
     contentLoginMobile: "compLMB",
     contentMygames: "compMG",
+    contentFriends: "compFri",
+    contentNofitications: "compNotifi",
+    contentSettings: "compSett",
     screen: Screen.DASHBOARD,
 }
 

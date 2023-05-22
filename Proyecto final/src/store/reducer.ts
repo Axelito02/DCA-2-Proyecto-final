@@ -9,6 +9,13 @@ export const reducer = (action: Action, currentState: any): any => {
         clone.contentGames = null;
         clone.contentPost = null;
         clone.contentProfile = null;
+        clone.contentMygames = null;
+        clone.contentLoginMobile = null;
+        clone.contentFavorites = null;
+        clone.contentFriends = null;
+        clone.contentNotification = null;
+        clone.contentAccount = null;
+        clone.contentSettings = null;
         clone.screen = null;
     };
 
@@ -41,19 +48,47 @@ export const reducer = (action: Action, currentState: any): any => {
                 contentMygames: "compMyGames",
             }
 
-        case ActionTypes.UPDATE_MYGAMES:
-            emptyContent();
-            return{
-                ...clone,
-                contentProfile: "compMyGames",
-        }
-
         case ActionTypes.UPDATE_LOGINMOBILE:
             emptyContent();
             return{
                 ...clone,
-                contentProfile: "compLoginMobile",
-        }
+                contentLoginMobile: "compLoginMobile",
+            }
+
+        case ActionTypes.UPDATE_FAVORITES:
+            emptyContent();
+            return{
+                ...clone,
+                contentFavorites: "compFavorites",
+            }
+
+        case ActionTypes.UPDATE_FRIENDS:
+            emptyContent();
+            return{
+                ...clone,
+                contentFriends: "compFriends",
+            }
+
+        case ActionTypes.UPDATE_NOTIFICATIONS:
+            emptyContent();
+            return{
+                ...clone,
+                contentNotification: "compNotification",
+            }
+
+        case ActionTypes.UPDATE_ACCOUNT:
+            emptyContent();
+            return{
+                ...clone,
+                contentAccount: "compAccount",
+            }
+
+        case ActionTypes.UPDATE_SETTINGS:
+            emptyContent();
+            return{
+                ...clone,
+                contentSettings: "compSettings",
+            }
             
         case NavigationActions.NAVIGATE:
             emptyContent();

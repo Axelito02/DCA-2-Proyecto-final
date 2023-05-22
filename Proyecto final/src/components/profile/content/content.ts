@@ -1,5 +1,8 @@
 import style from "./style.css";
 import { loadCss } from "../../../utils/styles";
+import { Addevent } from "../../../utils/addevents";
+import { ChagedAccount, ChagedFavorites, ChagedFriends, ChagedNotification, ChagedSettings } from "../../../store/actions";
+import { dispatch } from "../../../store/index";
 
 export default class ContenProfile extends HTMLElement {
     constructor(){
@@ -20,22 +23,52 @@ export default class ContenProfile extends HTMLElement {
         this.shadowRoot?.appendChild(Container);
 
         const ContainerNavigation = this.ownerDocument.createElement("section");
-        ContainerNavigation.id = "navContainer"
-        
+        ContainerNavigation.id = "navContainer";
+
+        const btnAccount = this.ownerDocument.createElement("button");
+        btnAccount.classList.add("btnNavigation");
+        btnAccount.classList.add("uno");
+        btnAccount.textContent = "Account";
+        Addevent(btnAccount, () => {
+            // dispatch(ChagedAccount())
+            console.log("Account");
+        })
+
         const btnFriends = this.ownerDocument.createElement("button");
         btnFriends.classList.add("btnNavigation");
-        btnFriends.classList.add("uno");
+        btnFriends.classList.add("dos");
         btnFriends.textContent = "Friends";
+        Addevent(btnFriends, () => {
+            // dispatch(ChagedFriends())
+            console.log("Friends");
+        })
+
+        const btnFavorites = this.ownerDocument.createElement("button");
+        btnFavorites.classList.add("btnNavigation");
+        btnFavorites.classList.add("tres");
+        btnFavorites.textContent = "Favorites";
+        Addevent(btnFavorites, () => {
+            // dispatch(ChagedFavorites())
+            console.log("Favorites");
+        })
         
         const btnNotification = this.ownerDocument.createElement("button");
         btnNotification.classList.add("btnNavigation");
-        btnNotification.classList.add("dos");
+        btnNotification.classList.add("cuatro");
         btnNotification.textContent = "Notifications";
+        Addevent(btnNotification, () => {
+            // dispatch(ChagedNotification())
+            console.log("Notifications");
+        })
         
         const btnSettings = this.ownerDocument.createElement("button");
         btnSettings.classList.add("btnNavigation");
-        btnSettings.classList.add("tres");
+        btnSettings.classList.add("cinco");
         btnSettings.textContent = "Settings";
+        Addevent(btnSettings, () => {
+            // dispatch(ChagedSettings())
+            console.log("Settings");
+        })
 
         const ContainerContent = this.ownerDocument.createElement("section");
         ContainerContent.id = "contentContainer";
@@ -43,15 +76,19 @@ export default class ContenProfile extends HTMLElement {
         const appFriends = this.ownerDocument.createElement("comp-friends");
         const appNotification = this.ownerDocument.createElement("comp-notification");
         const appSettings = this.ownerDocument.createElement("comp-settings");
-        
+
         Container.appendChild(ContainerNavigation);
         Container.appendChild(ContainerContent);
+
+        ContainerNavigation.appendChild(btnAccount);
         ContainerNavigation.appendChild(btnFriends);
+        ContainerNavigation.appendChild(btnFavorites);
         ContainerNavigation.appendChild(btnNotification);
         ContainerNavigation.appendChild(btnSettings);
-        ContainerContent.appendChild(appFriends);
-        ContainerContent.appendChild(appNotification);
-        // ContainerContent.appendChild(appSettings);
+
+        // ContainerContent.appendChild(appFriends);
+        // ContainerContent.appendChild(appNotification);
+        ContainerContent.appendChild(appSettings);
 
     }
 }

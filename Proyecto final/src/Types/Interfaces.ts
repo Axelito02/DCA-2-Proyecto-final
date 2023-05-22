@@ -55,3 +55,15 @@ export interface ScreenAction {
     action: NavigationActions.NAVIGATE;
     payload: Screen
 }
+
+export interface Friends {
+    thumbnail: string;
+    username: string;
+    lastcontecion: string;
+}
+
+export interface Notifications {
+    thumbnail: string;
+    username: string;
+    notification: string;
+}

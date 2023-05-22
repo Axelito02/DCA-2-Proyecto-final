@@ -1,0 +1,19 @@
+.ContainerLinkedTo {
+    display: flex;
+    flex-direction: row;
+    padding: 0 1.5rem;
+}
+
+.ContainerLinkTo {
+    display: flex;
+    flex-direction: row;
+    padding: 0 1.5rem;
+}
+
+.containerTitle {
+    padding: 0 1.5rem;
+}
+
+p {
+    margin: 0;
+}

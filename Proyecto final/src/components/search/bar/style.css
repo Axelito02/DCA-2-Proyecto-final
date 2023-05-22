@@ -1,9 +1,12 @@
+:host {
+    width: 100%;
+}
+
 .bar-search{
     background-color: #F8F8F8;
     padding: 0.5rem;
     border-radius: 0.7rem;
     border: none;
-    width: 100%;
     opacity: 0.7;
 }
 

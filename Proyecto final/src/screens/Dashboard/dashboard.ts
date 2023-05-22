@@ -113,7 +113,7 @@ export default class Dashboard extends HTMLElement {
             bottom.style.display = "none";
             main.appendChild(appProfile)
             
-        } else if (appState.contentProfile == "compLoginMobile"){
+        } else if (appState.contentLoginMobile == "compLoginMobile"){
             text.style.display = "none";
             row.style.display = "none";
             content.style.display = "none";

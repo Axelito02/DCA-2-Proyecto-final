@@ -1,3 +1,4 @@
+import { dispatch } from "../../../store/index";
 import { Addevent } from "../../../utils/addevents";
 import { loadCss } from "../../../utils/styles";
 import style from "./style.css"
@@ -23,7 +24,6 @@ export default class Bar extends HTMLElement {
         btn1.classList.add("btn");
         btn1.textContent = ("Sign in")
         Addevent(btn1, () => {
-            // dispatch(ChagedLOGIN())
             console.log("login");
         })
 
@@ -31,7 +31,6 @@ export default class Bar extends HTMLElement {
         btn2.classList.add("btn");
         btn2.textContent = ("Register")
         Addevent(btn2, () => {
-            // dispatch(ScreenNavigate(Screen.LOGIN))
             console.log("Register");
         })
         

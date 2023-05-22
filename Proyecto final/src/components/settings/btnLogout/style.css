@@ -1,0 +1,23 @@
+:host {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.5rem;
+}
+
+.btn{
+    background-color: #252848;
+    color: #F8F8F8;
+    border-radius: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    width: 10rem;
+    border-color: #C7C7C7;
+    border: 1px solid;
+}
+
+.btn:hover{
+    cursor: pointer;
+    background-color: #232445;
+    border-color: #a6a5a5;
+}
