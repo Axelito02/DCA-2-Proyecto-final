@@ -2,29 +2,50 @@ import style from "./style.css"
 import { loadCss } from "../../utils/styles";
 
 export default class Banner extends HTMLElement {
-    constructor(){
-        super();
-        this.attachShadow({mode: "open"})
-    }
+    private imageSrc = '../dist/image/Valorant.png';
 
-    connectedCallback(){
-        this.render();
-    }
+  constructor() {
+    super();
+    this.attachShadow({ mode: 'open' });
+  }
 
-    render(){
-        if(this.shadowRoot) this.shadowRoot.innerHTML = ``;
-        loadCss(this, style)
+  connectedCallback() {
+    this.render();
+  }
 
-        const banner = this.ownerDocument.createElement("div");
-        banner.classList.add("banner")
+  render() {
+    if (this.shadowRoot) this.shadowRoot.innerHTML = ``;
+    loadCss(this, style);
 
-        const img = this.ownerDocument.createElement("img");
-        img.setAttribute("src","../dist/image/Valorant.png");
-        img.setAttribute("alt","Valorant");
+    const banner = this.ownerDocument.createElement('div');
+    banner.classList.add('banner');
 
-        banner.appendChild(img);
-        this.shadowRoot?.appendChild(banner);
-    }
+    const img = this.ownerDocument.createElement('img');
+    img.setAttribute('src', this.imageSrc);
+    img.setAttribute('alt', 'Valorant');
+
+    banner.appendChild(img);
+    this.shadowRoot?.appendChild(banner);
+
+    // Guardar imagen en el localStorage
+    this.saveImageToLocalStorage();
+  }
+
+  private saveImageToLocalStorage() {
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', this.imageSrc, true);
+    xhr.responseType = 'blob';
+
+    xhr.onload = () => {
+      if (xhr.status === 200) {
+        const blob = xhr.response;
+        const objectURL = URL.createObjectURL(blob);
+        localStorage.setItem('imagen', objectURL);
+      }
+    };
+
+    xhr.send();
+  }
 }
 
 customElements.define('comp-banner', Banner);

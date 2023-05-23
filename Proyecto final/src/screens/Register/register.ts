@@ -7,9 +7,27 @@ export default class Register extends HTMLElement {
         this.attachShadow({mode: "open"})
     }
 
-    connectedCallback(){
+    connectedCallback() {
         this.render();
-    }
+        //this.setupFormSubmitHandler();
+      }
+    
+     //Prueba guardar info del usuario inicio
+
+    //   setupFormSubmitHandler() {
+    //     const form = this.shadowRoot?.querySelector("comp-form");
+    //     form?.addEventListener("formSubmit", (event: Event) => {
+    //       const customEvent = event as CustomEvent;
+    //       const userData = customEvent.detail;
+    //       this.saveUserDataToLocalStorage(userData);
+    //     });
+    //   }
+    
+    //   saveUserDataToLocalStorage(userData: { username: string; password: string }) {
+    //     localStorage.setItem("userData", JSON.stringify(userData));
+    //   }
+
+    //Prueba guardar info del usuario final
 
     render(){
         if(this.shadowRoot) this.shadowRoot.innerHTML = ``;

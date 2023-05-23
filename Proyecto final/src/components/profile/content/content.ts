@@ -6,6 +6,7 @@ import { dispatch } from "../../../store/index";
 import data from "../../mygames/games/data";
 import { AttrGames } from "../../../Types/Interfaces";
 import { setAttributes } from "../../../utils/attributtes";
+import { contentState } from "./contentState";
 
 export default class ContenProfile extends HTMLElement {
     constructor(){
@@ -75,7 +76,10 @@ export default class ContenProfile extends HTMLElement {
 
         const ContainerContent = this.ownerDocument.createElement("section");
         ContainerContent.id = "contentContainer";
-
+//tmb esto es de prueba
+        const row = this.ownerDocument.createElement("main");
+        row.setAttribute("id", "content");
+//aquí acaba la prueba
         const titleCommunities = this.ownerDocument.createElement("p");
         titleCommunities.textContent = "Communities"; 
 
@@ -96,6 +100,42 @@ export default class ContenProfile extends HTMLElement {
         const appSettings = this.ownerDocument.createElement("comp-settings");
         const appAccount = this.ownerDocument.createElement("comp-account");
         
+//pruebaaaaaaaaa inicio
+        // if(contentState.contentAccount == "compA") {
+        //     Container.appendChild(ContainerContent);
+        //     Container.appendChild(row);
+        //     Container.appendChild(bottom);
+
+        // } else if (contentState.contentPost == "compPost"){
+        //     text.style.display = "none";
+        //     text.innerHTML = "";
+        //     appGame.style.display = "none";
+        //     bottom.appendChild(appPost);
+            
+        // } else if (contentState.contentProfile == "compProfile"){
+        //     text.style.display = "none";
+        //     row.style.display = "none";
+        //     content.style.display = "none";
+        //     bottom.style.display = "none";
+        //     Container.appendChild(appProfile)
+            
+        // } else if (contentState.contentLoginMobile == "compLoginMobile"){
+        //     text.style.display = "none";
+        //     row.style.display = "none";
+        //     content.style.display = "none";
+        //     bottom.style.display = "none";
+        //     // Container.appendChild(appLogin);
+        //     Container.appendChild(appProfile);
+
+        // } else if (contentState.contentMygames == "compMyGames") {
+        //     text.textContent= "Recently played";
+        //     row.innerHTML = "";
+        //     bottom.style.display = "none";
+        //     content.innerHTML = "";
+        //     content.id ="overflowhide";
+        //     ContainerRecentlyGames.id = "recentlContainer";
+        //     ContainerSearchGames.appendChild(appSearchGames);
+//pruebaaaaaaaa final
 
         Container.appendChild(ContainerNavigation);
         Container.appendChild(ContainerContent);

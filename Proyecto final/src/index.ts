@@ -26,8 +26,8 @@ class App extends HTMLElement {
         const register = this.ownerDocument.createElement("comp-register");
 
         this.shadowRoot?.appendChild(dashboard)
-        // this.shadowRoot?.appendChild(login);
-        // this.shadowRoot?.appendChild(register)
+        this.shadowRoot?.appendChild(login);
+        this.shadowRoot?.appendChild(register)
 
         switch (appState.screen) {
             case Screen.LOGIN:

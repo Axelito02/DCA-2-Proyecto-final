@@ -10,9 +10,24 @@ export default class Form extends HTMLElement {
         this.attachShadow({mode: "open"})
     }
 
-    connectedCallback(){
+    connectedCallback() {
         this.render();
-    }
+        //this.setupFormSubmitHandler();
+      }
+    
+    //Prueba guardar info del usuario inicio
+    //   setupFormSubmitHandler() {
+    //     const formElement = this.shadowRoot?.querySelector("form");
+    //     formElement?.addEventListener("submit", (event) => {
+    //       event.preventDefault();
+    //       const username = (this.shadowRoot?.querySelector("#username") as HTMLInputElement)?.value;
+    //       const password = (this.shadowRoot?.querySelector("#password") as HTMLInputElement)?.value;
+    //       const userData = { username, password };
+    //       this.dispatchEvent(new CustomEvent("formSubmit", { detail: userData }));
+    //     });
+    //   }
+
+    //Prueba guardar info del usuario final
 
     render(){
         if(this.shadowRoot) this.shadowRoot.innerHTML = ``;
