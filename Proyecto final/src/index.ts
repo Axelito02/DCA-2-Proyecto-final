@@ -1,55 +1,52 @@
-import "./components/export"
-import dataG from "./components/card/games"
+import "./components/export";
+import "./screens/export";
+import { navigate } from "./store/actions";
+import { addObserver, appState, dispatch } from "./store/index";
+import { Screens } from "./types/store";
 
-class App extends HTMLElement {
+class AppContainer extends HTMLElement {
+  constructor() {
+    super();
+    this.attachShadow({ mode: "open" });
+    addObserver(this);
+  }
 
-    constructor() {
-        super();
-        this.attachShadow({mode: 'open'})
-    }
+  connectedCallback() {
+    this.render();
+  }
 
-    connectedCallback() {
-        this.render()
-        }
+  render() {
+    if (this.shadowRoot) this.shadowRoot.innerHTML = "";
+      const css = this.ownerDocument.createElement("link");
+      css.setAttribute("rel", "stylesheet");
+      css.setAttribute("href", "../dist/style/main.css");
+      this.shadowRoot?.appendChild(css);
 
-    render() {
-        if(this.shadowRoot){
-            const gamesD = dataG.map(({name, thumbnail, publisher, releaseyear}) => `<comp-card name="${name}" thumbnail="${thumbnail}" publisher="${publisher}" releaseyear="${releaseyear}"></comp-card>`)
-            
-            console.log(gamesD);
-            
-            this.shadowRoot.innerHTML =`
-        <link rel="stylesheet" href="../dist/styles/main.css">
+      const dashboard = this.ownerDocument.createElement("comp-dashboard");
+      const login = this.ownerDocument.createElement("comp-login");
+      const register = this.ownerDocument.createElement("comp-register");
 
-        <section id= "main_container">
-            <section id= "header">
-                <comp-search></comp-search>
-                <comp-banner></comp-banner>
-            </section>
+      switch (appState.screen) {
+        case Screens.LOGIN:
+          const login = this.ownerDocument.createElement("comp-login");
+          this.shadowRoot?.appendChild(login);
+          break;
 
-            <section id= "bar_nav">
-                <comp-nav></comp-nav>
-            </section>
+        case Screens.REGISTER:
+          const signup = this.ownerDocument.createElement("comp-register");
+          signup.innerText = "esta es la pantalla de signup";
+          this.shadowRoot?.appendChild(signup);
+          break;
 
-            <section id="title">
-                <h3>You’d also like...</h3>
-            </section>
+        case Screens.DASHBOARD:
+          const dashboard = this.ownerDocument.createElement("comp-dashboard");
+          this.shadowRoot?.appendChild(dashboard);
+          break;
 
-            <section id= "content">
-                ${gamesD.join("")}
-            </section>
-                
-            <section id= "content">    
-                ${gamesD.join("")}
-            </section>
-
-            <section id= "bottom">
-                <comp-gameweek></comp-gameweek>
-            </section>        
-        </section>
-            `;
-        }
+        default:
+          break;
+      }
     }
 }
 
-customElements.define('comp-app', App);
+customElements.define("comp-container", AppContainer);

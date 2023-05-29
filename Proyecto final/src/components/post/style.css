@@ -1,0 +1,67 @@
+:host{
+    display: flex;
+    justify-content: center;
+    width: 96%;
+}
+
+.title{
+    display: flex;
+    align-items: center;
+}
+
+.contTop{
+    display: flex;
+    gap: 24px;
+    box-sizing: border-box;
+    justify-content: space-between;
+    padding: 12px 0;
+}
+
+.contTop h2{
+    margin: 0;
+}
+
+.card-platform{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    column-gap: 1.5rem;
+}
+
+.card-platform img{
+    width: 3rem;
+    margin-bottom: 0.9rem;
+}
+
+.card-platform img:hover{
+    cursor: pointer;
+}
+
+.carContainer{
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+    margin: 0;
+    background-color: #252848;
+    justify-content: center;
+    border-radius: 20px 20px 0px 0px;
+}
+
+.card{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (max-width: 900px) {
+    :host{
+        display: flex;
+        width: 100%;
+    }
+
+    .card-platform{
+        display: none;
+    }
+}

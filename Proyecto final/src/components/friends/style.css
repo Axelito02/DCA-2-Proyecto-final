@@ -1,0 +1,42 @@
+:host {
+    margin: 0 1rem;
+}
+
+.mainContentFriends {
+    display: flex;
+    flex-direction: row;
+}
+
+.contentFriends {
+    display: grid;
+    grid-template-columns: auto auto;
+    border-radius: 20px;
+    background-color: #EAE8E8;
+    width: 100%;
+    color: #464646;
+}
+
+.contentUserImage img {
+    height: 6rem;
+    border-radius: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.contentUserImage {
+    display: flex;
+}
+
+.contentUserinfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contentUserinfo h1 {
+    margin: 0;
+}
+
+.contentUserinfo p {
+    margin: 0;
+}

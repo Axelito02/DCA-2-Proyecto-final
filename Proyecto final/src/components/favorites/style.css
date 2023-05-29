@@ -1,0 +1,23 @@
+@media (max-width: 900px) {
+    * {
+      display: none; /* Oculta todo el contenido dentro de la clase "column" */
+    }
+  }
+
+#Container {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    gap: 1rem;
+}
+
+.containerGames img{
+    display: flex;
+    height: 10rem;
+    transition: transform 0.3s ease;
+}
+
+.containerGames img:hover{
+    transform: translateY(-6px);
+    cursor: pointer;
+    filter: brightness(110%);
+}

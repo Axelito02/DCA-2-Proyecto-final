@@ -1,7 +1,23 @@
+import { AttrGames } from "../../utils/interfaces";
+import { loadCss } from "../../utils/styles";
+import style from "./style.css"
+import data from "../mygames/games/data";
+
 export default class Favorites extends HTMLElement {
-    constructor() {
+    thumbnail: string = "";
+
+    static get observedAttributes(){
+        return["thumbnail"]
+    }
+
+    attributeChangedCallback(propName: keyof AttrGames, _:unknown, newValue:string){
+        this[propName] = newValue;
+        this.render();
+    }
+
+    constructor(){
         super();
-        this.attachShadow({mode: 'open'})
+        this.attachShadow({mode: "open"})
     }
 
     connectedCallback(){
@@ -9,12 +25,20 @@ export default class Favorites extends HTMLElement {
     }
 
     render(){
-        if(this.shadowRoot){
-            this.shadowRoot.innerHTML = `<p>component favorites<p>`;
+        if(this.shadowRoot) this.shadowRoot.innerHTML = ``;
+        loadCss(this, style)
 
-        }
+        const CardGames = this.ownerDocument.createElement("section");
+        CardGames.classList.add("containerGames");
+
+        const thumbnail = this.ownerDocument.createElement("img");
+        thumbnail.src = this.thumbnail;
+
+        this.shadowRoot?.appendChild(CardGames);
+        
+        CardGames.appendChild(thumbnail)
+
     }
-
 }
 
 customElements.define('comp-favorites', Favorites);
