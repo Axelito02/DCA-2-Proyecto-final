@@ -1,4 +1,4 @@
-import { AttrProfile } from "../../../utils/interfaces";
+import { AttrProfile } from "../../../types/interfaces";
 import { loadCss } from "../../../utils/styles";
 import style from "./style.css"
 
@@ -8,31 +8,31 @@ export default class UserInfo extends HTMLElement {
     name = "";
     email = "";
 
-    static get observedAttributes(){
-        return["username", "thumbnail", "name", "email"]
+    static get observedAttributes() {
+        return ["username", "thumbnail", "name", "email"]
     }
 
-    attributeChangedCallback(propName: keyof AttrProfile, _:unknown, newValue:string){
+    attributeChangedCallback(propName: keyof AttrProfile, _: unknown, newValue: string) {
         this[propName] = newValue;
         this.render();
     }
 
-    constructor(){
+    constructor() {
         super();
-        this.attachShadow({mode: "open"})
+        this.attachShadow({ mode: "open" })
     }
 
-    connectedCallback(){
+    connectedCallback() {
         this.render();
     }
 
     render() {
-        if(this.shadowRoot) this.shadowRoot.innerHTML = ``;
-        loadCss (this, style);
+        if (this.shadowRoot) this.shadowRoot.innerHTML = ``;
+        loadCss(this, style);
 
         const ContIPicture = this.ownerDocument.createElement("div");
         ContIPicture.classList.add("Imageuser");
-        
+
         const ContInfo = this.ownerDocument.createElement("div");
         ContInfo.classList.add("infoUser");
 

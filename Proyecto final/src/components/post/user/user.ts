@@ -1,4 +1,4 @@
-import { AttrComments } from "../../../utils/interfaces";
+import { AttrComments } from "../../../types/interfaces";
 import { loadCss } from "../../../utils/styles";
 import style from "./style.css"
 
@@ -8,26 +8,26 @@ export default class User extends HTMLElement {
     hastag: string = "";
     comment: string = "";
 
-    static get observedAttributes(){
-        return["name", "thumbnail", "publisher", "releaseyear"]
+    static get observedAttributes() {
+        return ["name", "thumbnail", "publisher", "releaseyear"]
     }
 
-    attributeChangedCallback(propName: keyof AttrComments, _:unknown, newValue:string){
+    attributeChangedCallback(propName: keyof AttrComments, _: unknown, newValue: string) {
         this[propName] = newValue;
         this.render();
     }
 
-    constructor(){
+    constructor() {
         super();
-        this.attachShadow({mode: "open"})
+        this.attachShadow({ mode: "open" })
     }
 
-    connectedCallback(){
+    connectedCallback() {
         this.render();
     }
 
-    render(){
-        if(this.shadowRoot) this.shadowRoot.innerHTML = ``
+    render() {
+        if (this.shadowRoot) this.shadowRoot.innerHTML = ``
         loadCss(this, style)
 
         const user = this.ownerDocument.createElement("div");
@@ -39,9 +39,9 @@ export default class User extends HTMLElement {
         username.textContent = "Axelito"
 
         const icon = this.ownerDocument.createElement("img");
-        icon.setAttribute("src","../dist/image/iconProfile.jpeg")
+        icon.setAttribute("src", "../dist/image/iconProfile.jpeg")
         // icon.setAttribute("src",`${this.thumbnail}`)
-        icon.textContent=("Profile");
+        icon.textContent = ("Profile");
 
         user.appendChild(icon)
         user.appendChild(username)

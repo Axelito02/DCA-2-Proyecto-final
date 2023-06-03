@@ -6,17 +6,17 @@ import { loadCss } from "../../utils/styles";
 import style from "./style.css";
 
 export default class Register extends HTMLElement {
-    constructor(){
+    constructor() {
         super();
-        this.attachShadow({mode: "open"})
+        this.attachShadow({ mode: "open" })
     }
 
     connectedCallback() {
         this.render();
         //this.setupFormSubmitHandler();
-      }
-    
-     //Prueba guardar info del usuario inicio
+    }
+
+    //Prueba guardar info del usuario inicio
 
     //   setupFormSubmitHandler() {
     //     const form = this.shadowRoot?.querySelector("comp-form");
@@ -26,15 +26,15 @@ export default class Register extends HTMLElement {
     //       this.saveUserDataToLocalStorage(userData);
     //     });
     //   }
-    
+
     //   saveUserDataToLocalStorage(userData: { username: string; password: string }) {
     //     localStorage.setItem("userData", JSON.stringify(userData));
     //   }
 
     //Prueba guardar info del usuario final
 
-    render(){
-        if(this.shadowRoot) this.shadowRoot.innerHTML = ``;
+    render() {
+        if (this.shadowRoot) this.shadowRoot.innerHTML = ``;
         loadCss(this, style)
 
         const container = this.ownerDocument.createElement("main");
@@ -43,63 +43,63 @@ export default class Register extends HTMLElement {
 
         const left = this.ownerDocument.createElement("section");
         left.id = "space";
-        
+
         const right = this.ownerDocument.createElement("section");
         right.id = "login_form";
 
-            const ContainerFormLogin = this.ownerDocument.createElement("div");
-            ContainerFormLogin.classList.add("ContainerFormLogin");
+        const ContainerFormLogin = this.ownerDocument.createElement("div");
+        ContainerFormLogin.classList.add("ContainerFormLogin");
 
-                const ContainerTitle = this.ownerDocument.createElement("div");
-                ContainerTitle.classList.add("title");
+        const ContainerTitle = this.ownerDocument.createElement("div");
+        ContainerTitle.classList.add("title");
 
-                    const Title = this.ownerDocument.createElement("h1");
-                    Title.textContent = "Register";
-                    Title.classList.add("TitleLogin");
-            
-                const form = this.ownerDocument.createElement("div");
-                form.classList.add("forms");
+        const Title = this.ownerDocument.createElement("h1");
+        Title.textContent = "Register";
+        Title.classList.add("TitleLogin");
 
-                    const ContainerInputs = this.ownerDocument.createElement("div");
-                    ContainerInputs.classList.add("ContainerInputs");
+        const form = this.ownerDocument.createElement("div");
+        form.classList.add("forms");
 
-                        const appForm = this.ownerDocument.createElement("comp-form");
-                
-                    const Loginbtn = this.ownerDocument.createElement("button");
-                    Loginbtn.classList.add("LoginBtn")
-                    Loginbtn.textContent = "Register"
-                    Addevent(Loginbtn, () => {
-                        dispatch(navigate(Screens.DASHBOARD));
-                    })
+        const ContainerInputs = this.ownerDocument.createElement("div");
+        ContainerInputs.classList.add("ContainerInputs");
 
-                    const Text = this.ownerDocument.createElement("p");
-                    Text.classList.add("RecoveryPassword")
-                    Text.textContent = "Have you forgotten your password??"
+        const appForm = this.ownerDocument.createElement("comp-form");
 
-            const textContent2 = this.ownerDocument.createElement("div");
-            textContent2.classList.add("textContent");
+        const Loginbtn = this.ownerDocument.createElement("button");
+        Loginbtn.classList.add("LoginBtn")
+        Loginbtn.textContent = "Register"
+        Addevent(Loginbtn, () => {
+            dispatch(navigate(Screens.DASHBOARD));
+        })
 
-                const Text2 = this.ownerDocument.createElement("p");
-                Text2.textContent = "Or sign in with";
+        const Text = this.ownerDocument.createElement("p");
+        Text.classList.add("RecoveryPassword")
+        Text.textContent = "Have you forgotten your password??"
 
-            const ContainerSocial = this.ownerDocument.createElement("section");
-            ContainerSocial.classList.add("ContainerSocial");
+        const textContent2 = this.ownerDocument.createElement("div");
+        textContent2.classList.add("textContent");
 
-                const appSocial = this.ownerDocument.createElement("comp-social")
-                ContainerSocial.appendChild(appSocial)
+        const Text2 = this.ownerDocument.createElement("p");
+        Text2.textContent = "Or sign in with";
 
-            const textContent3 = this.ownerDocument.createElement("div");
-            textContent3.classList.add("textContent");
+        const ContainerSocial = this.ownerDocument.createElement("section");
+        ContainerSocial.classList.add("ContainerSocial");
 
-                const Text3 = this.ownerDocument.createElement("p");
-                Text3.textContent = "Do you have an account?";
-                
-                const HipervinculoRegister = this.ownerDocument.createElement("a")
-                HipervinculoRegister.textContent = "Login"
-                Addevent(HipervinculoRegister, () => {
-                    dispatch(navigate(Screens.LOGIN))
-                })
-        
+        const appSocial = this.ownerDocument.createElement("comp-social")
+        ContainerSocial.appendChild(appSocial)
+
+        const textContent3 = this.ownerDocument.createElement("div");
+        textContent3.classList.add("textContent");
+
+        const Text3 = this.ownerDocument.createElement("p");
+        Text3.textContent = "Do you have an account?";
+
+        const HipervinculoRegister = this.ownerDocument.createElement("a")
+        HipervinculoRegister.textContent = "Login"
+        Addevent(HipervinculoRegister, () => {
+            dispatch(navigate(Screens.LOGIN))
+        })
+
         container.appendChild(left);
         container.appendChild(right);
 

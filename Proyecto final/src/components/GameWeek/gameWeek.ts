@@ -1,33 +1,33 @@
 import style from "./style.css"
 import { loadCss } from "../../utils/styles";
-import { AttrGameWeek } from "../../utils/interfaces";
+import { AttrGameWeek } from "../../types/interfaces";
 
 export default class GameWeek extends HTMLElement {
     name: string = "";
-    thumbnail: string= "";
-    description: string= "";
-    alt: string= "";
+    thumbnail: string = "";
+    description: string = "";
+    alt: string = "";
 
-    static get observedAttributes(){
-        return["name", "thumbnail", "description", "alt"]
+    static get observedAttributes() {
+        return ["name", "thumbnail", "description", "alt"]
     }
 
-    attributeChangedCallback(propName: keyof AttrGameWeek, _:unknown, newValue:string){
+    attributeChangedCallback(propName: keyof AttrGameWeek, _: unknown, newValue: string) {
         this[propName] = newValue;
         this.render();
     }
 
-    constructor(){
+    constructor() {
         super();
-        this.attachShadow({mode: "open"})
+        this.attachShadow({ mode: "open" })
     }
 
-    connectedCallback(){   
+    connectedCallback() {
         this.render();
     }
 
-    render(){
-        if(this.shadowRoot) this.shadowRoot.innerHTML = ``
+    render() {
+        if (this.shadowRoot) this.shadowRoot.innerHTML = ``
         loadCss(this, style)
 
         const container = this.ownerDocument.createElement("div");
@@ -51,35 +51,35 @@ export default class GameWeek extends HTMLElement {
 
         const contImg = this.ownerDocument.createElement("div");
         contImg.classList.add("contImg")
-        
+
         const text = this.ownerDocument.createElement("h1");
-        text.textContent=("Game The Week")
-        
+        text.textContent = ("Game The Week")
+
         const nameGame = this.ownerDocument.createElement("h2");
         nameGame.classList.add("name")
-        nameGame.textContent=(`Terraria`)
-        
+        nameGame.textContent = (`Terraria`)
+
         const text2 = this.ownerDocument.createElement("p");
         text2.classList.add("description")
-        text2.textContent=(`Terraria es un videojuego de acción, aventura y de sandbox producido de forma independiente por el estudio Re-Logic. Tiene características tales como la exploración, la artesanía, la construcción de estructuras y el combate.`)
+        text2.textContent = (`Terraria es un videojuego de acción, aventura y de sandbox producido de forma independiente por el estudio Re-Logic. Tiene características tales como la exploración, la artesanía, la construcción de estructuras y el combate.`)
 
         const img = this.ownerDocument.createElement("img");
-        img.setAttribute("src",`../dist/image/Terraria.jpg`);
-        img.setAttribute("alt",`${this.alt}`);
+        img.setAttribute("src", `../dist/image/Terraria.jpg`);
+        img.setAttribute("alt", `${this.alt}`);
 
         const steam = this.ownerDocument.createElement("img");
         const HipervinculoSteam = this.ownerDocument.createElement("a");
         HipervinculoSteam.href = "https://store.steampowered.com/";
         HipervinculoSteam.target = "_blank";
-        steam.setAttribute("src",`../dist/image/Steam-logo.png`);
-        steam.setAttribute("alt","logo Steam");
+        steam.setAttribute("src", `../dist/image/Steam-logo.png`);
+        steam.setAttribute("alt", "logo Steam");
 
         const epic = this.ownerDocument.createElement("img");
         const HipervinculoEpic = this.ownerDocument.createElement("a");
         HipervinculoEpic.href = "https://store.epicgames.com/es-ES/";
         HipervinculoEpic.target = "_blank";
-        epic.setAttribute("src",`../dist/image/Epic_Games_logo.png`);
-        epic.setAttribute("alt","logo Epic Games");
+        epic.setAttribute("src", `../dist/image/Epic_Games_logo.png`);
+        epic.setAttribute("alt", "logo Epic Games");
 
         container.appendChild(card)
         card.appendChild(title)
@@ -97,7 +97,7 @@ export default class GameWeek extends HTMLElement {
         title.appendChild(text)
         title2.appendChild(nameGame)
         contImg.appendChild(img)
-        
+
     }
 }
 

@@ -1,9 +1,16 @@
-import { NavigationActions, Screens } from "../types/store";
-import { NavigateAction } from "../utils/interfaces";
+import { Content, NavigateActions, ScreenActions, Screens } from "../types/store";
+import { NavigateAction, ScreenNavigateAction } from "../types/interfaces";
 
-export const navigate = (screen: Screens): NavigateAction => {
+export const navigate = (screen: Screens): ScreenNavigateAction => {
   return {
-    action: NavigationActions.NAVIGATE,
+    action: ScreenActions.NAVIGATE,
     payload: screen,
+  };
+};
+
+export const navNavigate = (content: Content): NavigateAction => {
+  return {
+    action: NavigateActions.CONTENT,
+    payload: content,
   };
 };

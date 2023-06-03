@@ -4,24 +4,24 @@ import { Addevent } from "../../../utils/addevents";
 // import { ChagedAccount, ChagedFavorites, ChagedFriends, ChagedNotification, ChagedSettings } from "../../../store/actions";
 import { dispatch } from "../../../store/index";
 import data from "../../mygames/games/data";
-import { AttrGames } from "../../../utils/interfaces";
+import { AttrGames } from "../../../types/interfaces";
 import { setAttributes } from "../../../utils/attributtes";
 // import { contentState } from "./contentState";
 
 export default class ContenProfile extends HTMLElement {
-    constructor(){
+    constructor() {
         super();
-        this.attachShadow({mode: "open"})
+        this.attachShadow({ mode: "open" })
     }
 
-    connectedCallback(){
+    connectedCallback() {
         this.render();
     }
 
-    render(){
-        if(this.shadowRoot) this.shadowRoot.innerHTML = ``;
+    render() {
+        if (this.shadowRoot) this.shadowRoot.innerHTML = ``;
         loadCss(this, style)
-        
+
         const Container = this.ownerDocument.createElement("section");
         Container.id = "mainContainer";
         this.shadowRoot?.appendChild(Container);
@@ -55,7 +55,7 @@ export default class ContenProfile extends HTMLElement {
             // dispatch(ChagedFavorites())
             console.log("Favorites");
         })
-        
+
         const btnNotification = this.ownerDocument.createElement("button");
         btnNotification.classList.add("btnNavigation");
         btnNotification.classList.add("cuatro");
@@ -64,7 +64,7 @@ export default class ContenProfile extends HTMLElement {
             // dispatch(ChagedNotification())
             console.log("Notifications");
         })
-        
+
         const btnSettings = this.ownerDocument.createElement("button");
         btnSettings.classList.add("btnNavigation");
         btnSettings.classList.add("cinco");
@@ -76,31 +76,31 @@ export default class ContenProfile extends HTMLElement {
 
         const ContainerContent = this.ownerDocument.createElement("section");
         ContainerContent.id = "contentContainer";
-//tmb esto es de prueba
+        //tmb esto es de prueba
         const row = this.ownerDocument.createElement("main");
         row.setAttribute("id", "content");
-//aquí acaba la prueba
+        //aquí acaba la prueba
         const titleCommunities = this.ownerDocument.createElement("p");
-        titleCommunities.textContent = "Communities"; 
+        titleCommunities.textContent = "Communities";
 
         const ContainerContentFavorites = this.ownerDocument.createElement("section");
         ContainerContentFavorites.id = "contentFavorites";
 
-        data.forEach(({thumbnail}) => {
+        data.forEach(({ thumbnail }) => {
             const appFavorites = this.ownerDocument.createElement("comp-favorites");
             const gamesProps: AttrGames = {
                 thumbnail: `${thumbnail}`
             }
-            setAttributes<AttrGames> (gamesProps, appFavorites);
+            setAttributes<AttrGames>(gamesProps, appFavorites);
             ContainerContentFavorites.appendChild(appFavorites)
         })
-        
+
         const appFriends = this.ownerDocument.createElement("comp-friends");
         const appNotification = this.ownerDocument.createElement("comp-notification");
         const appSettings = this.ownerDocument.createElement("comp-settings");
         const appAccount = this.ownerDocument.createElement("comp-account");
-        
-//pruebaaaaaaaaa inicio
+
+        //pruebaaaaaaaaa inicio
         // if(contentState.contentAccount == "compA") {
         //     Container.appendChild(ContainerContent);
         //     Container.appendChild(row);
@@ -111,14 +111,14 @@ export default class ContenProfile extends HTMLElement {
         //     text.innerHTML = "";
         //     appGame.style.display = "none";
         //     bottom.appendChild(appPost);
-            
+
         // } else if (contentState.contentProfile == "compProfile"){
         //     text.style.display = "none";
         //     row.style.display = "none";
         //     content.style.display = "none";
         //     bottom.style.display = "none";
         //     Container.appendChild(appProfile)
-            
+
         // } else if (contentState.contentLoginMobile == "compLoginMobile"){
         //     text.style.display = "none";
         //     row.style.display = "none";
@@ -135,12 +135,12 @@ export default class ContenProfile extends HTMLElement {
         //     content.id ="overflowhide";
         //     ContainerRecentlyGames.id = "recentlContainer";
         //     ContainerSearchGames.appendChild(appSearchGames);
-//pruebaaaaaaaa final
+        //pruebaaaaaaaa final
 
         Container.appendChild(ContainerNavigation);
         Container.appendChild(ContainerContent);
 
-        
+
         ContainerNavigation.appendChild(btnAccount);
         ContainerNavigation.appendChild(btnFriends);
         ContainerNavigation.appendChild(btnFavorites);

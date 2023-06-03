@@ -1,4 +1,4 @@
-import { AttrGames } from "../../utils/interfaces";
+import { AttrGames } from "../../types/interfaces";
 import { loadCss } from "../../utils/styles";
 import style from "./style.css"
 import data from "../mygames/games/data";
@@ -6,26 +6,26 @@ import data from "../mygames/games/data";
 export default class Favorites extends HTMLElement {
     thumbnail: string = "";
 
-    static get observedAttributes(){
-        return["thumbnail"]
+    static get observedAttributes() {
+        return ["thumbnail"]
     }
 
-    attributeChangedCallback(propName: keyof AttrGames, _:unknown, newValue:string){
+    attributeChangedCallback(propName: keyof AttrGames, _: unknown, newValue: string) {
         this[propName] = newValue;
         this.render();
     }
 
-    constructor(){
+    constructor() {
         super();
-        this.attachShadow({mode: "open"})
+        this.attachShadow({ mode: "open" })
     }
 
-    connectedCallback(){
+    connectedCallback() {
         this.render();
     }
 
-    render(){
-        if(this.shadowRoot) this.shadowRoot.innerHTML = ``;
+    render() {
+        if (this.shadowRoot) this.shadowRoot.innerHTML = ``;
         loadCss(this, style)
 
         const CardGames = this.ownerDocument.createElement("section");
@@ -35,7 +35,7 @@ export default class Favorites extends HTMLElement {
         thumbnail.src = this.thumbnail;
 
         this.shadowRoot?.appendChild(CardGames);
-        
+
         CardGames.appendChild(thumbnail)
 
     }

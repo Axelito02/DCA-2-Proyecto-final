@@ -1,9 +1,13 @@
-import { Screens } from "../types/store";
-import { NavigationActions } from "../types/store";
+import { ScreenActions, Content, NavigateActions, Screens } from "./store";
+
+export interface ScreenNavigateAction {
+    action: ScreenActions.NAVIGATE;
+    payload: Screens;
+}
 
 export interface NavigateAction {
-    action: NavigationActions.NAVIGATE;
-    payload: Screens;
+    action: NavigateActions.CONTENT;
+    payload: Content;
 }
 
 export interface AttrCards {
@@ -51,10 +55,6 @@ export interface AttrComment {
 
 export interface AttrGames {
     thumbnail: string;
-}
-
-export interface Action {
-    type: string,
 }
 
 export interface Friends {

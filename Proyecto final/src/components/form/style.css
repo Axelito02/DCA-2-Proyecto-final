@@ -1,16 +1,21 @@
-
-
-.ContainerInputs{
+.ContainerInputs {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 0.5rem;   
+    gap: 0.5rem;
 }
 
-input{
+input {
     width: 100%;
     padding: 1rem;
     border-radius: 0.5rem;
     border: none;
+}
+
+@media (max-width: 900px) {
+
+    input {
+        width: 120%;
+    }
 }
