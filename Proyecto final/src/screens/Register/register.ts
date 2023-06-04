@@ -63,14 +63,7 @@ export default class Register extends HTMLElement {
         const ContainerInputs = this.ownerDocument.createElement("div");
         ContainerInputs.classList.add("ContainerInputs");
 
-        const appForm = this.ownerDocument.createElement("comp-form");
-
-        const Loginbtn = this.ownerDocument.createElement("button");
-        Loginbtn.classList.add("LoginBtn")
-        Loginbtn.textContent = "Register"
-        Addevent(Loginbtn, () => {
-            dispatch(navigate(Screens.DASHBOARD));
-        })
+        const appForm = this.ownerDocument.createElement("comp-formr");
 
         const Text = this.ownerDocument.createElement("p");
         Text.classList.add("RecoveryPassword")
@@ -113,7 +106,6 @@ export default class Register extends HTMLElement {
         ContainerFormLogin.appendChild(textContent3);
         form.appendChild(ContainerInputs);
         ContainerInputs.appendChild(appForm);
-        ContainerInputs.appendChild(Loginbtn);
         ContainerInputs.appendChild(Text);
         textContent2.appendChild(Text2);
         ContainerSocial.appendChild(appSocial)

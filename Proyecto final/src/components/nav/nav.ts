@@ -2,8 +2,9 @@ import style from "./style.css"
 import { loadCss } from "../../utils/styles";
 import { Addevent } from "../../utils/addevents";
 import { dispatch } from "../../store/index";
-import { navNavigate } from "../../store/actions";
+import { navNavigate, navigate } from "../../store/actions";
 import { Content } from "../../types/store";
+import { Screens } from "../../types/store";
 
 export default class Nav extends HTMLElement {
     constructor() {
@@ -51,7 +52,7 @@ export default class Nav extends HTMLElement {
         col3.classList.add("tres");
         col3.textContent = ("Login")
         Addevent(col3, () => {
-            dispatch(navNavigate(Content.UPDATE_LOGINMOBILE))
+            dispatch(navigate(Screens.LOGIN))
             console.log("login");
         })
 

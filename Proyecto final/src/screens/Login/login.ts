@@ -4,6 +4,7 @@ import { Screens } from "../../types/store";
 import { Addevent } from "../../utils/addevents";
 import { loadCss } from "../../utils/styles";
 import style from "./style.css"
+import userInputs  from "../../components/form/form";
 
 export default class Login extends HTMLElement {
     private imageSrc = '../dist/image/Terraria.jpg';
@@ -48,12 +49,7 @@ export default class Login extends HTMLElement {
 
         const appForm = this.ownerDocument.createElement("comp-form");
 
-        const Loginbtn = this.ownerDocument.createElement("button");
-        Loginbtn.classList.add("LoginBtn")
-        Loginbtn.textContent = "Login"
-        Addevent(Loginbtn, () => {
-            dispatch(navigate(Screens.DASHBOARD));
-        })
+        
 
         const Text = this.ownerDocument.createElement("p");
         Text.classList.add("RecoveryPassword")
@@ -95,7 +91,6 @@ export default class Login extends HTMLElement {
         ContainerFormLogin.appendChild(textContent3);
         form.appendChild(ContainerInputs);
         ContainerInputs.appendChild(appForm);
-        ContainerInputs.appendChild(Loginbtn);
         ContainerInputs.appendChild(Text);
         textContent2.appendChild(Text2);
         ContainerSocial.appendChild(appSocial)

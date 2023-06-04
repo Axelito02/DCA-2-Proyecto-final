@@ -14,7 +14,7 @@ const userInputs: Usuario={
     inptuPassword: "",
 };
 
-export default class Form extends HTMLElement {
+export default class FormR extends HTMLElement {
     constructor(){
         super();
         this.attachShadow({mode: "open"});
@@ -56,6 +56,15 @@ export default class Form extends HTMLElement {
             console.log (e.target.value)
             userInputs.inptuUsername = e.target.value;
         })
+
+        const inptuEmail = this.ownerDocument.createElement("input");
+        inptuEmail.placeholder = "Enter email";
+        inptuEmail.classList.add("username");
+        inptuEmail.type = "text";
+        inptuEmail.addEventListener("change", (e: any)=>{
+            console.log (e.target.value)
+            userInputs.inptuEmail = e.target.value;
+        })
         
         const inptuPassword = this.ownerDocument.createElement("input");
         inptuPassword.placeholder = "Enter password";
@@ -77,9 +86,10 @@ export default class Form extends HTMLElement {
         });
 
         ContainerInputs.appendChild(inptuUsername);
+        ContainerInputs.appendChild(inptuEmail);
         ContainerInputs.appendChild(inptuPassword);
         ContainerInputs.appendChild(Loginbtn);
     }
 }
 
-customElements.define('comp-form', Form);
+customElements.define('comp-formr', FormR);

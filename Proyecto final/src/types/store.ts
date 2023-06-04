@@ -1,4 +1,5 @@
 import { NavigateAction, ScreenNavigateAction } from "./interfaces";
+import { Usuario } from "./usuario";
 export type Observer = { render: () => void } & HTMLElement;
 
 export enum Screens {
@@ -23,6 +24,7 @@ export enum Content {
 export type AppState = {
   screen: Screens;
   content: Content;
+  usuarios: Usuario[];
 };
 
 export enum ScreenActions {
@@ -33,4 +35,12 @@ export enum NavigateActions {
   "CONTENT" = "CONTENT",
 }
 
-export type Actions = ScreenNavigateAction | NavigateAction;
+export enum SaveInfoUser{
+  "SAVE_INFO_USER" = "SAVE_INFO_USER"
+}
+export interface SaveInfoAction {
+  action: SaveInfoUser.SAVE_INFO_USER;
+  payload: Usuario;
+}
+
+export type Actions = ScreenNavigateAction | NavigateAction | SaveInfoAction;

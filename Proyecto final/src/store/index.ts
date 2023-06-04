@@ -4,7 +4,8 @@ import { reducer } from "./reducer";
 
 const emptyState: AppState = {
   screen: Screens.LOGIN,
-  content: Content.UPDATE_GAMES
+  content: Content.UPDATE_GAMES,
+  usuarios: [],
 };
 
 export let appState = Storage.get<AppState>({

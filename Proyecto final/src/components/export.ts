@@ -18,6 +18,7 @@ export { default as UserInfo } from "./profile/UserInfo/userInfo"
 export { default as RecentlyGames } from "./profile/gamesRecently/gamesRecently"
 export { default as ContenProfile } from "./profile/content/content"
 export { default as Form } from "./form/form"
+export { default as FormR } from "./form/formR"
 export { default as LoginMobile } from "./login_(mobile)/login"
 export { default as RecentlyPlay } from "./mygames/recentlyplayed/recentlyplayed";
 export { default as Games } from "./mygames/games/games";
