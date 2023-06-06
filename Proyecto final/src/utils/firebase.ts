@@ -52,4 +52,4 @@ const checkUsuarioInDB = async (usuario: Usuario) => {
   }
 };
 
-export { saveUsuarioInDB, checkUsuarioInDB };
+export { saveUsuarioInDB, checkUsuarioInDB, db };

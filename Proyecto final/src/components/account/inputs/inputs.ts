@@ -1,5 +1,8 @@
 import { loadCss } from "../../../utils/styles";
 import style from "./style.css";
+import { getDocs, query, collection, where } from "firebase/firestore";
+import { db } from "../../../utils/firebase"; // Asegúrate de importar la instancia de Firebase Firestore que estás utilizando
+
 
 export default class Inputs extends HTMLElement {
     constructor() {
@@ -8,9 +11,9 @@ export default class Inputs extends HTMLElement {
     }
 
     connectedCallback() {
-        this.render();
-    }
-
+        this.render();  
+        }
+  
     render() {
         if (this.shadowRoot) this.shadowRoot.innerHTML = ``;
         loadCss(this, style);
