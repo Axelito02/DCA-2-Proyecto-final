@@ -6,7 +6,8 @@ import { dispatch } from "../../store";
 import { navigate, saveInputs } from "../../store/actions";
 import { Addevent } from "../../utils/addevents";
 import { Usuario } from "../../types/usuario";
-import firebase from "../../utils/firebase";
+import { checkUsuarioInDB, saveUsuarioInDB } from "../../utils/firebase";
+
 
 const userInputs: Usuario = {
     inptuUsername: "",
@@ -23,22 +24,7 @@ export default class Form extends HTMLElement {
 
     connectedCallback() {
         this.render();
-        //this.setupFormSubmitHandler();
     }
-
-    //Prueba guardar info del usuario inicio
-    //   setupFormSubmitHandler() {
-    //     const formElement = this.shadowRoot?.querySelector("form");
-    //     formElement?.addEventListener("submit", (event) => {
-    //       event.preventDefault();
-    //       const username = (this.shadowRoot?.querySelector("#username") as HTMLInputElement)?.value;
-    //       const password = (this.shadowRoot?.querySelector("#password") as HTMLInputElement)?.value;
-    //       const userData = { username, password };
-    //       this.dispatchEvent(new CustomEvent("formSubmit", { detail: userData }));
-    //     });
-    //   }
-
-    //Prueba guardar info del usuario final
 
     render() {
         if (this.shadowRoot) this.shadowRoot.innerHTML = ``;
@@ -71,10 +57,14 @@ export default class Form extends HTMLElement {
         Loginbtn.textContent = "Enter"
         Addevent(Loginbtn, async () => {
             console.log(userInputs);
-            await firebase.saveUsuarioInDB(userInputs);
-            dispatch(navigate(Screens.DASHBOARD));
-            dispatch(saveInputs(userInputs));
-        })
+            const exists = await checkUsuarioInDB(userInputs);
+            if (exists) {
+                dispatch(navigate(Screens.DASHBOARD));
+                dispatch(saveInputs(userInputs));
+            } else {
+                alert("El usuario no existe en la base de datos");
+            }
+            });
 
         ContainerInputs.appendChild(inptuUsername);
         ContainerInputs.appendChild(inptuPassword);

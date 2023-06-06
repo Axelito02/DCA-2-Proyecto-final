@@ -13,20 +13,23 @@ const saveUsuarioInDB = async (usuario: Usuario) => {
       alert("Debes proporcionar un correo electrónico válido");
       return;
     }
+
     // Verificar si existe
-    const usuarioQuery = query(collection(db, "usuarios"),
+    const usuarioQuery = query(
+      collection(db, "usuarios"),
       where("inptuEmail", "==", usuario.inptuEmail),
-      where("inptuPassword", "==", usuario.inptuPassword));
+      where("inptuPassword", "==", usuario.inptuPassword)
+    );
     const querySnapshot = await getDocs(usuarioQuery);
 
     if (!querySnapshot.empty) {
-      alert("El usuario ya existe; iniciando sesión")
+      alert("El usuario ya existe; iniciando sesión");
       console.log("El usuario ya existe en Firestore");
       return;
     }
 
     await addDoc(collection(db, "usuarios"), usuario);
-    alert("Usuario registrado correctamente")
+    alert("Usuario registrado correctamente");
     console.log("Usuario guardado exitosamente en Firestore");
   } catch (e) {
     console.error("Error adding document: ", e);
@@ -77,4 +80,4 @@ const getPostFromDB = async (): Promise<AttrComment[]> => {
 
 
 
-export default { saveUsuarioInDB, savePostInDB, getPostFromDB, checkUsuarioInDB, db };
+export { saveUsuarioInDB, savePostInDB, getPostFromDB, checkUsuarioInDB, db };

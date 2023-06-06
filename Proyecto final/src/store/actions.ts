@@ -1,7 +1,7 @@
 import { Actions, ScreenActions, Screens, SaveInfoUser, PostActions } from "../types/store";
 import { AttrComment, ScreenNavigateAction } from "../types/interfaces";
 import { Usuario } from "../types/usuario";
-import firebase from "../utils/firebase";
+import {savePostInDB, getPostFromDB} from "../utils/firebase";
 
 export const navigate = (screen: Screens): ScreenNavigateAction => {
   return {
@@ -20,7 +20,7 @@ export const saveInputs = (
 };
 
 export const savePost = async (post: AttrComment): Promise<Actions> => {
-  await firebase.savePostInDB(post);
+  await savePostInDB(post);
   return {
     action: PostActions.SAVE_POST,
     payload: post,
@@ -28,9 +28,14 @@ export const savePost = async (post: AttrComment): Promise<Actions> => {
 }
 
 export const getPost = async (): Promise<Actions> => {
-  const DataPost = await firebase.getPostFromDB();
+  const DataPost = await getPostFromDB();
   return {
     action: PostActions.GET_POST,
     payload: DataPost,
   }
 } 
+
+export const validateEmail = (email: string): boolean => {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+};

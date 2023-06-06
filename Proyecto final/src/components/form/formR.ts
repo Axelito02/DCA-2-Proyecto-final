@@ -6,7 +6,8 @@ import { dispatch } from "../../store";
 import { navigate, saveInputs } from "../../store/actions";
 import { Addevent } from "../../utils/addevents";
 import { Usuario } from "../../types/usuario";
-import firebase from "../../utils/firebase";
+import { checkUsuarioInDB, saveUsuarioInDB } from "../../utils/firebase";
+import { validateEmail } from "../../store/actions";
 
 const userInputs: Usuario = {
     inptuUsername: "",
@@ -23,22 +24,7 @@ export default class FormR extends HTMLElement {
 
     connectedCallback() {
         this.render();
-        //this.setupFormSubmitHandler();
     }
-
-    //Prueba guardar info del usuario inicio
-    //   setupFormSubmitHandler() {
-    //     const formElement = this.shadowRoot?.querySelector("form");
-    //     formElement?.addEventListener("submit", (event) => {
-    //       event.preventDefault();
-    //       const username = (this.shadowRoot?.querySelector("#username") as HTMLInputElement)?.value;
-    //       const password = (this.shadowRoot?.querySelector("#password") as HTMLInputElement)?.value;
-    //       const userData = { username, password };
-    //       this.dispatchEvent(new CustomEvent("formSubmit", { detail: userData }));
-    //     });
-    //   }
-
-    //Prueba guardar info del usuario final
 
     render() {
         if (this.shadowRoot) this.shadowRoot.innerHTML = ``;
@@ -61,6 +47,7 @@ export default class FormR extends HTMLElement {
         inptuEmail.placeholder = "Enter email";
         inptuEmail.classList.add("username");
         inptuEmail.type = "text";
+        
         inptuEmail.addEventListener("change", (e: any) => {
             console.log(e.target.value)
             userInputs.inptuEmail = e.target.value;
@@ -79,11 +66,16 @@ export default class FormR extends HTMLElement {
         Loginbtn.classList.add("LoginBtn")
         Loginbtn.textContent = "Enter"
         Loginbtn.addEventListener("click", async () => {
+            if (!validateEmail(userInputs.inptuEmail)) {
+              alert("Por favor, ingresa un correo electrónico válido.");
+              return;
+            }
+          
             console.log(userInputs);
-            await firebase.saveUsuarioInDB(userInputs);
+            await saveUsuarioInDB(userInputs);
             dispatch(navigate(Screens.DASHBOARD));
             dispatch(saveInputs(userInputs));
-        });
+          });
 
         ContainerInputs.appendChild(inptuUsername);
         ContainerInputs.appendChild(inptuEmail);
