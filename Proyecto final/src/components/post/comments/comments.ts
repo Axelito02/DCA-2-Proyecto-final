@@ -34,7 +34,6 @@ export default class Comments extends HTMLElement {
 
             const textpost = this.ownerDocument.createElement("p")
             post.appendChild(textpost)
-
             textpost.textContent = comt.comment
         })
     }

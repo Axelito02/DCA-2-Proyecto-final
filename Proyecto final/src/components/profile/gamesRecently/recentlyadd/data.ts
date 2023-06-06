@@ -1,6 +1,6 @@
 export default [
     {
-        thumbnail: "https://www.minecraft.net/content/dam/games/minecraft/key-art/Games_Subnav_Minecraft-300x465.jpg",
+        thumbnail: "https://image.api.playstation.com/vulcan/img/cfn/11307uYG0CXzRuA9aryByTHYrQLFz-HVQ3VVl7aAysxK15HMpqjkAIcC_R5vdfZt52hAXQNHoYhSuoSq_46_MT_tDBcLu49I.png",
     },
     {
         thumbnail: "https://i.ibb.co/vsQT4KY/Terraria.jpg",
@@ -12,7 +12,7 @@ export default [
         thumbnail: "https://upload.wikimedia.org/wikipedia/en/thumb/1/13/Paladins_%28video_game%29.jpg/220px-Paladins_%28video_game%29.jpg",
     },
     {
-        thumbnail: "https://www.minecraft.net/content/dam/games/minecraft/key-art/Games_Subnav_Minecraft-300x465.jpg",
+        thumbnail: "https://image.api.playstation.com/vulcan/img/cfn/11307uYG0CXzRuA9aryByTHYrQLFz-HVQ3VVl7aAysxK15HMpqjkAIcC_R5vdfZt52hAXQNHoYhSuoSq_46_MT_tDBcLu49I.png",
     },
     {
         thumbnail: "https://i.ibb.co/vsQT4KY/Terraria.jpg",

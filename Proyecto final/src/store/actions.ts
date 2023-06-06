@@ -19,12 +19,15 @@ export const saveInputs = (
   };
 };
 
-export const savePost = async (post: AttrComment): Promise<Actions> => {
-  await savePostInDB(post);
+export const savePost = async (post: AttrComment): Promise<Actions | null> => {
+  const shouldSave = await savePostInDB(post);
+  if (shouldSave) {
+    return null;
+  }
   return {
     action: PostActions.SAVE_POST,
     payload: post,
-  }
+  };
 }
 
 export const getPost = async (): Promise<Actions> => {

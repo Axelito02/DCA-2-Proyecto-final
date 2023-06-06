@@ -14,7 +14,7 @@ export default [
     {
         name: "Rain World",
         alt: "Imagen de Rain World",
-        thumbnail: "https://m.media-amazon.com/images/M/MV5BODY5NzY3ZTMtOGE2Mi00M2UwLTg2MzQtNTU1ODE5YmU4OWZkXkEyXkFqcGdeQXVyNjA3NjA5ODg@._V1_FMjpg_UX1000_.jpg",
+        thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Rain_World_logo.jpg/800px-Rain_World_logo.jpg",
         description: "El mundo que te rodea está lleno de peligros y debes enfrentarlo solo. Separado de tu familia en una inundación devastadora, deberás encontrar comida y refugio entre terribles aguaceros torrenciales que amenazan con ahogar toda la vida.",
     },
     {

@@ -11,12 +11,24 @@
     padding: 0;
     padding-bottom: 18px;
     justify-content: flex-start;
+    font-weight: bold;
 }
 
 .content {
     display: flex;
-    padding: 0;
-    padding-bottom: 18px;
+    padding: 1rem;
+    margin: 0.3rem 0 ;
+    border: solid 0.2px white;
+    border-radius: 6px;
+    background-color: #41446b;
+    transition: transform 0.3s ease;
+}
+
+.content:hover {
+    transform: translateY(-6px);
+    cursor: pointer;
+    filter: brightness(110%);
+    background-color: #41446b;
 }
 
 p {

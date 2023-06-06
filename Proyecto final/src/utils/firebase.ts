@@ -9,10 +9,6 @@ const db = getFirestore(app);
 
 const saveUsuarioInDB = async (usuario: Usuario) => {
   try {
-    if (usuario.inptuEmail === "") {
-      alert("Debes proporcionar un correo electrónico válido");
-      return;
-    }
 
     // Verificar si existe
     const usuarioQuery = query(
@@ -36,12 +32,19 @@ const saveUsuarioInDB = async (usuario: Usuario) => {
   }
 };
 
+//guardar post
 const savePostInDB = async (post: AttrComment) => {
+
   try {
+    if (post.comment === "") {
+      return true;
+    }
     await addDoc(collection(db, "post"), post);
     console.log("Document written in Firestore");
+    return false;
   } catch (e) {
     console.error("Error adding document: ", e);
+    return false;
   }
 };
 

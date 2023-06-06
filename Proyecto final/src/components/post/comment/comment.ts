@@ -37,11 +37,18 @@ export default class Comment extends HTMLElement {
 
         const btn = this.ownerDocument.createElement("button");
         btn.classList.add("btnSend");
-        btn.textContent = "Send"
+        btn.textContent = "Send";
         Addevent(btn, async () => {
-            console.log("envio el nuevo post");
-            dispatch(await savePost(newPost))
-        })
+        console.log("envio el nuevo post");
+        const result = await savePost(newPost);
+        if (result === null) {
+            alert("El comentario está vacío, escribe algo antes de envíar");
+            // Mostrar un mensaje de error al usuario
+        } else {
+            dispatch(result);
+            newPost.comment = "";
+        }
+        });
 
         contInput.appendChild(input);
         contInput.appendChild(btn);
