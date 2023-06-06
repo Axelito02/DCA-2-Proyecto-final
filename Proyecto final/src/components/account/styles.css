@@ -1,8 +1,9 @@
 @media (max-width: 900px) {
     * {
-      display: none; /* Oculta todo el contenido dentro de la clase "column" */
+        display: none;
+        /* Oculta todo el contenido dentro de la clase "column" */
     }
-  }
+}
 
 .ContainerLinkedTo {
     display: flex;
@@ -29,4 +30,9 @@ p {
     flex-direction: row;
     justify-content: center;
     gap: 40px;
+}
+
+.ContainerStatus {
+    display: flex;
+    flex-direction: column;
 }

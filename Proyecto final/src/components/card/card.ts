@@ -1,39 +1,39 @@
-import style from "./style.css"
-import { AttrCards } from "../../Types/Interfaces";
+import style from "./style.css";
+import { AttrCards } from "../../types/interfaces";
 import { loadCss } from "../../utils/styles";
 
 export default class Card extends HTMLElement {
     name: string = "";
-    thumbnail: string= "";
-    publisher: string= "";
-    releaseyear: string= "";
+    thumbnail: string = "";
+    publisher: string = "";
+    releaseyear: string = "";
 
-    static get observedAttributes(){
-        return["name", "thumbnail", "publisher", "releaseyear"]
+    static get observedAttributes() {
+        return ["name", "thumbnail", "publisher", "releaseyear"];
     }
 
-    attributeChangedCallback(propName: keyof AttrCards, _:unknown, newValue:string){
+    attributeChangedCallback(propName: keyof AttrCards, _: unknown, newValue: string) {
         this[propName] = newValue;
         this.render();
     }
 
-    constructor(){
+    constructor() {
         super();
-        this.attachShadow({mode: "open"})
+        this.attachShadow({ mode: "open" })
     }
 
-    connectedCallback(){
+    connectedCallback() {
         this.render();
     }
 
-    render(){
-        if(this.shadowRoot) this.shadowRoot.innerHTML = ``;
+    render() {
+        if (this.shadowRoot) this.shadowRoot.innerHTML = ``;
         loadCss(this, style);
-        
+
         const mainContainer = this.ownerDocument.createElement("div");
         mainContainer.setAttribute("id", "carousel-container");
         this.shadowRoot?.appendChild(mainContainer);
-        
+
         const app = this.ownerDocument.createElement("div");
         app.setAttribute("id", "app");
 
@@ -44,14 +44,14 @@ export default class Card extends HTMLElement {
         figure.classList.add("juego-card");
 
         const img = this.ownerDocument.createElement("img");
-        img.setAttribute("src",`${this.thumbnail}`);
-        
+        img.setAttribute("src", `${this.thumbnail}`);
+
         const text1 = this.ownerDocument.createElement("h2");
         text1.textContent = `${this.name}`
-        
+
         const text2 = this.ownerDocument.createElement("h2");
         text2.textContent = `${this.releaseyear}`
-        
+
         const text3 = this.ownerDocument.createElement("h3");
         text3.textContent = `${this.publisher}`
 

@@ -1,7 +1,7 @@
 {
-  "name": "taller2",
+  "name": "dca_scoffolding",
   "version": "1.0.0",
-  "description": "",
+  "description": "this is a base project",
   "main": "index.js",
   "scripts": {
     "start": "serve",
@@ -14,11 +14,11 @@
     "css-loader": "^6.7.3",
     "serve": "^14.2.0",
     "ts-loader": "^9.4.2",
-    "typescript": "^5.0.3",
-    "webpack": "^5.77.0",
+    "typescript": "^5.0.2",
+    "webpack": "^5.76.3",
     "webpack-cli": "^5.0.1"
   },
   "dependencies": {
-    "firebase": "^9.21.0"
+    "firebase": "^9.22.1"
   }
 }

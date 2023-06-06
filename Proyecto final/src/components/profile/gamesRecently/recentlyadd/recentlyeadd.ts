@@ -1,30 +1,30 @@
-import { AttrGames } from "../../../../Types/Interfaces";
+import { AttrGames } from "../../../../types/interfaces";
 import style from "./style.css";
 import { loadCss } from "../../../../utils/styles";
 
 export default class RecentlyAdd extends HTMLElement {
     thumbnail: string = "";
 
-    static get observedAttributes(){
-        return["thumbnail"]
+    static get observedAttributes() {
+        return ["thumbnail"]
     }
 
-    attributeChangedCallback(propName: keyof AttrGames, _:unknown, newValue:string){
+    attributeChangedCallback(propName: keyof AttrGames, _: unknown, newValue: string) {
         this[propName] = newValue;
         this.render();
     }
 
-    constructor(){
+    constructor() {
         super();
-        this.attachShadow({mode: "open"})
+        this.attachShadow({ mode: "open" })
     }
 
-    connectedCallback(){
+    connectedCallback() {
         this.render();
     }
 
-    render(){
-        if(this.shadowRoot) this.shadowRoot.innerHTML = ``;
+    render() {
+        if (this.shadowRoot) this.shadowRoot.innerHTML = ``;
         loadCss(this, style)
 
         const ContainerRecentlyAddGame = this.ownerDocument.createElement("section");
@@ -32,7 +32,7 @@ export default class RecentlyAdd extends HTMLElement {
         this.shadowRoot?.appendChild(ContainerRecentlyAddGame)
 
         const game = this.ownerDocument.createElement("img");
-        game.classList.add ("RecentlyAddGames");
+        game.classList.add("RecentlyAddGames");
         game.src = this.thumbnail
 
 

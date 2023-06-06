@@ -1,4 +1,4 @@
-import { AttrGames } from "../../Types/Interfaces";
+import { AttrGames } from "../../types/interfaces";
 import data from "../../components/settings/linked/data";
 import datalink from "../../components/settings/linkto/data";
 import { setAttributes } from "../../utils/attributtes";
@@ -34,9 +34,9 @@ export default class Settings extends HTMLElement {
         const ContainerLinkto = this.ownerDocument.createElement("div");
         ContainerLinkto.classList.add("ContainerLinkTo");
 
-        const ContainerBtnLogout= this.ownerDocument.createElement("div");
+        const ContainerBtnLogout = this.ownerDocument.createElement("div");
         ContainerBtnLogout.classList.add("ContainerBtnLogout");
-        
+
         const containerTitle = this.ownerDocument.createElement("div");
         containerTitle.classList.add("containerTitle");
 
@@ -49,21 +49,21 @@ export default class Settings extends HTMLElement {
         const title2 = this.ownerDocument.createElement("p");
         title2.textContent = "Link to";
 
-        data.forEach(({thumbnail}) => {
+        data.forEach(({ thumbnail }) => {
             const appLinkedTo = this.ownerDocument.createElement("comp-linked");
             const gamesProps: AttrGames = {
                 thumbnail: `${thumbnail}`
             }
-            setAttributes<AttrGames> (gamesProps, appLinkedTo);
+            setAttributes<AttrGames>(gamesProps, appLinkedTo);
             ContainerLinkedTo.appendChild(appLinkedTo)
         })
 
-        datalink.forEach(({thumbnail}) => {
+        datalink.forEach(({ thumbnail }) => {
             const appLinkto = this.ownerDocument.createElement("comp-link");
             const gamesProps: AttrGames = {
                 thumbnail: `${thumbnail}`
             }
-            setAttributes<AttrGames> (gamesProps, appLinkto);
+            setAttributes<AttrGames>(gamesProps, appLinkto);
             ContainerLinkto.appendChild(appLinkto)
         })
 

@@ -1,23 +1,23 @@
 import data from "../gamesRecently/recentlyadd/data";
 import style from "./style.css";
 import { loadCss } from "../../../utils/styles";
-import { AttrGames } from "../../../Types/Interfaces";
+import { AttrGames } from "../../../types/interfaces";
 import { setAttributes } from "../../../utils/attributtes";
 
 export default class RecentlyGames extends HTMLElement {
-    constructor(){
+    constructor() {
         super();
-        this.attachShadow({mode: "open"})
+        this.attachShadow({ mode: "open" })
     }
 
-    connectedCallback(){
+    connectedCallback() {
         this.render();
     }
 
-    render(){
-        if(this.shadowRoot) this.shadowRoot.innerHTML = ``;
+    render() {
+        if (this.shadowRoot) this.shadowRoot.innerHTML = ``;
         loadCss(this, style)
-        
+
         const Container = this.ownerDocument.createElement("section");
         Container.id = "Containermain";
 
@@ -33,7 +33,7 @@ export default class RecentlyGames extends HTMLElement {
         this.shadowRoot?.appendChild(ContainerTitle);
         this.shadowRoot?.appendChild(Container);
 
-        data.forEach(({thumbnail}) => {
+        data.forEach(({ thumbnail }) => {
             const appRecentlyAdd = this.ownerDocument.createElement("recently-add");
             const cardProps: AttrGames = {
                 thumbnail: `${thumbnail}`,

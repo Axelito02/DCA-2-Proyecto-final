@@ -1,26 +1,33 @@
-import { Action } from "../Types/Interfaces";
-import { Observer, Screen } from "../Types/store";
+import Storage, { PersistanceKeys } from "../utils/storage";
+import { Actions, AppState, Observer, Screens } from "../types/store";
 import { reducer } from "./reducer";
 
-export let appState = {
-    contentGames: "compG",
-    contentPost: "compPs",
-    contentProfile: "compPr",
-    contentLoginMobile: "compLMB",
-    contentMygames: "compMG",
-    contentFriends: "compFri",
-    contentNofitications: "compNotifi",
-    contentSettings: "compSett",
-    screen: Screen.DASHBOARD,
-}
+const emptyState: AppState = {
+  screen: Screens.DASHBOARD,
+  usuarios: [],
+};
 
-const oberservers: Observer[] = [];
+export let appState = Storage.get<AppState>({
+  key: PersistanceKeys.STORE,
+  defaultValue: emptyState,
+});
 
-export const dispatch = (action: Action) => {
-    appState = reducer(action, appState);
-    oberservers.forEach(o => o.render())
-}
+let observers: Observer[] = [];
 
-export const addObserver = (comp: Observer) => {
-    oberservers.push(comp)
-}
+const persistStore = (state: AppState) =>
+  Storage.set({ key: PersistanceKeys.STORE, value: state });
+
+const notifyObservers = () => observers.forEach((o) => o.render());
+
+export const dispatch = (action: Actions) => {
+  const clone = JSON.parse(JSON.stringify(appState));
+  const newState = reducer(action, clone);
+  appState = newState;
+
+  persistStore(newState);
+  notifyObservers();
+};
+
+export const addObserver = (ref: Observer) => {
+  observers = [...observers, ref];
+};

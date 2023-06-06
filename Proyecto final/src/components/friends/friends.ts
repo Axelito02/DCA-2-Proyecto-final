@@ -2,31 +2,31 @@ import { loadCss } from "../../utils/styles";
 import style from "./style.css";
 
 export default class Friend extends HTMLElement {
-    constructor(){
+    constructor() {
         super();
-        this.attachShadow({mode: "open"})
+        this.attachShadow({ mode: "open" })
     }
 
-    connectedCallback(){
+    connectedCallback() {
         this.render();
     }
 
-    render(){
-        if(this.shadowRoot) this.shadowRoot.innerHTML = ``;
+    render() {
+        if (this.shadowRoot) this.shadowRoot.innerHTML = ``;
         loadCss(this, style)
-        
+
         const mainContentFriends = this.ownerDocument.createElement("section");
         mainContentFriends.classList.add("mainContentFriends");
         this.shadowRoot?.appendChild(mainContentFriends);
 
         const contentFriends = this.ownerDocument.createElement("div");
         contentFriends.classList.add("contentFriends");
-        
+
         const contentUserImage = this.ownerDocument.createElement("div");
         contentUserImage.classList.add("contentUserImage");
         const userImage = this.ownerDocument.createElement("img");
         userImage.src = "../dist/image/iconProfile.jpeg";
-        
+
         const contentUserinfo = this.ownerDocument.createElement("div");
         contentUserinfo.classList.add("contentUserinfo");
         const username = this.ownerDocument.createElement("h1");

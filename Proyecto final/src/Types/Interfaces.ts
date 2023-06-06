@@ -1,4 +1,15 @@
-import { NavigationActions } from "./store";
+import { ScreenActions, NavigateActions, Screens, SaveInfoUser } from "./store";
+import { Usuario } from "./usuario";
+
+export interface ScreenNavigateAction {
+    action: ScreenActions.NAVIGATE;
+    payload: Screens;
+}
+
+export interface SaveInfoAction {
+    action: SaveInfoUser.SAVE_INFO_USER;
+    payload: Usuario;
+}
 
 export interface AttrCards {
     name: string;
@@ -45,15 +56,6 @@ export interface AttrComment {
 
 export interface AttrGames {
     thumbnail: string;
-}
-
-export interface Action {
-    type: string,
-}
-
-export interface ScreenAction {
-    action: NavigationActions.NAVIGATE;
-    payload: Screen
 }
 
 export interface Friends {

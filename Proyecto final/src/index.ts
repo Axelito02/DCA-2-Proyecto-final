@@ -1,51 +1,91 @@
-import "./screens/export"
-import "./components/export"
+import "./components/export";
+import "./screens/export";
 import { addObserver, appState } from "./store/index";
-import { Screen } from "./Types/store";
+import { Screens } from "./types/store";
 
-class App extends HTMLElement {
-    constructor(){
-        super();
-        this.attachShadow({mode: "open"})
-        addObserver(this)
-    }
+class AppContainer extends HTMLElement {
+  constructor() {
+    super();
+    this.attachShadow({ mode: "open" });
+    addObserver(this);
+  }
 
-    connectedCallback(){
-        this.render();
-    }
+  connectedCallback() {
+    this.render();
+  }
 
-    render(){
-        if(this.shadowRoot) this.shadowRoot.innerHTML = ``;
-        const css = this.ownerDocument.createElement("link");
-        css.setAttribute("rel", "stylesheet");
-        css.setAttribute("href", "../dist/style/main.css");
-        this.shadowRoot?.appendChild(css);
+  render() {
+    if (this.shadowRoot) this.shadowRoot.innerHTML = "";
+    const css = this.ownerDocument.createElement("link");
+    css.setAttribute("rel", "stylesheet");
+    css.setAttribute("href", "../dist/style/main.css");
+    this.shadowRoot?.appendChild(css);
 
-        const dashboard = this.ownerDocument.createElement("comp-dashboard");
+    switch (appState.screen) {
+      case Screens.LOGIN:
         const login = this.ownerDocument.createElement("comp-login");
-        const register = this.ownerDocument.createElement("comp-register");
-
-        this.shadowRoot?.appendChild(dashboard)
         this.shadowRoot?.appendChild(login);
-        this.shadowRoot?.appendChild(register)
+        break;
 
-        switch (appState.screen) {
-            case Screen.LOGIN:
-                this.shadowRoot?.appendChild(login);
-                break;
-        
-            case Screen.REGISTER:
-                this.shadowRoot?.appendChild(register)
-                break;
+      case Screens.REGISTER:
+        const register = this.ownerDocument.createElement("comp-register");
+        this.shadowRoot?.appendChild(register);
+        break;
 
-            case Screen.DASHBOARD:
-                this.shadowRoot?.appendChild(dashboard)
-                break;
-        
-            default:
-                break;
-        }
+      case Screens.DASHBOARD:
+        const dashboard = this.ownerDocument.createElement("comp-dashboard");
+        this.shadowRoot?.appendChild(dashboard);
+        break;
+
+      case Screens.UPDATE_GAMES:
+        const home = this.ownerDocument.createElement("comp-home");
+        this.shadowRoot?.appendChild(home);
+        break;
+
+      case Screens.UPDATE_POST:
+        const post = this.ownerDocument.createElement("comp-posting");
+        this.shadowRoot?.appendChild(post);
+        break;
+
+      case Screens.UPDATE_MYGAMES:
+        const mygames = this.ownerDocument.createElement("comp-mygame");
+        this.shadowRoot?.appendChild(mygames);
+        break;
+
+      case Screens.UPDATE_PROFILE:
+        const profile = this.ownerDocument.createElement("compscreen-profileaccount");
+        this.shadowRoot?.appendChild(profile);
+        break;
+
+      case Screens.UPDATE_ACCOUNT:
+        const account = this.ownerDocument.createElement("compscreen-profileaccount");
+        this.shadowRoot?.appendChild(account);
+        break;
+
+      case Screens.UPDATE_FRIENDS:
+        const friends = this.ownerDocument.createElement("compscreen-profilefriends");
+        this.shadowRoot?.appendChild(friends);
+        break;
+
+      case Screens.UPDATE_FAVORITES:
+        const favorites = this.ownerDocument.createElement("compscreen-favorites");
+        this.shadowRoot?.appendChild(favorites);
+        break;
+
+      case Screens.UPDATE_NOTIFICATIONS:
+        const notifications = this.ownerDocument.createElement("compscreen-notification");
+        this.shadowRoot?.appendChild(notifications);
+        break;
+
+      case Screens.UPDATE_SETTINGS:
+        const settings = this.ownerDocument.createElement("compscreen-profilesettings");
+        this.shadowRoot?.appendChild(settings);
+        break;
+
+      default:
+        break;
     }
+  }
 }
 
-customElements.define('comp-container', App);
+customElements.define("comp-container", AppContainer);

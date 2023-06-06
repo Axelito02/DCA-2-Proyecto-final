@@ -2,22 +2,22 @@ import { loadCss } from "../../utils/styles";
 import style from "./styles.css";
 import data from "../../components/settings/linked/data";
 import datalink from "../../components/settings/linkto/data";
-import { AttrGames } from "../../Types/Interfaces";
+import { AttrGames } from "../../types/interfaces";
 import { setAttributes } from "../../utils/attributtes";
 
 export default class Account extends HTMLElement {
 
-    constructor(){
+    constructor() {
         super();
-        this.attachShadow({mode: "open"})
+        this.attachShadow({ mode: "open" })
     }
 
-    connectedCallback(){
+    connectedCallback() {
         this.render();
     }
 
-    render(){
-        if(this.shadowRoot) this.shadowRoot.innerHTML = ``
+    render() {
+        if (this.shadowRoot) this.shadowRoot.innerHTML = ``
         loadCss(this, style)
         const Container = this.ownerDocument.createElement("section");
         this.shadowRoot?.appendChild(Container);
@@ -32,7 +32,7 @@ export default class Account extends HTMLElement {
 
         const ContainerLinkto = this.ownerDocument.createElement("div");
         ContainerLinkto.classList.add("ContainerLinkTo");
-        
+
         const containerTitle = this.ownerDocument.createElement("div");
         containerTitle.classList.add("containerTitle");
 
@@ -54,21 +54,21 @@ export default class Account extends HTMLElement {
         const title2 = this.ownerDocument.createElement("p");
         title2.textContent = "Link to";
 
-        data.forEach(({thumbnail}) => {
+        data.forEach(({ thumbnail }) => {
             const appLinkedTo = this.ownerDocument.createElement("comp-linked");
             const gamesProps: AttrGames = {
                 thumbnail: `${thumbnail}`
             }
-            setAttributes<AttrGames> (gamesProps, appLinkedTo);
+            setAttributes<AttrGames>(gamesProps, appLinkedTo);
             ContainerLinkedTo.appendChild(appLinkedTo)
         })
 
-        datalink.forEach(({thumbnail}) => {
+        datalink.forEach(({ thumbnail }) => {
             const appLinkto = this.ownerDocument.createElement("comp-link");
             const gamesProps: AttrGames = {
                 thumbnail: `${thumbnail}`
             }
-            setAttributes<AttrGames> (gamesProps, appLinkto);
+            setAttributes<AttrGames>(gamesProps, appLinkto);
             ContainerLinkto.appendChild(appLinkto)
         })
 
@@ -86,6 +86,6 @@ export default class Account extends HTMLElement {
         ContainerInputs.appendChild(appInputs)
     }
 }
-       
+
 
 customElements.define('comp-account', Account);

@@ -1,171 +1,32 @@
-:host{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
-
-.forms {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    margin-top: 2rem;
-    margin-bottom: 4rem;
-    /* margin:  4.5rem 0; */
-    gap: 0.5rem;   
-    width: 100%;
-}
-
-.ContainerInputs{
+.ContainerInputs {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 80%;
-    gap: 0.5rem;   
+    gap: 0.5rem;
 }
 
-.ContainerFormLogin{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #252848;
-    padding: 2rem;
-    border-radius: 1rem;
-    width: 60%;
-}
-
-.google-btn{
-    display: flex;
-    flex-direction: row;
-    background-color: #f44242;
-    margin-bottom: 0.5rem;
-    border-radius: 0.5rem;
-}
-
-.facebook-btn{
-    display: flex;
-    flex-direction: row;
-    background-color: #2918da;
-    border-radius: 0.5rem;
-}
-
-.Btn-social{
-    display: flex;
-    align-items: center;
-    background-color: #fff;
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-}
-
-.LoginGoogle{
-    cursor: pointer;
-    display: flex;
-    background-color: #f44242;
-    border: none;
-    color: #fff;
-    align-items: center;
-    padding: 0 1rem;
-    border-radius: 0.5rem ;
-}
-
-.LoginGoogle:hover{
-    background-color: #b34343;
-}
-
-.LoginFacebook{
-    cursor: pointer;
-    display: flex;
-    background-color: #2918da;
-    border: none;
-    color: #fff;
-    align-items: center;
-    padding: 0 1rem;
-    border-radius: 0.5rem ;
-}
-
-.LoginFacebook:hover{
-    background-color: #2013ae;
-}
-
-.facebook-icon {
-    width: 1.3rem;
-}
-
-.google-icon {
-    width: 1.3rem;
-} 
-
-.textContent{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-bottom: 0.5rem;
-}
-
-.ContainerSocial{
-    margin-bottom: 1rem;
-}
-
-.LoginBtn{
-    cursor: pointer;
-    display: flex;
-    padding: 0.5rem;
-    border: none;
-    border-radius: 0.5rem;
-}
-
-.LoginBtn:hover{
-    background-color: #e3e3e3;
-}
-
-input{
+input {
     width: 100%;
     padding: 1rem;
     border-radius: 0.5rem;
     border: none;
 }
-
-p{
-    margin: 0;
-    padding: 0 0.5rem;
-}
-
-a{
-    display: flex;
-    color: #4e74ff;
-    text-decoration: none;
+.LoginBtn {
     cursor: pointer;
+    display: flex;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.5rem;
 }
 
-.RecoveryPassword{
-    display: none;
-}
-
-.TitleLogin{
-    margin-top: 4rem;
+.LoginBtn:hover {
+    background-color: #e3e3e3;
 }
 
 @media (max-width: 900px) {
-    .ContainerSocial {
-        display: none;
-    }
 
-    .textContent {
-        display: none;
-    }
-
-    .RecoveryPassword{
-        padding: 12px 0;
-        display: block;
-    }
-
-    .ContainerFormLogin {
-        padding: 1rem;
-        width: 75%;
-    }
-
-    .forms{
-        display: flex;
-        margin: 1rem 0;
+    input {
+        width: 120%;
     }
 }

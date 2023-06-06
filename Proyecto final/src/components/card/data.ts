@@ -5,6 +5,7 @@ export default [
     publisher: "Nintendo",
     releaseyear: "2017",
   },
+
   {
     name: "Super Mario Bros",
     thumbnail: "https://images.nintendolife.com/games/nes/super_mario_bros/cover_large.jpg",
@@ -38,5 +39,33 @@ export default [
     thumbnail: "https://i1.sndcdn.com/artworks-Xb7DjesUtk53E0KI-GpZdgg-t500x500.jpg",
     publisher: "Omocat",
     releaseyear: "2021",
+  },
+
+  {
+    name: "Cycle Frontier",
+    thumbnail: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk3oLU6rky1Pxwj4Oc2qp1cPZjvta4ftdgf07Zu71tV2rRTBkGurK_gsWQKneCjItmRQE&usqp=CAU",
+    publisher: "YAGER",
+    releaseyear: "2022",
+  },
+
+  {
+    name: "Deceit",
+    thumbnail: "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/e2278b63f8258686357e285e84af423d.png",
+    publisher: "World Maker",
+    releaseyear: "2017",
+  },
+
+  {
+    name: "Hue",
+    thumbnail: "https://howlongtobeat.com/games/38008_HUE.jpg?width=250",
+    publisher: "Curve Games",
+    releaseyear: "2016",
+  },
+
+  {
+    name: "Don't Stay Together ",
+    thumbnail: "https://s.pacn.ws/1/p/117/dont-starve-together-steam-gift-669879.10.jpg?v=rn4taf",
+    publisher: "Klei Enternaiment",
+    releaseyear: "2016",
   },
 ];
