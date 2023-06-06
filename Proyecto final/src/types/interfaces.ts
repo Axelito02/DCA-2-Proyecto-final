@@ -26,6 +26,7 @@ export interface AttrCards {
     thumbnail: string;
     publisher: string;
     releaseyear: string;
+    linkto: string;
 }
 
 export interface AttrGameWeek {

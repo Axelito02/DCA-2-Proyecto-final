@@ -47,25 +47,27 @@ export default class Dashboard extends HTMLElement {
         const appNav = this.ownerDocument.createElement("comp-nav");
 
 
-        data.forEach(({ name, thumbnail, publisher, releaseyear }) => {
+        data.forEach(({ name, thumbnail, publisher, releaseyear, linkto }) => {
             const appCard = this.ownerDocument.createElement("comp-card");
             const cardProps: AttrCards = {
                 name: `${name}`,
                 thumbnail: `${thumbnail}`,
                 publisher: `${publisher}`,
                 releaseyear: `${releaseyear}`,
+                linkto: `${linkto}`,
             }
             setAttributes<AttrCards>(cardProps, appCard);
             content.appendChild(appCard)
         })
 
-        data.forEach(({ name, thumbnail, publisher, releaseyear }) => {
+        data.forEach(({ name, thumbnail, publisher, releaseyear, linkto }) => {
             const appCard = this.ownerDocument.createElement("comp-card");
             const cardProps: AttrCards = {
                 name: `${name}`,
                 thumbnail: `${thumbnail}`,
                 publisher: `${publisher}`,
                 releaseyear: `${releaseyear}`,
+                linkto: `${linkto}`,
             }
             setAttributes<AttrCards>(cardProps, appCard);
             row.appendChild(appCard)

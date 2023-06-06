@@ -71,14 +71,14 @@ export default class GameWeek extends HTMLElement {
         const HipervinculoSteam = this.ownerDocument.createElement("a");
         HipervinculoSteam.href = "https://store.steampowered.com/";
         HipervinculoSteam.target = "_blank";
-        steam.setAttribute("src", `../dist/image/Steam-logo.png`);
+        steam.setAttribute("src", `https://i.ibb.co/CM92ktt/Steam-logo.png`);
         steam.setAttribute("alt", "logo Steam");
 
         const epic = this.ownerDocument.createElement("img");
         const HipervinculoEpic = this.ownerDocument.createElement("a");
         HipervinculoEpic.href = "https://store.epicgames.com/es-ES/";
         HipervinculoEpic.target = "_blank";
-        epic.setAttribute("src", `../dist/image/Epic_Games_logo.png`);
+        epic.setAttribute("src", `https://i.ibb.co/ssvZ87Q/Epic-Games-logo.png`);
         epic.setAttribute("alt", "logo Epic Games");
 
         container.appendChild(card)
