@@ -88,26 +88,21 @@ p {
 
 @media (max-width: 900px) {
 
-    #space {
-        display: none;
-    }
-
     .ContainerSocial {
         display: none;
     }
 
-    .textContent {
-        display: none;
-    }
-
     .Login-both {
-        background-image: none;
         display: grid;
         grid-template-columns: auto;
     }
 
     #login_form {
-        background: #09093a;
+        background: none;
+    }
+
+    .textContent {
+        display: none;
     }
 
     .RecoveryPassword {

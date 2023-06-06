@@ -19,7 +19,7 @@ export default class Search extends HTMLElement {
         const main = this.ownerDocument.createElement("div");
         const header = this.ownerDocument.createElement("div");
         const logo = this.ownerDocument.createElement("img");
-        logo.setAttribute("src", "../dist/image/Playconnect-Logo.png");
+        logo.setAttribute("src", "https://i.ibb.co/mGXY07S/Playconnect-Logo.png");
 
         main.classList.add("row");
         header.classList.add("header");

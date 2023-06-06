@@ -38,7 +38,7 @@ export default class UserInfo extends HTMLElement {
 
         const Picture = this.ownerDocument.createElement("img");
         Picture.classList.add('Profile-pic');
-        Picture.src = "../dist/image/iconProfile.jpeg";
+        Picture.src = "https://i.ibb.co/hsr5dLL/Icon-Profile.jpg";
 
         const Username = this.ownerDocument.createElement("h3");
         Username.textContent = this.username

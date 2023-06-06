@@ -1,4 +1,6 @@
 import { addObserver } from "../../store/index";
+import style from "./style.css"
+import { loadCss } from "../../utils/styles";
 
 export default class LoginMobile extends HTMLElement {
     constructor() {
@@ -13,6 +15,7 @@ export default class LoginMobile extends HTMLElement {
 
     render() {
         if (this.shadowRoot) this.shadowRoot.innerHTML = ``;
+        loadCss(this, style);
         const css = this.ownerDocument.createElement("link");
         css.setAttribute("rel", "stylesheet");
         css.setAttribute("href", "./style/main.css");

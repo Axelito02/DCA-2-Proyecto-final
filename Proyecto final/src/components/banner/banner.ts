@@ -2,7 +2,7 @@ import style from "./style.css"
 import { loadCss } from "../../utils/styles";
 
 export default class Banner extends HTMLElement {
-    private imageSrc = '../dist/image/Valorant.png';
+    private imageSrc = 'https://i.ibb.co/xGtRp3r/Valorant.png';
 
   constructor() {
     super();

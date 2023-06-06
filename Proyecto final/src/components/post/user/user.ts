@@ -39,7 +39,7 @@ export default class User extends HTMLElement {
         username.textContent = "Axelito"
 
         const icon = this.ownerDocument.createElement("img");
-        icon.setAttribute("src", "../dist/image/iconProfile.jpeg")
+        icon.setAttribute("src", "https://i.ibb.co/hsr5dLL/Icon-Profile.jpg")
         // icon.setAttribute("src",`${this.thumbnail}`)
         icon.textContent = ("Profile");
 
