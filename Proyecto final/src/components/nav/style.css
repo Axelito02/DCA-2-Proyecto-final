@@ -1,3 +1,7 @@
+* {
+    color: white;
+}
+
 .cont-nav {
     display: flex;
     flex-direction: row;
@@ -6,7 +10,7 @@
     padding: 0;
 }
 
-.col{
+.col {
     padding: 0.5rem;
     display: flex;
     justify-content: center;
@@ -18,22 +22,45 @@
     border-width: 1px;
 }
 
-.col:hover{
+.col:hover {
     cursor: pointer;
     background-color: #2f3257;
 }
 
-.col:focus{
+.col:focus {
     border-bottom: none;
     background-color: #0E0F38;
 }
 
 .uno {
-    border-left: none ;
+    border-left: none;
 }
 
-@media screen and (min-width: 1280px) {
-    .tres{
+@media (min-width: 900px) {
+    .tres {
+        display: none;
+    }
+
+    .cuatro-log {
+
+        display: none;
+    }
+
+    .cinco-log {
+        display: none;
+    }
+}
+
+@media (max-width: 900px) {
+    .tres {
+        display: none;
+    }
+
+    .cinco {
+        display: flex;
+    }
+
+    .cuatro {
         display: none;
     }
 }

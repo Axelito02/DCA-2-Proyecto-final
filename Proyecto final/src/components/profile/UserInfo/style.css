@@ -1,0 +1,18 @@
+:host {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.Profile-pic {
+    height: 18rem;
+    border-radius: 12rem;
+}
+
+@media screen and (max-width: 900px) {
+    .Profile-pic {
+        height: 8rem;
+    }
+}

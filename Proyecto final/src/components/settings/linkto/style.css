@@ -1,0 +1,14 @@
+:host {
+    display: flex;
+    padding: 0.5rem;
+}
+
+.containerPlatformLink {
+    display: flex;
+    flex-direction: row;
+}
+
+.containerPlatformLink img {
+    width: 2.5rem;
+    filter: grayscale(1);
+}

@@ -1,0 +1,45 @@
+:host {
+    margin: 0 1rem;
+}
+
+.mainContentNotification {
+    display: flex;
+    flex-direction: row;
+}
+
+.contentNotification{
+    display: grid;
+    grid-template-columns: auto auto;
+    border-radius: 20px;
+    background-color: #EAE8E8;
+    width: 100%;
+    color: #464646;
+}
+
+.contentUserImage img {
+    height: 6rem;
+    border-radius: 12rem;
+    margin: 0;
+    padding: 0;
+}
+
+.contentUserImage {
+    display: flex;
+    padding: 0.5rem;
+}
+
+.contentUserinfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contentUserinfo h1 {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.contentUserinfo p {
+    font-size: 0.8rem;
+    margin: 0;
+}

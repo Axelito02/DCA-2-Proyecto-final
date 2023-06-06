@@ -1,24 +1,51 @@
+import style from "./style.css"
+import { loadCss } from "../../utils/styles";
+
 export default class Banner extends HTMLElement {
-    constructor() {
-        super();
-        this.attachShadow({mode: 'open'})
-    }
+    private imageSrc = 'https://i.ibb.co/xGtRp3r/Valorant.png';
 
-    connectedCallback(){
-        this.render();
-    }
+  constructor() {
+    super();
+    this.attachShadow({ mode: 'open' });
+  }
 
-    render(){
-        if(this.shadowRoot){
-            this.shadowRoot.innerHTML = `
-            <link rel="stylesheet" href="../src/components/banner/style.css">
+  connectedCallback() {
+    this.render();
+  }
 
-            <div class="banner">
-                <img src="../dist/images/Valorant.png" alt="Valorant">
-            </div>
-            `;
-        }
-    }
+  render() {
+    if (this.shadowRoot) this.shadowRoot.innerHTML = ``;
+    loadCss(this, style);
+
+    const banner = this.ownerDocument.createElement('div');
+    banner.classList.add('banner');
+
+    const img = this.ownerDocument.createElement('img');
+    img.setAttribute('src', this.imageSrc);
+    img.setAttribute('alt', 'Valorant');
+
+    banner.appendChild(img);
+    this.shadowRoot?.appendChild(banner);
+
+    // Guardar imagen en el localStorage
+    this.saveImageToLocalStorage();
+  }
+
+  private saveImageToLocalStorage() {
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', this.imageSrc, true);
+    xhr.responseType = 'blob';
+
+    xhr.onload = () => {
+      if (xhr.status === 200) {
+        const blob = xhr.response;
+        const objectURL = URL.createObjectURL(blob);
+        localStorage.setItem('imagen', objectURL);
+      }
+    };
+
+    xhr.send();
+  }
 }
 
 customElements.define('comp-banner', Banner);

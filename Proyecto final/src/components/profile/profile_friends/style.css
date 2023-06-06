@@ -1,0 +1,16 @@
+#Top {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+#Main {
+    margin-bottom: 1rem;
+}
+
+
+@media screen and (max-width: 900px) {
+    #Top {
+        display: grid;
+        grid-template-columns: auto;
+    }
+}

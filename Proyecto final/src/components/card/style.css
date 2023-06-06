@@ -42,7 +42,7 @@ scroll-snap-type: x mandatory;
   display: flex;
   flex-direction: column;
   border-radius: 5px;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 }
 
@@ -55,6 +55,7 @@ scroll-snap-type: x mandatory;
   width: 200px;
   height: 200px;
   object-fit: cover;
+  border: solid 2px ;
 }
 
 .juego-card h2 {
@@ -66,10 +67,10 @@ scroll-snap-type: x mandatory;
 
 .juego-card h3 {
   background-color: transparent;
-  margin: 10px;
+  margin: 8px 0;
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 900px) {
 
   .juego-card h3{
     display: none;

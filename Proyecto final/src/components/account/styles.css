@@ -1,0 +1,38 @@
+@media (max-width: 900px) {
+    * {
+        display: none;
+        /* Oculta todo el contenido dentro de la clase "column" */
+    }
+}
+
+.ContainerLinkedTo {
+    display: flex;
+    flex-direction: row;
+    padding: 0 1.5rem;
+}
+
+.ContainerLinkTo {
+    display: flex;
+    flex-direction: row;
+    padding: 0 1.5rem;
+}
+
+.containerTitle {
+    padding: 0 1.5rem;
+}
+
+p {
+    margin: 0;
+}
+
+.containerlos4 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px;
+}
+
+.ContainerStatus {
+    display: flex;
+    flex-direction: column;
+}

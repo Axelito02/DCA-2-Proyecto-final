@@ -1,0 +1,38 @@
+:host {
+    display: flex;
+    padding: 0.5rem;
+}
+
+#Container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 0 1rem;
+}
+
+.ContainerInput {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 32%;
+    gap: 1rem;
+}
+
+.ContainerTitle {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 50%;
+}
+
+.btn {
+    cursor: pointer;
+    border: none;
+    background: #ECECEC;
+    border-radius: 12px;
+    padding: 0.5rem;
+}
+
+.btn:hover {
+    background-color: #d4d4d4;
+}
