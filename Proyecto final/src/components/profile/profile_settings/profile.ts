@@ -1,7 +1,7 @@
 import style from "./style.css";
 import { loadCss } from "../../../utils/styles";
 
-export default class ProfileSettings extends HTMLElement {
+export default class ProfileSetting extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({ mode: "open" })
@@ -38,4 +38,4 @@ export default class ProfileSettings extends HTMLElement {
     }
 }
 
-customElements.define('comp-profilesetting', ProfileSettings);
+customElements.define('comp-profilesetting', ProfileSetting);

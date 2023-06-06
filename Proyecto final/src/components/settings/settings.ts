@@ -40,14 +40,20 @@ export default class Settings extends HTMLElement {
         const containerTitle = this.ownerDocument.createElement("div");
         containerTitle.classList.add("containerTitle");
 
-        const containerTitle2 = this.ownerDocument.createElement("div");
-        containerTitle2.classList.add("containerTitle");
-
         const title = this.ownerDocument.createElement("p");
         title.textContent = "Linked to";
 
+        const containerTitle2 = this.ownerDocument.createElement("div");
+        containerTitle2.classList.add("containerTitle");
+
         const title2 = this.ownerDocument.createElement("p");
         title2.textContent = "Link to";
+
+        const containerTitle3 = this.ownerDocument.createElement("div");
+        containerTitle3.classList.add("containerTitle");
+
+        const title3 = this.ownerDocument.createElement("p");
+        title3.textContent = "Security";
 
         data.forEach(({ thumbnail }) => {
             const appLinkedTo = this.ownerDocument.createElement("comp-linked");
@@ -72,10 +78,12 @@ export default class Settings extends HTMLElement {
         Container.appendChild(ContainerLinkedTo)
         Container.appendChild(containerTitle2)
         Container.appendChild(ContainerLinkto)
+        Container.appendChild(containerTitle3)
         Container.appendChild(ContainerBtnLogout)
 
         containerTitle.appendChild(title)
         containerTitle2.appendChild(title2)
+        containerTitle3.appendChild(title3)
         ContainerStatus.appendChild(appStatus)
         ContainerBtnLogout.appendChild(appLogout)
     }

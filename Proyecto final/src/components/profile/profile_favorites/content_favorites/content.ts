@@ -87,7 +87,7 @@ export default class ContenProfileFavorites extends HTMLElement {
         ContainerContentFavorites.id = "contentFavorites";
 
         data.forEach(({ thumbnail }) => {
-            const appFavorites = this.ownerDocument.createElement("comp-profilefavorite");
+            const appFavorites = this.ownerDocument.createElement("comp-favorites");
             const gamesProps: AttrGames = {
                 thumbnail: `${thumbnail}`
             }
@@ -97,6 +97,8 @@ export default class ContenProfileFavorites extends HTMLElement {
 
         Container.appendChild(ContainerNavigation);
         Container.appendChild(ContainerContent);
+
+        ContainerContent.appendChild(ContainerContentFavorites)
 
         ContainerNavigation.appendChild(btnAccount);
         ContainerNavigation.appendChild(btnFriends);

@@ -77,24 +77,6 @@ export default class ContenProfileSettings extends HTMLElement {
         const ContainerContent = this.ownerDocument.createElement("section");
         ContainerContent.id = "contentContainer";
 
-        const row = this.ownerDocument.createElement("main");
-        row.setAttribute("id", "content");
-
-        const titleCommunities = this.ownerDocument.createElement("p");
-        titleCommunities.textContent = "Communities";
-
-        const ContainerContentFavorites = this.ownerDocument.createElement("section");
-        ContainerContentFavorites.id = "contentFavorites";
-
-        data.forEach(({ thumbnail }) => {
-            const appFavorites = this.ownerDocument.createElement("comp-favorites");
-            const gamesProps: AttrGames = {
-                thumbnail: `${thumbnail}`
-            }
-            setAttributes<AttrGames>(gamesProps, appFavorites);
-            ContainerContentFavorites.appendChild(appFavorites)
-        })
-
         const appSettings = this.ownerDocument.createElement("comp-settings");
 
         Container.appendChild(ContainerNavigation);
