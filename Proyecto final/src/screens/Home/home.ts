@@ -3,7 +3,9 @@ import dataGames from "../../components/GameWeek/data"
 import { addObserver, appState } from "../../store/index";
 import { AttrCards, AttrGames, AttrGameWeek } from "../../types/interfaces";
 import { setAttributes } from "../../utils/attributtes";
-
+function getRandomIndex(length: number): number {
+  return Math.floor(Math.random() * length);
+}
 
 export default class Home extends HTMLElement {
     constructor() {
@@ -43,18 +45,6 @@ export default class Home extends HTMLElement {
         const appBanner = this.ownerDocument.createElement("comp-banner");
         const appNav = this.ownerDocument.createElement("comp-nav");
 
-        dataGames.forEach(({ name, thumbnail, alt, description }) => {
-            const appGame = this.ownerDocument.createElement("comp-gameweek");
-            const cardProps: AttrGameWeek = {
-                name: `${name}`,
-                thumbnail: `${thumbnail}`,
-                alt: `${alt}`,
-                description: `${description}`,
-            }
-            setAttributes<AttrGameWeek>(cardProps, appGame);
-            bottom.appendChild(appGame)
-        })
-
         data.forEach(({ name, thumbnail, publisher, releaseyear }) => {
             const appCard = this.ownerDocument.createElement("comp-card");
             const cardProps: AttrCards = {
@@ -92,6 +82,19 @@ export default class Home extends HTMLElement {
 
         const bottom = this.ownerDocument.createElement("section");
         bottom.setAttribute("id", "bottom");
+
+        const randomIndex = getRandomIndex(dataGames.length);
+        const { name, thumbnail, alt, description } = dataGames[randomIndex];{
+            const appGame = this.ownerDocument.createElement("comp-gameweek");
+            const cardProps: AttrGameWeek = {
+                name: `${name}`,
+                thumbnail: `${thumbnail}`,
+                alt: `${alt}`,
+                description: `${description}`,
+            }
+            setAttributes<AttrGameWeek>(cardProps, appGame);
+            bottom.appendChild(appGame)
+        }
 
         main.appendChild(header);
         main.appendChild(nav);
