@@ -1,4 +1,4 @@
-.card-posts{
+.card-posts {
     display: flex;
     flex-direction: column;
     background-color: #4C4F78;
@@ -6,15 +6,19 @@
     border-radius: 10px;
 }
 
-.hastag{
+.hastag {
     display: flex;
     padding: 0;
     padding-bottom: 18px;
     justify-content: flex-start;
 }
 
-.content{
+.content {
     display: flex;
     padding: 0;
     padding-bottom: 18px;
+}
+
+p {
+    margin: 0;
 }

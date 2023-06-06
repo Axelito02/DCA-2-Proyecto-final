@@ -1,13 +1,24 @@
-import { ScreenActions, Content, NavigateActions, Screens } from "./store";
+import { ScreenActions, Screens, SaveInfoUser, PostActions } from "./store";
+import { Usuario } from "./usuario";
 
 export interface ScreenNavigateAction {
     action: ScreenActions.NAVIGATE;
     payload: Screens;
 }
 
-export interface NavigateAction {
-    action: NavigateActions.CONTENT;
-    payload: Content;
+export interface SaveInfoAction {
+    action: SaveInfoUser.SAVE_INFO_USER;
+    payload: Usuario;
+}
+
+export interface GetPots {
+    action: PostActions.GET_POST
+    payload: AttrComment[];
+}
+
+export interface SavePots {
+    action: PostActions.SAVE_POST
+    payload: AttrComment;
 }
 
 export interface AttrCards {

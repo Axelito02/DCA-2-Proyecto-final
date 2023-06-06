@@ -1,3 +1,7 @@
+import { dispatch } from "../../../store";
+import { navigate } from "../../../store/actions";
+import { Screens } from "../../../types/store";
+import { Addevent } from "../../../utils/addevents";
 import { loadCss } from "../../../utils/styles";
 import style from "./style.css";
 
@@ -18,6 +22,10 @@ export default class LogOut extends HTMLElement {
         const btn = this.ownerDocument.createElement("button")
         btn.textContent = "Log out"
         btn.classList.add("btn")
+        Addevent(btn, () => {
+            dispatch(navigate(Screens.LOGIN))
+            console.log("comunidad");
+        })
         this.shadowRoot?.appendChild(btn)
     }
 }

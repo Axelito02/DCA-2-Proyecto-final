@@ -1,7 +1,6 @@
 import { AttrGames } from "../../types/interfaces";
 import { loadCss } from "../../utils/styles";
 import style from "./style.css"
-import data from "../mygames/games/data";
 
 export default class Favorites extends HTMLElement {
     thumbnail: string = "";

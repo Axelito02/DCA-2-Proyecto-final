@@ -17,3 +17,47 @@
 p {
     margin: 0;
 }
+
+@media (max-width: 900px) {
+    .Title3 {
+        display: none;
+    }
+
+    .Title4 {
+        display: none;
+    }
+
+    .ContainerPasword {
+        display: none;
+    }
+
+    .ContainerChechbox {
+        display: none;
+    }
+
+    .ContainerPrivacity {
+        display: none;
+    }
+}
+
+@media (min-width: 900px) {
+    .ContainerStatus {
+        display: none;
+    }
+
+    .ContainerLinkedTo {
+        display: none;
+    }
+
+    .ContainerLinkTo {
+        display: none;
+    }
+
+    .Title1 {
+        display: none;
+    }
+
+    .Title2 {
+        display: none;
+    }
+}

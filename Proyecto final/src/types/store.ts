@@ -1,4 +1,5 @@
-import { NavigateAction, ScreenNavigateAction } from "./interfaces";
+import { Post } from "../components/export";
+import { AttrComment, GetPots, SaveInfoAction, SavePots, ScreenNavigateAction } from "./interfaces";
 import { Usuario } from "./usuario";
 export type Observer = { render: () => void } & HTMLElement;
 
@@ -6,9 +7,6 @@ export enum Screens {
   LOGIN = "LOGIN",
   REGISTER = "REGISTER",
   DASHBOARD = "DASHBOARD",
-}
-
-export enum Content {
   UPDATE_GAMES = "UPDATE_GAMES",
   UPDATE_POST = "UPDATE_POST",
   UPDATE_PROFILE = "UPDATE_PROFILE",
@@ -23,24 +21,25 @@ export enum Content {
 
 export type AppState = {
   screen: Screens;
-  content: Content;
   usuarios: Usuario[];
+  Post: AttrComment[];
 };
 
 export enum ScreenActions {
   "NAVIGATE" = "NAVIGATE",
 }
 
+export enum PostActions {
+  "SAVE_POST" = "SAVE_POST",
+  "GET_POST" = "GET_POST",
+}
+
 export enum NavigateActions {
   "CONTENT" = "CONTENT",
 }
 
-export enum SaveInfoUser{
+export enum SaveInfoUser {
   "SAVE_INFO_USER" = "SAVE_INFO_USER"
 }
-export interface SaveInfoAction {
-  action: SaveInfoUser.SAVE_INFO_USER;
-  payload: Usuario;
-}
 
-export type Actions = ScreenNavigateAction | NavigateAction | SaveInfoAction;
+export type Actions = ScreenNavigateAction | SaveInfoAction | SavePots | GetPots;

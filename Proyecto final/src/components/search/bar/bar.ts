@@ -1,5 +1,5 @@
 import { navigate } from "../../../store/actions";
-import { dispatch } from "../../../store/index";
+import { appState, dispatch } from "../../../store/index";
 import { Screens } from "../../../types/store";
 import { Addevent } from "../../../utils/addevents";
 import { loadCss } from "../../../utils/styles";
@@ -47,6 +47,61 @@ export default class Bar extends HTMLElement {
         col.appendChild(btn2);
 
         this.shadowRoot?.appendChild(col);
+
+        switch (appState.screen) {
+            case Screens.DASHBOARD:
+                btn1.style.display = "none"
+                btn2.style.display = "none"
+                break;
+
+            case Screens.UPDATE_GAMES:
+                btn1.style.display = "none"
+                btn2.style.display = "none"
+                break;
+
+            case Screens.UPDATE_POST:
+                btn1.style.display = "none"
+                btn2.style.display = "none"
+                break;
+
+            case Screens.UPDATE_MYGAMES:
+                btn1.style.display = "none"
+                btn2.style.display = "none"
+                break;
+
+            case Screens.UPDATE_PROFILE:
+                btn1.style.display = "none"
+                btn2.style.display = "none"
+                break;
+
+            case Screens.UPDATE_ACCOUNT:
+                btn1.style.display = "none"
+                btn2.style.display = "none"
+                break;
+
+            case Screens.UPDATE_FRIENDS:
+                btn1.style.display = "none"
+                btn2.style.display = "none"
+                break;
+
+            case Screens.UPDATE_FAVORITES:
+                btn1.style.display = "none"
+                btn2.style.display = "none"
+                break;
+
+            case Screens.UPDATE_NOTIFICATIONS:
+                btn1.style.display = "none"
+                btn2.style.display = "none"
+                break;
+
+            case Screens.UPDATE_SETTINGS:
+                btn1.style.display = "none"
+                btn2.style.display = "none"
+                break;
+
+            default:
+                break;
+        }
 
     }
 }

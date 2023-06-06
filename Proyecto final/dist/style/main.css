@@ -1,4 +1,4 @@
-*{
+* {
     padding: 0px;
     margin: 0px;
     font-family: sans-serif;
@@ -11,18 +11,19 @@
     display: none;
 }
 
-.icon{
+.icon {
     position: absolute;
     left: 90px;
     top: 1.87rem;
     width: 20px;
 }
 
-#bar_nav{
+#bar_nav {
     background-color: #252848;
+    margin-bottom: 2rem;
 }
 
-#content{
+#content {
     display: flex;
     flex-direction: row;
     margin: 0 0 10px 0;
@@ -34,12 +35,12 @@
     display: none;
 }
 
-#title{
+#title {
     display: flex;
     padding: 1rem 1rem;
 }
 
-#bottom{
+#bottom {
     display: flex;
     justify-content: center;
 }
@@ -50,11 +51,4 @@
     flex-wrap: wrap;
     gap: 10px;
     margin: 0 1rem 0 1rem;
-}
-
-#recentlContainer {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    width: 100%;
 }

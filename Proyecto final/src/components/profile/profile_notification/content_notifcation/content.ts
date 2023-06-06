@@ -1,14 +1,14 @@
 import style from "./style.css";
-import { loadCss } from "../../../utils/styles";
-import { Addevent } from "../../../utils/addevents";
-// import { ChagedAccount, ChagedFavorites, ChagedFriends, ChagedNotification, ChagedSettings } from "../../../store/actions";
-import { dispatch } from "../../../store/index";
-import data from "../../mygames/games/data";
-import { AttrGames } from "../../../types/interfaces";
-import { setAttributes } from "../../../utils/attributtes";
-// import { contentState } from "./contentState";
+import { loadCss } from "../../../../utils/styles";
+import { Addevent } from "../../../../utils/addevents";
+import { dispatch } from "../../../../store/index";
+import data from "../../../mygames/games/data";
+import { AttrGames } from "../../../../types/interfaces";
+import { setAttributes } from "../../../../utils/attributtes";
+import { navigate } from "../../../../store/actions";
+import { Screens } from "../../../../types/store";
 
-export default class ContenProfile extends HTMLElement {
+export default class ContenProfileNotification extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({ mode: "open" })
@@ -20,7 +20,7 @@ export default class ContenProfile extends HTMLElement {
 
     render() {
         if (this.shadowRoot) this.shadowRoot.innerHTML = ``;
-        loadCss(this, style)
+        loadCss(this, style);
 
         const Container = this.ownerDocument.createElement("section");
         Container.id = "mainContainer";
@@ -34,7 +34,7 @@ export default class ContenProfile extends HTMLElement {
         btnAccount.classList.add("uno");
         btnAccount.textContent = "Account";
         Addevent(btnAccount, () => {
-            // dispatch(ChagedAccount())
+            dispatch(navigate(Screens.UPDATE_ACCOUNT))
             console.log("Account");
         })
 
@@ -43,7 +43,7 @@ export default class ContenProfile extends HTMLElement {
         btnFriends.classList.add("dos");
         btnFriends.textContent = "Friends";
         Addevent(btnFriends, () => {
-            // dispatch(ChagedFriends())
+            dispatch(navigate(Screens.UPDATE_FRIENDS))
             console.log("Friends");
         })
 
@@ -52,7 +52,7 @@ export default class ContenProfile extends HTMLElement {
         btnFavorites.classList.add("tres");
         btnFavorites.textContent = "Favorites";
         Addevent(btnFavorites, () => {
-            // dispatch(ChagedFavorites())
+            dispatch(navigate(Screens.UPDATE_FAVORITES))
             console.log("Favorites");
         })
 
@@ -61,7 +61,7 @@ export default class ContenProfile extends HTMLElement {
         btnNotification.classList.add("cuatro");
         btnNotification.textContent = "Notifications";
         Addevent(btnNotification, () => {
-            // dispatch(ChagedNotification())
+            dispatch(navigate(Screens.UPDATE_NOTIFICATIONS))
             console.log("Notifications");
         })
 
@@ -70,16 +70,16 @@ export default class ContenProfile extends HTMLElement {
         btnSettings.classList.add("cinco");
         btnSettings.textContent = "Settings";
         Addevent(btnSettings, () => {
-            // dispatch(ChagedSettings())
+            dispatch(navigate(Screens.UPDATE_SETTINGS))
             console.log("Settings");
         })
 
         const ContainerContent = this.ownerDocument.createElement("section");
         ContainerContent.id = "contentContainer";
-        //tmb esto es de prueba
+
         const row = this.ownerDocument.createElement("main");
         row.setAttribute("id", "content");
-        //aquí acaba la prueba
+
         const titleCommunities = this.ownerDocument.createElement("p");
         titleCommunities.textContent = "Communities";
 
@@ -95,51 +95,10 @@ export default class ContenProfile extends HTMLElement {
             ContainerContentFavorites.appendChild(appFavorites)
         })
 
-        const appFriends = this.ownerDocument.createElement("comp-friends");
         const appNotification = this.ownerDocument.createElement("comp-notification");
-        const appSettings = this.ownerDocument.createElement("comp-settings");
-        const appAccount = this.ownerDocument.createElement("comp-account");
-
-        //pruebaaaaaaaaa inicio
-        // if(contentState.contentAccount == "compA") {
-        //     Container.appendChild(ContainerContent);
-        //     Container.appendChild(row);
-        //     Container.appendChild(bottom);
-
-        // } else if (contentState.contentPost == "compPost"){
-        //     text.style.display = "none";
-        //     text.innerHTML = "";
-        //     appGame.style.display = "none";
-        //     bottom.appendChild(appPost);
-
-        // } else if (contentState.contentProfile == "compProfile"){
-        //     text.style.display = "none";
-        //     row.style.display = "none";
-        //     content.style.display = "none";
-        //     bottom.style.display = "none";
-        //     Container.appendChild(appProfile)
-
-        // } else if (contentState.contentLoginMobile == "compLoginMobile"){
-        //     text.style.display = "none";
-        //     row.style.display = "none";
-        //     content.style.display = "none";
-        //     bottom.style.display = "none";
-        //     // Container.appendChild(appLogin);
-        //     Container.appendChild(appProfile);
-
-        // } else if (contentState.contentMygames == "compMyGames") {
-        //     text.textContent= "Recently played";
-        //     row.innerHTML = "";
-        //     bottom.style.display = "none";
-        //     content.innerHTML = "";
-        //     content.id ="overflowhide";
-        //     ContainerRecentlyGames.id = "recentlContainer";
-        //     ContainerSearchGames.appendChild(appSearchGames);
-        //pruebaaaaaaaa final
 
         Container.appendChild(ContainerNavigation);
         Container.appendChild(ContainerContent);
-
 
         ContainerNavigation.appendChild(btnAccount);
         ContainerNavigation.appendChild(btnFriends);
@@ -147,16 +106,8 @@ export default class ContenProfile extends HTMLElement {
         ContainerNavigation.appendChild(btnNotification);
         ContainerNavigation.appendChild(btnSettings);
 
-
-        ContainerContent.appendChild(titleCommunities)
-        ContainerContent.appendChild(ContainerContentFavorites);
-        ContainerContent.appendChild(appAccount);
-        //ContainerContent.appendChild(appFavorites);
-        // ContainerContent.appendChild(appFriends);
-        // ContainerContent.appendChild(appNotification);
-        ContainerContent.appendChild(appSettings);
-
+        ContainerContent.appendChild(appNotification);
     }
 }
 
-customElements.define('content-profile', ContenProfile);
+customElements.define('content-notification', ContenProfileNotification);

@@ -8,24 +8,24 @@ import { Addevent } from "../../utils/addevents";
 import { Usuario } from "../../types/usuario";
 import firebase from "../../utils/firebase";
 
-const userInputs: Usuario={
+const userInputs: Usuario = {
     inptuUsername: "",
     inptuEmail: "",
     inptuPassword: "",
 };
 
 export default class FormR extends HTMLElement {
-    constructor(){
+    constructor() {
         super();
-        this.attachShadow({mode: "open"});
+        this.attachShadow({ mode: "open" });
         addObserver(this);
     }
 
     connectedCallback() {
         this.render();
         //this.setupFormSubmitHandler();
-      }
-    
+    }
+
     //Prueba guardar info del usuario inicio
     //   setupFormSubmitHandler() {
     //     const formElement = this.shadowRoot?.querySelector("form");
@@ -40,20 +40,20 @@ export default class FormR extends HTMLElement {
 
     //Prueba guardar info del usuario final
 
-    render(){
-        if(this.shadowRoot) this.shadowRoot.innerHTML = ``;
+    render() {
+        if (this.shadowRoot) this.shadowRoot.innerHTML = ``;
         loadCss(this, style)
 
         const ContainerInputs = this.ownerDocument.createElement("div");
         ContainerInputs.classList.add("ContainerInputs")
         this.shadowRoot?.appendChild(ContainerInputs)
-        
+
         const inptuUsername = this.ownerDocument.createElement("input");
         inptuUsername.placeholder = "Enter username";
         inptuUsername.classList.add("username");
         inptuUsername.type = "text";
-        inptuUsername.addEventListener("change", (e: any)=>{
-            console.log (e.target.value)
+        inptuUsername.addEventListener("change", (e: any) => {
+            console.log(e.target.value)
             userInputs.inptuUsername = e.target.value;
         })
 
@@ -61,24 +61,24 @@ export default class FormR extends HTMLElement {
         inptuEmail.placeholder = "Enter email";
         inptuEmail.classList.add("username");
         inptuEmail.type = "text";
-        inptuEmail.addEventListener("change", (e: any)=>{
-            console.log (e.target.value)
+        inptuEmail.addEventListener("change", (e: any) => {
+            console.log(e.target.value)
             userInputs.inptuEmail = e.target.value;
         })
-        
+
         const inptuPassword = this.ownerDocument.createElement("input");
         inptuPassword.placeholder = "Enter password";
         inptuPassword.classList.add("password");
-        inptuPassword.type = "text";
-        inptuPassword.addEventListener("change", (e: any)=>{
-            console.log (e.target.value)
+        inptuPassword.type = "password";
+        inptuPassword.addEventListener("change", (e: any) => {
+            console.log(e.target.value)
             userInputs.inptuPassword = e.target.value;
         })
 
         const Loginbtn = this.ownerDocument.createElement("button");
         Loginbtn.classList.add("LoginBtn")
         Loginbtn.textContent = "Enter"
-        Loginbtn.addEventListener("click", async ()=>{
+        Loginbtn.addEventListener("click", async () => {
             console.log(userInputs);
             await firebase.saveUsuarioInDB(userInputs);
             dispatch(navigate(Screens.DASHBOARD));
@@ -89,6 +89,17 @@ export default class FormR extends HTMLElement {
         ContainerInputs.appendChild(inptuEmail);
         ContainerInputs.appendChild(inptuPassword);
         ContainerInputs.appendChild(Loginbtn);
+
+        switch (appState.screen) {
+            case Screens.REGISTER:
+                inptuUsername.style.width = "200%";
+                inptuEmail.style.width = "200%";
+                inptuPassword.style.width = "200%";
+                break;
+
+            default:
+                break;
+        }
     }
 }
 

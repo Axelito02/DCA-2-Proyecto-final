@@ -4,7 +4,6 @@ import { Screens } from "../../types/store";
 import { Addevent } from "../../utils/addevents";
 import { loadCss } from "../../utils/styles";
 import style from "./style.css"
-import userInputs  from "../../components/form/form";
 
 export default class Login extends HTMLElement {
     private imageSrc = '../dist/image/Terraria.jpg';
@@ -48,8 +47,6 @@ export default class Login extends HTMLElement {
         ContainerInputs.classList.add("ContainerInputs");
 
         const appForm = this.ownerDocument.createElement("comp-form");
-
-        
 
         const Text = this.ownerDocument.createElement("p");
         Text.classList.add("RecoveryPassword")

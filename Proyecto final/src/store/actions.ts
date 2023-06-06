@@ -1,5 +1,5 @@
-import { Actions, Content, NavigateActions, ScreenActions, Screens, SaveInfoUser } from "../types/store";
-import { NavigateAction, ScreenNavigateAction } from "../types/interfaces";
+import { Actions, ScreenActions, Screens, SaveInfoUser, PostActions } from "../types/store";
+import { AttrComment, ScreenNavigateAction } from "../types/interfaces";
 import { Usuario } from "../types/usuario";
 import firebase from "../utils/firebase";
 
@@ -10,18 +10,27 @@ export const navigate = (screen: Screens): ScreenNavigateAction => {
   };
 };
 
-export const navNavigate = (content: Content): NavigateAction => {
-  return {
-    action: NavigateActions.CONTENT,
-    payload: content,
-  };
-};
-
 export const saveInputs = (
   usuario: Usuario
-  ): Actions => {
+): Actions => {
   return {
     action: SaveInfoUser.SAVE_INFO_USER,
     payload: usuario,
   };
 };
+
+export const savePost = async (post: AttrComment): Promise<Actions> => {
+  await firebase.savePostInDB(post);
+  return {
+    action: PostActions.SAVE_POST,
+    payload: post,
+  }
+}
+
+export const getPost = async (): Promise<Actions> => {
+  const DataPost = await firebase.getPostFromDB();
+  return {
+    action: PostActions.GET_POST,
+    payload: DataPost,
+  }
+} 

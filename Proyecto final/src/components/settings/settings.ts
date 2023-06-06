@@ -24,6 +24,9 @@ export default class Settings extends HTMLElement {
 
         const appStatus = this.ownerDocument.createElement("comp-status");
         const appLogout = this.ownerDocument.createElement("comp-btnlogout");
+        const appPassword = this.ownerDocument.createElement("comp-password");
+        const appVerification = this.ownerDocument.createElement("comp-verification");
+        const appPrivacity = this.ownerDocument.createElement("comp-privacity");
 
         const ContainerStatus = this.ownerDocument.createElement("div");
         ContainerStatus.classList.add("ContainerStatus");
@@ -39,15 +42,40 @@ export default class Settings extends HTMLElement {
 
         const containerTitle = this.ownerDocument.createElement("div");
         containerTitle.classList.add("containerTitle");
-
-        const containerTitle2 = this.ownerDocument.createElement("div");
-        containerTitle2.classList.add("containerTitle");
+        containerTitle.classList.add("Title1");
 
         const title = this.ownerDocument.createElement("p");
         title.textContent = "Linked to";
 
+        const containerTitle2 = this.ownerDocument.createElement("div");
+        containerTitle2.classList.add("containerTitle");
+        containerTitle2.classList.add("Title2");
+
         const title2 = this.ownerDocument.createElement("p");
         title2.textContent = "Link to";
+
+        const containerTitle3 = this.ownerDocument.createElement("div");
+        containerTitle3.classList.add("containerTitle");
+        containerTitle3.classList.add("Title3");
+
+        const title3 = this.ownerDocument.createElement("p");
+        title3.textContent = "Security";
+
+        const containerTitle4 = this.ownerDocument.createElement("div");
+        containerTitle4.classList.add("containerTitle");
+        containerTitle4.classList.add("Title4");
+
+        const title4 = this.ownerDocument.createElement("p");
+        title4.textContent = "Privacity";
+
+        const ContainerPasword = this.ownerDocument.createElement("div");
+        ContainerPasword.classList.add("ContainerPasword");
+
+        const ContainerChechbox = this.ownerDocument.createElement("div");
+        ContainerChechbox.classList.add("ContainerChechbox");
+
+        const ContainerPrivacity = this.ownerDocument.createElement("div");
+        ContainerPrivacity.classList.add("ContainerPrivacity");
 
         data.forEach(({ thumbnail }) => {
             const appLinkedTo = this.ownerDocument.createElement("comp-linked");
@@ -72,10 +100,20 @@ export default class Settings extends HTMLElement {
         Container.appendChild(ContainerLinkedTo)
         Container.appendChild(containerTitle2)
         Container.appendChild(ContainerLinkto)
+        Container.appendChild(containerTitle3)
+        Container.appendChild(ContainerPasword)
+        Container.appendChild(ContainerChechbox)
+        Container.appendChild(containerTitle4)
+        Container.appendChild(ContainerPrivacity)
         Container.appendChild(ContainerBtnLogout)
 
+        containerTitle4.appendChild(title4)
+        ContainerPrivacity.appendChild(appPrivacity)
+        ContainerPasword.appendChild(appPassword)
+        ContainerChechbox.appendChild(appVerification)
         containerTitle.appendChild(title)
         containerTitle2.appendChild(title2)
+        containerTitle3.appendChild(title3)
         ContainerStatus.appendChild(appStatus)
         ContainerBtnLogout.appendChild(appLogout)
     }

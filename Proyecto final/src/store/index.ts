@@ -1,11 +1,11 @@
 import Storage, { PersistanceKeys } from "../utils/storage";
-import { Actions, AppState, Content, Observer, Screens } from "../types/store";
+import { Actions, AppState, Observer, Screens } from "../types/store";
 import { reducer } from "./reducer";
 
 const emptyState: AppState = {
   screen: Screens.LOGIN,
-  content: Content.UPDATE_GAMES,
   usuarios: [],
+  Post: [],
 };
 
 export let appState = Storage.get<AppState>({

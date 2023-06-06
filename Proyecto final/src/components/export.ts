@@ -8,7 +8,6 @@ export { default as MyGames } from "./mygames/mygames";
 export { default as Friend } from "./friends/friends";
 export { default as GameWeek } from "./GameWeek/gameWeek";
 export { default as Notification } from "./notification/notification";
-export { default as Profile } from "./profile/profile";
 export { default as Search } from "./search/search";
 export { default as Settings } from "./settings/settings";
 export { default as Bar } from "./search/bar/bar";
@@ -16,7 +15,6 @@ export { default as Post } from "./post/post";
 export { default as User } from "./post/user/user";
 export { default as UserInfo } from "./profile/UserInfo/userInfo"
 export { default as RecentlyGames } from "./profile/gamesRecently/gamesRecently"
-export { default as ContenProfile } from "./profile/content/content"
 export { default as Form } from "./form/form"
 export { default as FormR } from "./form/formR"
 export { default as LoginMobile } from "./login_(mobile)/login"
@@ -31,3 +29,16 @@ export { default as LogOut } from "./settings/btnLogout/logout";
 export { default as Inputs } from "./account/inputs/inputs";
 export { default as Favorites } from "./favorites/favorites";
 export { default as Social } from "./social/social";
+export { default as ProfileFavorites } from "./profile/profile_favorites/profile"
+export { default as ProfileFriends } from "./profile/profile_friends/profile"
+export { default as ProfileNotification } from "./profile/profile_notification/profile"
+export { default as ProfileSettings } from "./profile/profile_settings/profile"
+export { default as ProfileAccount } from "./profile/profile_account/profile"
+export { default as ContenProfileAccount } from "./profile/profile_account/content_account/content"
+export { default as ContenProfileFavorites } from "./profile/profile_favorites/content_favorites/content"
+export { default as ContenProfileFriends } from "./profile/profile_friends/content_friends/content"
+export { default as ContenProfileSettings } from "./profile/profile_settings/content_settings/content"
+export { default as ContenProfileNotification } from "./profile/profile_notification/content_notifcation/content"
+export { default as Password } from "./settings/inputpassword/password"
+export { default as Verification } from "./settings/verification/verification"
+export { default as Privacity } from "./settings/privacity/privacity"

@@ -1,5 +1,7 @@
 import { loadCss } from "../../../utils/styles";
 import style from "./style.css";
+// import { getDocs, query, collection, where } from "firebase/firestore";
+// import { db } from "../../../utils/firebase";
 
 export default class Inputs extends HTMLElement {
     constructor() {
@@ -21,9 +23,15 @@ export default class Inputs extends HTMLElement {
 
         const titleContact = this.ownerDocument.createElement("p");
         titleContact.textContent = "Contact information";
-        
+
         const ContainerTitle = this.ownerDocument.createElement("div");
-        ContainerTitle.classList.add ("ContainerTitle");
+        ContainerTitle.classList.add("ContainerTitle");
+
+        const ContainerTitleInputs = this.ownerDocument.createElement("div");
+        ContainerTitleInputs.classList.add("ContainerTitleInputs");
+
+        const ContainerInfo = this.ownerDocument.createElement("div");
+        ContainerInfo.classList.add("ContainerInfo");
 
         //Los títulos de los inputs
         const titleEmail = this.ownerDocument.createElement("p");
@@ -36,38 +44,43 @@ export default class Inputs extends HTMLElement {
         titlePhone.textContent = "Phone registered";
 
         const ContainerselectStatus = this.ownerDocument.createElement("div");
-        ContainerselectStatus.classList.add ("Inputs");
+        ContainerselectStatus.classList.add("Inputs");
 
         //todos los inputs
         const inputEmail = this.ownerDocument.createElement("input");
         inputEmail.type = "text";
         inputEmail.placeholder = "example@gmail.com";
-        inputEmail.classList.add ("inputEmail");
+        inputEmail.classList.add("inputEmail");
+
         const inputRecovery = this.ownerDocument.createElement("input");
         inputRecovery.type = "text";
         inputRecovery.placeholder = "example@gmail.com";
-        inputRecovery.classList.add ("inputRecovery");
+        inputRecovery.classList.add("inputRecovery");
         const inputID = this.ownerDocument.createElement("input");
         inputID.type = "text";
         inputID.readOnly = true;
         inputID.placeholder = "2398289302";
-        inputID.classList.add ("inputID");
+        inputID.classList.add("inputID");
+
         const inputPhone = this.ownerDocument.createElement("input");
         inputPhone.type = "text";
         inputID.readOnly = true;
         inputPhone.placeholder = "3174454969";
-        inputPhone.classList.add ("inputPhone");
+        inputPhone.classList.add("inputPhone");
 
         containerContent.appendChild(ContainerTitle);
-        containerContent.appendChild(titleContact);
-        containerContent.appendChild(ContainerselectStatus);
-        ContainerTitle.appendChild(titleEmail);
+        containerContent.appendChild(ContainerInfo);
+
+        ContainerInfo.appendChild(ContainerTitleInputs);
+        ContainerInfo.appendChild(ContainerselectStatus);
+        ContainerTitle.appendChild(titleContact);
+        ContainerTitleInputs.appendChild(titleEmail);
         ContainerselectStatus.appendChild(inputEmail);
-        ContainerTitle.appendChild(titleRecovery);
+        ContainerTitleInputs.appendChild(titleRecovery);
         ContainerselectStatus.appendChild(inputRecovery);
-        ContainerTitle.appendChild(titleID);
+        ContainerTitleInputs.appendChild(titleID);
         ContainerselectStatus.appendChild(inputID);
-        ContainerTitle.appendChild(titlePhone);
+        ContainerTitleInputs.appendChild(titlePhone);
         ContainerselectStatus.appendChild(inputPhone);
 
     }

@@ -1,14 +1,10 @@
-import { Actions, AppState, NavigateActions, ScreenActions, SaveInfoUser } from "../types/store";
+import { Actions, AppState, ScreenActions, SaveInfoUser, PostActions } from "../types/store";
 
 export const reducer = (
   currentAction: Actions,
   currentState: AppState,
 ): AppState => {
   const { action, payload } = currentAction;
-  const clone = JSON.parse(JSON.stringify(currentState));
-  const emptyContent = () => {
-    clone.content = null;
-  };
 
   switch (action) {
     case ScreenActions.NAVIGATE:
@@ -17,22 +13,27 @@ export const reducer = (
         screen: payload,
       };
 
-    case NavigateActions.CONTENT:
-      const contentPayload = payload;
-      emptyContent();
+    case SaveInfoUser.SAVE_INFO_USER:
+      const userPayload = payload;
       return {
         ...currentState,
-        content: contentPayload,
+        usuarios: [...currentState.usuarios, userPayload],
       };
 
-  case SaveInfoUser.SAVE_INFO_USER:
-    const userPayload = payload; 
-    return {
-      ...currentState,
-      usuarios: [...currentState.usuarios, userPayload],
-    };
+    case PostActions.SAVE_POST:
+      return {
+        ...currentState,
+        Post: [...currentState.Post, payload],
+      };
 
-  default:
-    return currentState;
-  
-}};
+    case PostActions.GET_POST:
+      return {
+        ...currentState,
+        Post: payload,
+      };
+
+    default:
+      return currentState;
+
+  }
+};

@@ -1,4 +1,4 @@
-*{
+* {
     color: white;
 }
 
@@ -10,7 +10,7 @@
     padding: 0;
 }
 
-.col{
+.col {
     padding: 0.5rem;
     display: flex;
     justify-content: center;
@@ -22,41 +22,45 @@
     border-width: 1px;
 }
 
-.col:hover{
+.col:hover {
     cursor: pointer;
     background-color: #2f3257;
 }
 
-.col:focus{
+.col:focus {
     border-bottom: none;
     background-color: #0E0F38;
 }
 
 .uno {
-    border-left: none ;
+    border-left: none;
 }
 
 @media (min-width: 900px) {
-    .tres{
+    .tres {
         display: none;
     }
-    .cuatro-log{
-   
+
+    .cuatro-log {
+
         display: none;
     }
-    .cinco-log{
+
+    .cinco-log {
         display: none;
     }
 }
 
 @media (max-width: 900px) {
-    .tres-log{
+    .tres {
         display: none;
     }
-    .cuatro{
-        display: none;
+
+    .cinco {
+        display: flex;
     }
-    .cinco{
+
+    .cuatro {
         display: none;
     }
 }

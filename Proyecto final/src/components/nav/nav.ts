@@ -1,9 +1,8 @@
 import style from "./style.css"
 import { loadCss } from "../../utils/styles";
 import { Addevent } from "../../utils/addevents";
-import { dispatch } from "../../store/index";
-import { navNavigate, navigate } from "../../store/actions";
-import { Content } from "../../types/store";
+import { appState, dispatch } from "../../store/index";
+import { navigate } from "../../store/actions";
 import { Screens } from "../../types/store";
 
 export default class Nav extends HTMLElement {
@@ -34,7 +33,7 @@ export default class Nav extends HTMLElement {
         col1.classList.add("uno");
         col1.textContent = ("News")
         Addevent(col1, () => {
-            dispatch(navNavigate(Content.UPDATE_GAMES))
+            dispatch(navigate(Screens.UPDATE_GAMES))
             console.log("home");
         })
 
@@ -43,7 +42,7 @@ export default class Nav extends HTMLElement {
         col2.classList.add("dos")
         col2.textContent = ("Comunities");
         Addevent(col2, () => {
-            dispatch(navNavigate(Content.UPDATE_POST))
+            dispatch(navigate(Screens.UPDATE_POST))
             console.log("comunidad");
         })
 
@@ -52,7 +51,7 @@ export default class Nav extends HTMLElement {
         col3.classList.add("tres");
         col3.textContent = ("Login")
         Addevent(col3, () => {
-            dispatch(navigate(Screens.LOGIN))
+            dispatch(navigate(Screens.UPDATE_LOGINMOBILE))
             console.log("login");
         })
 
@@ -61,18 +60,32 @@ export default class Nav extends HTMLElement {
         col4.classList.add("cuatro");
         col4.textContent = ("My games");
         Addevent(col4, () => {
-            dispatch(navNavigate(Content.UPDATE_MYGAMES))
+            dispatch(navigate(Screens.UPDATE_MYGAMES))
             console.log("my games");
         })
 
         const col5 = this.ownerDocument.createElement("button");
         col5.classList.add("col");
-        col5.classList.add("cuatro");
+        col5.classList.add("cinco");
         col5.textContent = ("Profile");
         Addevent(col5, () => {
-            dispatch(navNavigate(Content.UPDATE_PROFILE))
+            dispatch(navigate(Screens.UPDATE_PROFILE))
             console.log("Profile");
         })
+
+        switch (appState.screen) {
+            case Screens.UPDATE_LOGINMOBILE:
+                col3.style.display = "flex"
+                col5.style.display = "none"
+                break;
+            case Screens.DASHBOARD:
+                col3.style.display = "none"
+                col5.style.display = "flex"
+                break;
+
+            default:
+                break;
+        }
 
         main.appendChild(col1);
         main.appendChild(col2);
