@@ -1,9 +1,9 @@
 import data from "../../components/card/data";
-import dataGames from "../../components/mygames/games/data";
-import datarecentlyGames from "../../components/mygames/recentlyplayed/data";
+import dataGames from "../../components/GameWeek/data"
 import { addObserver, appState } from "../../store/index";
-import { AttrCards, AttrGames } from "../../types/interfaces";
+import { AttrCards, AttrGames, AttrGameWeek } from "../../types/interfaces";
 import { setAttributes } from "../../utils/attributtes";
+
 
 export default class Home extends HTMLElement {
     constructor() {
@@ -42,7 +42,18 @@ export default class Home extends HTMLElement {
         const appSearch = this.ownerDocument.createElement("comp-search");
         const appBanner = this.ownerDocument.createElement("comp-banner");
         const appNav = this.ownerDocument.createElement("comp-nav");
-        const appGame = this.ownerDocument.createElement("comp-gameweek");
+
+        dataGames.forEach(({ name, thumbnail, alt, description }) => {
+            const appGame = this.ownerDocument.createElement("comp-gameweek");
+            const cardProps: AttrGameWeek = {
+                name: `${name}`,
+                thumbnail: `${thumbnail}`,
+                alt: `${alt}`,
+                description: `${description}`,
+            }
+            setAttributes<AttrGameWeek>(cardProps, appGame);
+            bottom.appendChild(appGame)
+        })
 
         data.forEach(({ name, thumbnail, publisher, releaseyear }) => {
             const appCard = this.ownerDocument.createElement("comp-card");
@@ -89,7 +100,6 @@ export default class Home extends HTMLElement {
         main.appendChild(row);
         main.appendChild(bottom);
 
-        bottom.appendChild(appGame);
         nav.appendChild(appNav);
         header.appendChild(appSearch);
         header.appendChild(appBanner);

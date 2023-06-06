@@ -57,14 +57,14 @@ export default class GameWeek extends HTMLElement {
 
         const nameGame = this.ownerDocument.createElement("h2");
         nameGame.classList.add("name")
-        nameGame.textContent = (`Terraria`)
+        nameGame.textContent = `${this.name}`
 
         const text2 = this.ownerDocument.createElement("p");
         text2.classList.add("description")
-        text2.textContent = (`Terraria es un videojuego de acción, aventura y de sandbox producido de forma independiente por el estudio Re-Logic. Tiene características tales como la exploración, la artesanía, la construcción de estructuras y el combate.`)
+        text2.textContent = `${this.description}`
 
         const img = this.ownerDocument.createElement("img");
-        img.setAttribute("src", `../dist/image/Terraria.jpg`);
+        img.setAttribute("src", `${this.thumbnail}`);
         img.setAttribute("alt", `${this.alt}`);
 
         const steam = this.ownerDocument.createElement("img");
