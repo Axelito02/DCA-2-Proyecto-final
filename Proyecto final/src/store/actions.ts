@@ -1,7 +1,7 @@
 import { Actions, NavigateActions, ScreenActions, Screens, SaveInfoUser } from "../types/store";
 import { ScreenNavigateAction } from "../types/interfaces";
 import { Usuario } from "../types/usuario";
-import firebase from "../utils/firebase";
+import { saveUsuarioInDB } from "../utils/firebase";
 
 export const navigate = (screen: Screens): ScreenNavigateAction => {
   return {
